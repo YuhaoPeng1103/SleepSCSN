@@ -1,0 +1,80 @@
+# ---------------------------------------------------------------------------
+# Data. The Sleep-EDF and telemetry recordings are third-party data available
+# from PhysioNet; they are never redistributed here. See README for download
+# and preparation commands.
+# ---------------------------------------------------------------------------
+data/*
+!data/README.md
+
+# ---------------------------------------------------------------------------
+# Experiment outputs. The JSON is released: it is a few megabytes and it lets
+# a reader check every number in the manuscript without retraining. The
+# probability arrays (.npz), checkpoints (.pt) and logs are not --- they are
+# large, and scripts/run_matrix.sh regenerates them from the public recordings.
+# ---------------------------------------------------------------------------
+results/**
+!results/**/
+!results/**/*.json
+!results/**/*.md
+!results/**/*.pt
+logs/
+
+# ---------------------------------------------------------------------------
+# Internal working notes (planning, theory drafts). Not part of the release.
+# ---------------------------------------------------------------------------
+notes/
+task_plan.md
+notes.md
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+.venv/
+venv/
+
+# ---------------------------------------------------------------------------
+# LaTeX build products. main.pdf and main.bbl are kept: the PDF is the
+# artefact readers look at, and the .bbl makes the bibliography reproducible
+# without a full BibTeX pass.
+# ---------------------------------------------------------------------------
+*.aux
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.spl
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# ---------------------------------------------------------------------------
+# OS / editor
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ---------------------------------------------------------------------------
+# Local visual-inspection artifacts
+# ---------------------------------------------------------------------------
+qa_pages/
+qa_contact_*.png
+qa_contact_final_*.jpg
+qa_final_main/
+qa_submission_pages/
+qa_make_contacts.py
+qa_make_highlights_docx.js
+.docx-tools/
+paper2/highlights.pdf

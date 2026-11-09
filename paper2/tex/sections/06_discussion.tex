@@ -1,0 +1,266 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{What the decomposition buys}
+
+The literature on subject variability in physiological signal classifiers is
+mostly a literature about remedies: add a subject identifier, adversarially
+remove one, fine-tune on the new patient. Each remedy is expensive in a
+different currency --- annotations, training time, or a labeled target
+cohort. The decomposition of Section~\ref{sec:method} separates the patient
+into a recording-wide offset and a stage-conditional signature, and the
+experiments show that the two parts have different remedies. The offset is
+manufactured by the normalization layer and can be removed by replacing its
+statistics, with no optimizer and no label. The signature can be targeted only
+by an operation that knows the stage, and the inability of any marginal method
+to target it is visible in the within-stage probe.
+
+The decomposition also changes what a subject-invariance claim should report.
+An overall probe conflates the two components: a single vector subtraction
+per recording drives it close to chance even when the conditional signature
+is untouched, because the recording mean is the dominant direction. A paper
+that reports only the overall probe would conclude that marginal adaptation
+and SCSN are equivalent on HMC --- both reach a probe near $0.07$ --- when
+the within-stage probe is $0.41$ under the former and $0.21$ under the
+latter. The within-stage probe is the quantity that matches the object the
+classifier uses: the relative position of two stage-conditional means.
+
+\subsection{Why marginal adaptation is not enough}
+
+Proposition~\ref{prop:marginal} gives the residual of any correction that
+subtracts one vector per recording: $\mu_k+s_{\cR,k}+(\mu_{\mathrm{coh}}-\bar
+\mu_{\cR})$. The first two terms say that the class-conditional means are
+still those of the patient, not those of the cohort; the third says that the
+correction adds an offset determined by the patient's stage mix. The second
+term is why the within-stage probe survives. The third is why marginal
+adaptation can \emph{lose} accuracy: on HMC, where recordings differ in stage
+mix and the cohort is large, the post-hoc marginal arm is $2.3$ points worse
+than the uncorrected model. The loss is not spread evenly over the night: on
+HMC EEGNet the marginal arm gives up $0.135$ of REM recall and $0.107$ of
+wake recall for $0.079$ of N2 recall, whereas SCSN raises N2 recall by
+$0.040$ without a significant loss in any stage
+(Section~\ref{sec:agreement}). An oracle marginal correction that knew the
+recording's stage mix would remove the third term but not the second; the
+signature is out of reach of any operation that uses one mean per recording.
+
+SCSN removes both terms with the model's own posterior. The price is that the
+posterior must be informative: the residual of the soft correction is the part
+of the signature assigned to the wrong stage, bounded by the posterior error.
+The cross-cohort experiment is the regime in which that price is not paid, and
+the degradation there is the clearest evidence that the mechanism is the one
+the algebra describes rather than an unspecified regularisation effect.
+
+\subsection{What kind of claim this is}
+
+The method can be read as an inference-time trick, and that reading would miss
+what is being claimed. Nothing here changes the training procedure, the
+architecture or the objective; the operation is arithmetic on a frozen
+representation, and it is not presented as a new architecture or a new learning
+objective. The claim is nevertheless about the model: that the
+stage-conditional means of its penultimate representation are shifted by the
+patient, that the shift is identifiable from the recording and the model's own
+posterior, and that no operation using a single vector per recording can
+remove it (Corollary~\ref{cor:no-marginal}). That is a statement about what the network
+has learned, in the same sense as a probing result, and the paper makes it
+falsifiable with a measurement it introduces: the within-stage probe falls
+under SCSN and does not fall under any marginal correction, in every setting
+tested. The estimator then follows from the statement through the conditional
+expectation of the shift given the model's posterior
+(Remark~\ref{rem:mmse}), and the closed form follows from the deployment
+setting in which such a statement is useful: a checkpoint whose weights are
+frozen and a night whose labels are unknown. A method that needed a second
+pass, an optimizer or a gradient through the posterior would answer the same
+analytical question and be a different engineering object. The object of the
+contribution is the analysis and the measurement. The algorithm is what that
+analysis leaves as the only available operation; its deployment properties are
+what make the analysis usable at the bedside, and they are not where the
+novelty lies.
+
+\subsection{When the correction is free and when it is not}
+
+On Sleep-EDF EEGNet, SCSN leaves accuracy where the uncorrected model and
+layerwise AdaBN leave it; on HMC EEGNet and HMC SleepCNN it gains $1.9$ and
+$1.4$ points over the uncorrected model and has the highest mean accuracy of
+the arms, although on HMC SleepCNN the margin over layerwise AdaBN is not
+significant ($p=0.084$).
+The HMC gains survive the chance-corrected and class-balanced measures:
+$\kappa$ rises by $0.023$ and $0.017$ and macro-$F_1$ by $0.018$ and $0.013$
+on the two backbones, with no comparable change on Sleep-EDF.
+On Sleep-EDF SleepCNN, layerwise AdaBN is $1.4$ points more accurate than
+SCSN, a difference that is not significant. We report the ordering rather
+than selecting the cohort on which the method wins. Two mechanisms plausibly
+explain the ordering. Layerwise AdaBN is nonlinear and acts at every layer:
+it removes part of the conditional signature as a side effect, lowering the
+within-stage probe by $0.04$ to $0.09$ where it acts at all, and not at all
+on Sleep-EDF SleepCNN, but it has no stage index and cannot target that
+signature; SCSN removes $0.24$ to $0.35$ more. And the accuracy effect of
+SCSN depends on the posterior: where the posterior is weak, the correction
+approaches the marginal one, as the cross-cohort experiment shows. Neither
+mechanism makes SCSN preferable on accuracy alone on Sleep-EDF; the case for
+SCSN there rests on the identity it removes and on the fact that the same
+operation is the only one available on a group-normalized checkpoint.
+
+Tent is a strong baseline on Sleep-EDF and we do not claim to beat it on
+accuracy. It is also a batch-normalization method: it optimizes the affine
+parameters of batch-normalization layers. Applying it unchanged to a
+group-normalized model is not defined, and a GroupNorm-specific entropy method
+would require a separate design and tuning protocol. The comparison is
+therefore reported for the batch-normalized checkpoints where both methods are
+defined.
+
+\subsection{The group-normalized setting}
+
+Group normalization is often described as removing subject information
+because it removes the batch. The experiments show that it does not remove
+the patient: a linear probe identifies the patient from a group-normalized
+representation well above chance on both cohorts and both backbones. What it
+removes is the batch dependence of the normalization, not the
+recording-dependent variation that the following layers map into the
+penultimate space.
+
+This is the setting in which the contribution is least ambiguous within the
+family considered here. Standard AdaBN is undefined because there is no
+test-time batch statistic, and standard Tent targets batch-normalization
+affine parameters. The post-hoc marginal correction is defined and removes
+the overall probe, but it moves the
+within-stage probe by between a tenth and a third of what SCSN removes, and
+in the wrong direction on both SleepCNN checkpoints, because a single vector
+per recording carries no stage index. SCSN is the only stage-aware
+statistics-replacement correction among those evaluated, and on the
+group-normalized checkpoints it improves accuracy and the worst-covered
+patient over the uncorrected model. A practitioner who chooses group
+normalization for its batch independence therefore has a label-free
+inference-time correction available without changing the architecture.
+
+\subsection{Reading the reliability result correctly}
+
+The conformal guarantee is marginal over patients, and the numbers make the
+sense in which it is marginal concrete: every arm covers at about the nominal
+rate on average, while the worst-covered patient of a fold is covered well
+below it. The dispersion of per-patient coverage is the quantity that
+separates a model whose guarantee is uniform from one whose guarantee is an
+average.
+
+The correction that removes the patient signature also reduces the
+concentration of failures, but not uniformly across settings. On the
+group-normalized checkpoints SCSN improves the worst-covered patient and the
+dispersion in all four settings. On
+the batch-normalized EEGNet checkpoints, layerwise AdaBN attains a better
+worst-covered patient than SCSN ($0.866$ against $0.857$ on Sleep-EDF and
+$0.698$ against $0.678$ on HMC) and a smaller dispersion on Sleep-EDF ($0.028$
+against $0.036$), with the two dispersions comparable on HMC ($0.069$ against
+$0.067$); on HMC SleepCNN the ordering reverses, with SCSN better on both
+quantities ($0.664$ against $0.649$ and $0.066$ against $0.072$). We report
+that rather than the comparison that favors the method. The safe statement is the mechanistic one: removing the
+component of the representation that carries the patient reduces the
+patient-dependence of the coverage, and the size of the reduction depends on
+how much of that component the correction removes.
+
+\subsection{The boundary of the method}
+
+The cross-cohort experiment defines the regime in which a stage-conditional
+correction should not be used. When a model trained on one centre is applied
+to another, its posterior is weak, and the stage-conditional means estimated
+from that posterior are dominated by the prior and by the recording offset.
+SCSN then performs like the marginal correction and below layerwise AdaBN; the
+oracle-label version, which uses the true stages to estimate the shifts,
+recovers a large part of the gap, so the limitation is the posterior rather
+than the estimator. This is a useful diagnostic: the method has a measurable
+precondition, and the precondition can be checked on the unlabeled night
+before the correction is applied, for example by the entropy or the
+confidence of the uncorrected posterior.
+
+\subsection{Limitations}
+
+\paragraph{Cohort size}
+Sleep-EDF has 20 subjects, so a fold holds out four of them and the probe is a
+four-way problem. A four-way probe can only be so informative, and a
+subject-level statistic computed over four subjects is noisy. This is the
+reason the paper carries a second cohort of 151 subjects; the second cohort is
+larger than most in the literature but comes from one centre, one montage and
+one scoring team, and it is a cohort of patients referred for suspected sleep
+disorders rather than of healthy volunteers.
+
+\paragraph{Probe capacity}
+The probe is a linear readout. A nonlinear probe would find more identity in
+every arm, and the fractions reported here are lower bounds on what the
+representation contains rather than statements about what it contains. The
+comparison between arms is not affected by this, since the probe is the same
+object in every arm, but the absolute level should be read as a floor.
+
+\paragraph{Backbones}
+Two convolutional backbones are used on both cohorts, chosen to differ in
+depth, width and receptive field. Neither is a transformer, and the extent to
+which normalization-driven identity matters in attention-based stagers is not
+addressed here.
+
+\paragraph{Posterior quality}
+The correction is only as good as the posterior that indexes the stages. On
+the within-cohort experiments the posterior is informative enough that the
+correction is close to exact; across cohorts it is not, and the method
+degrades to the marginal correction. A stager with a poorly calibrated head
+would need the head recalibrated before the correction is applied.
+
+\paragraph{Probability calibration}
+Re-estimating the statistics, or correcting the representation, changes the
+scale of the logits relative to the scale on which the posterior head was
+fitted, and the expected calibration error moves with it: on Sleep-EDF EEGNet
+from $0.030$ to $0.044$, with layerwise AdaBN at $0.043$ on the same runs, and
+by at most $0.006$ on HMC. Conformal sets are
+unaffected in coverage because their quantile is refitted on the calibration
+split after the same intervention, but a user who reads the raw probabilities
+of a deployed stager should recalibrate them after the correction.
+
+\paragraph{Offline operation}
+As with AdaBN, the statistics are estimated on the whole night. Clinical
+staging is scored after the night, so the constraint is not binding in the
+application we target, but a real-time monitor would have to estimate the
+statistics on a prefix, which we have not tested.
+
+\paragraph{GroupNorm-specific test-time adaptation}
+Because group normalization has learnable affine parameters, an entropy-based
+test-time objective could be designed for it. We did not implement that
+baseline here: doing so would introduce a new optimizer, step-size schedule,
+and stopping rule, and would no longer be the standard Tent method. The
+group-normalized comparison therefore establishes applicability and internal
+mechanism, not superiority to every possible GroupNorm-specific adaptation
+objective.
+
+\paragraph{Single channel}
+Both cohorts are staged from a single EEG derivation. Multi-channel stagers
+have more ways to encode a patient, and the balance between the marginal and
+the conditional part of the identity may differ.
+
+\paragraph{Statistical inference}
+The Wilcoxon tests are exploratory and pairwise unadjusted. Seeds within a
+fold reuse the same held-out subjects, so paired runs are not fully
+independent; fold-level sign counts are therefore reported alongside the
+run-level tests to reduce reliance on pseudo-replication. We make no
+familywise-error claim. The consistency of effect directions across cohorts,
+backbones, and normalization schemes, rather than any single $p$-value, is
+the basis for the conclusions.
+
+\subsection{Practical recipe}
+
+For a stager that is already trained and validated, the procedure the results
+support is short.
+\begin{enumerate}
+  \item Fit a linear probe from the penultimate representation to the patient,
+  overall and within stage. If the overall probe is near chance, the marginal
+  patient is not in the representation. If the within-stage probe is near
+  chance, the conditional signature is not there either, and no
+  stage-conditional correction is needed.
+  \item If the within-stage probe is high, apply SCSN on each recording before
+  predicting it. On a batch-normalized model, compare with layerwise AdaBN; on
+  a group-normalized model, SCSN is the only stage-conditional option.
+  \item Check the uncorrected posterior before applying the correction. If it
+  is close to uniform, the stage-conditional means are not identifiable and
+  the correction should be reduced to the marginal one.
+  \item Recalibrate the conformal score on recordings processed the same way,
+  and report per-patient coverage dispersion beside average coverage.
+\end{enumerate}
+The first step is a diagnostic that costs one logistic regression; the second
+adds a few matrix products to the forward pass the stager performs anyway; the
+third is a scalar check on the posterior; the fourth is bookkeeping. None of them requires a labeled target cohort, and
+all of them can be applied to a model whose weights will never be touched
+again.

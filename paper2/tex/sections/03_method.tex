@@ -1,0 +1,317 @@
+\section{Stage-conditional shift normalization}
+\label{sec:method}
+
+\subsection{What the normalization layer leaves in the representation}
+
+Let $z_i\in\bR^d$ be the penultimate representation of epoch $i$, let
+$k_i\in\{1,\dots,K\}$ be its sleep stage, and let $r(i)$ be the recording it
+belongs to. Write $\cR$ for a recording and $\pi_{\cR,k}$ for the fraction of
+its epochs scored as stage $k$. The class-conditional mean of the
+representation in a recording is
+\begin{equation}
+  m_{\cR,k} \;=\; \bE\!\left[z_i \mid r(i)=\cR,\, k_i=k\right],
+  \qquad
+  m_{\cR} \;=\; \sum_{k}\pi_{\cR,k}\,m_{\cR,k},
+  \label{eq:means}
+\end{equation}
+and the cohort mean is $\mu_{\mathrm{coh}}=\sum_k \pi_k \mu_k$, with $\mu_k$ the
+class mean over the training cohort and $\pi_k$ its stage mix.
+
+The decomposition that organises the paper is a definition, not an
+assumption. Set
+\begin{equation}
+  a_{\cR} \;=\; m_{\cR}-\bar\mu_{\cR},
+  \qquad
+  s_{\cR,k} \;=\; m_{\cR,k}-\mu_k-a_{\cR},
+  \qquad
+  \bar\mu_{\cR}=\sum_k \pi_{\cR,k}\mu_k .
+  \label{eq:decomp}
+\end{equation}
+Then $m_{\cR,k}=\mu_k+a_{\cR}+s_{\cR,k}$ and, by construction,
+$\sum_k \pi_{\cR,k}s_{\cR,k}=0$. The three terms have different meanings.
+$\mu_k$ is the stage prototype the classifier was trained on. $a_{\cR}$ is a
+recording-wide offset: it is the same vector for every epoch of the night and
+is what a batch-normalization layer manufactures when the recording's first
+and second moments differ from the cohort's. $s_{\cR,k}$ is the part of the
+patient that is not an offset: within a stage, this patient's spindles, slow
+waves or alpha differ from the cohort prototype in a way that is stable across
+the night. The constraint makes the offset and the conditional signature
+identifiable from each other.
+
+\subsection{Marginal adaptation removes the offset and keeps the signature}
+
+The default label-free remedy is to replace the cohort statistics by the
+recording's, either by re-estimating every batch-normalization statistic
+(AdaBN) or, at the representation, by subtracting the recording's mean shift
+$m_{\cR}-\mu_{\mathrm{coh}}$. The next proposition states exactly what that
+leaves behind.
+
+\begin{proposition}[Marginal residual]
+\label{prop:marginal}
+Under the decomposition \eqref{eq:decomp}, marginal correction
+$z_i\mapsto z_i-(m_{\cR}-\mu_{\mathrm{coh}})$ gives
+\begin{equation}
+  \bE\!\left[z_i-(m_{\cR}-\mu_{\mathrm{coh}})\mid r(i)=\cR,k_i=k\right]
+  \;=\;\mu_k+s_{\cR,k}+\bigl(\mu_{\mathrm{coh}}-\bar\mu_{\cR}\bigr).
+  \label{eq:marginal-residual}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Substitute $m_{\cR}=\bar\mu_{\cR}+a_{\cR}$ from \eqref{eq:decomp} into the
+conditional mean $m_{\cR,k}=\mu_k+a_{\cR}+s_{\cR,k}$ and cancel $a_{\cR}$.
+\end{proof}
+
+Two consequences follow. The conditional signature $s_{\cR,k}$ survives
+untouched: marginal adaptation removes a vector that is constant across stages
+and cannot remove one that is not. And the correction adds
+$\mu_{\mathrm{coh}}-\bar\mu_{\cR}$, which is zero only when the recording's
+stage mix equals the cohort's. A recording with an atypical architecture
+therefore keeps a residual offset that is a function of \emph{how it slept},
+not of who the patient is. Even an oracle marginal correction that knows
+$\bar\mu_{\cR}$ and subtracts $m_{\cR}-\bar\mu_{\cR}$ would leave
+$\mu_k+s_{\cR,k}$; the conditional signature is out of reach of any operation
+that uses one mean per recording. The next corollary states that this is not a
+property of a particular estimate of the mean but of the entire family.
+
+\begin{corollary}[No single-vector correction removes the signature]
+\label{cor:no-marginal}
+Let $g$ be any function of the recording alone, and apply the correction
+$z_i\mapsto z_i-g(\cR)$. Then for any two stages $j,k$,
+\begin{equation}
+\begin{aligned}
+  &\bE\!\left[z_i-g(\cR)\mid r(i)=\cR,k_i=j\right] \\
+  &\quad-\bE\!\left[z_i-g(\cR)\mid r(i)=\cR,k_i=k\right]
+  =(\mu_j-\mu_k)+(s_{\cR,j}-s_{\cR,k}),
+\end{aligned}
+  \label{eq:invariant}
+\end{equation}
+independently of $g$.
+\end{corollary}
+\begin{proof}
+The same vector $g(\cR)$ is subtracted from both conditional means, and
+$m_{\cR,j}-m_{\cR,k}=(\mu_j-\mu_k)+(s_{\cR,j}-s_{\cR,k})$ by
+\eqref{eq:decomp}.
+\end{proof}
+
+The corollary is the precise sense in which the signature is out of reach of
+the marginal family. Whatever $g$ is --- the recording mean, an oracle that
+knows the patient's stage mix, or a vector learned from the recording --- the
+displacement the head compares between two stages changes by the same
+$s_{\cR,j}-s_{\cR,k}$. A better estimate of the marginal statistic moves the
+offset and leaves the relative geometry exactly where it was; only an operation
+whose index depends on $k$ can change \eqref{eq:invariant}. The statement is a
+consequence of the definition rather than of a modeling assumption: the
+conditional means are what they are, and the difference between two of them
+contains $s_{\cR,j}-s_{\cR,k}$ exactly. What the corollary rules out is
+therefore not a particular estimator but a class of interventions.
+
+The consequence for the classifier is equally direct. The logit margin
+between two stages under marginal correction is
+\begin{equation}
+  W\!\left(m'_{\cR,j}-m'_{\cR,k}\right)
+  = W\!\left(\mu_j-\mu_k+s_{\cR,j}-s_{\cR,k}\right),
+  \label{eq:marginal-margin}
+\end{equation}
+so the patient's stage-conditional signature is added to the very quantity
+the classifier compares. When that signature is large --- an atypical patient,
+a recording with unusual stage-specific morphology --- the margin can move
+across the decision boundary, and accuracy falls. This is the mechanism behind
+the accuracy difference between the marginal and conditional corrections in
+Section~\ref{sec:scsn-identity}.
+
+\subsection{Stage-conditional shift normalization}
+
+The alternative is to estimate the shift separately for each stage and to
+remove it with the model's own soft assignments. Let
+$p_{ik}=\Pr(k_i=k\mid z_i)$ be the posterior of the unadapted model, and let
+\begin{equation}
+  \hat m_{\cR,k}
+  =\frac{\sum_{i:r(i)=\cR}p_{ik}z_i+\lambda_s\mu_k}
+         {\sum_{i:r(i)=\cR}p_{ik}+\lambda_s},
+  \qquad
+  \hat\delta_{\cR,k}=\hat m_{\cR,k}-\mu_k ,
+  \label{eq:estimator}
+\end{equation}
+where $\lambda_s\ge0$ is a pseudo-count that shrinks rare stages towards the
+cohort prototype; in all experiments $\lambda_s=10$. The corrected
+representation is
+\begin{equation}
+  \tilde z_i \;=\; z_i-\sum_{k}p_{ik}\,\hat\delta_{\cR,k}.
+  \label{eq:scsn}
+\end{equation}
+Equations \eqref{eq:estimator}--\eqref{eq:scsn} are stage-conditional shift
+normalization (SCSN). The operation is a closed-form post-processing of one
+forward pass: the pass gives $p_{ik}$ and $z_i$, the per-stage shifts are
+accumulated, and the corrected representation is obtained by subtracting the
+weighted shifts. No second pass over the network is required. No weight is
+updated, no optimizer is run, no label of the recording is read, and no
+subject identifier is used.
+
+Read as a normalization operator, \eqref{eq:scsn} has the same shape as the
+normalizers reviewed in Section~\ref{sec:related} but different sufficient
+statistics: batch normalization uses the moments of a batch, group
+normalization the moments of an epoch, and SCSN the class-conditional means of
+the recording, weighted by the model's posterior. It is a normalization whose
+statistics are indexed by the classes the model assigns.
+
+For a recording of $n$ epochs and penultimate dimension $d$, accumulating the
+stage summaries takes $O(nKd)$ arithmetic and $O(Kd)$ additional storage; the
+correction has the same arithmetic complexity. No network replay, backward
+pass, or gradient is required.
+
+\begin{proposition}[Conditional residual]
+\label{prop:conditional}
+Let $\hat\delta_{\cR,k}=\delta_{\cR,k}=a_{\cR}+s_{\cR,k}$ (the population
+value). Then for every epoch,
+\begin{equation}
+  \tilde z_i
+  = z_i-\sum_k p_{ik}\bigl(a_{\cR}+s_{\cR,k}\bigr)
+  = z_i-a_{\cR}-\sum_k p_{ik}s_{\cR,k} .
+  \label{eq:cond-exact}
+\end{equation}
+In particular the offset cancels for \emph{any} posterior with
+$\sum_k p_{ik}=1$, and if $p_{ik}=\mathbb{1}[k_i=k]$ the conditional mean of
+$\tilde z_i$ is exactly $\mu_k$.
+\end{proposition}
+\begin{proof}
+$\sum_k p_{ik}=1$ gives $\sum_k p_{ik}a_{\cR}=a_{\cR}$. For hard assignments
+$\sum_k p_{ik}s_{\cR,k}=s_{\cR,k_i}$, and $\mu_k+a_{\cR}+s_{\cR,k}-a_{\cR}
+-s_{\cR,k}=\mu_k$.
+\end{proof}
+
+For a soft posterior the residual is
+\begin{equation}
+  \bE[\tilde z_i\mid r(i)=\cR,k_i=k]
+  =\mu_k+\sum_j\bigl(\mathbb{1}[j=k]-p_{ij}\bigr)s_{\cR,j},
+  \label{eq:soft-residual}
+\end{equation}
+so the error is the part of the conditional signature assigned to the wrong
+stage. It vanishes when the posterior is correct and is bounded by
+$\max_j\|s_{\cR,j}\|\sum_j|\mathbb{1}[j=k]-p_{ij}|$. This is why the method is
+robust to an imperfect but informative posterior and why it degrades when the
+posterior is close to uniform, a prediction we test in the cross-cohort
+experiment.
+
+\begin{remark}[Why the posterior-weighted average]
+\label{rem:mmse}
+Condition on the recording and write $\Delta_i=a_{\cR}+s_{\cR,k_i}$ for the
+shift that affects epoch $i$. Given $z_i$, the least-mean-square estimate of
+$\Delta_i$ among functions of $z_i$ is the conditional expectation
+\begin{equation}
+  \bE[\Delta_i\mid z_i]=a_{\cR}+\sum_k \Pr(k_i=k\mid z_i)\,s_{\cR,k},
+  \label{eq:mmse}
+\end{equation}
+and \eqref{eq:scsn} subtracts this quantity with the model's posterior in place
+of the unknown true one. The correction is therefore not a heuristic blend: it
+is the estimate that minimizes the expected squared residual, and the residual
+it leaves, \eqref{eq:soft-residual}, is the part of the shift attributed to the
+wrong stage. The hard-assignment variant replaces the posterior by a point mass;
+it has a smaller conditional bias and a larger variance, and the experiments
+show that it over-corrects. The interpolated family
+$z_i-\delta_{\cR}-\lambda(\sum_k p_{ik}\hat\delta_{\cR,k}-\delta_{\cR})$
+traces a path from ignoring the stage ($\lambda=0$) to trusting the posterior
+completely ($\lambda=1$).
+\end{remark}
+
+The class geometry is preserved by the same argument. Under the population
+correction the class-conditional means of the corrected representation are
+$\mu_k$, independently of the recording, so
+\begin{equation}
+  W\!\left(\tilde m_{\cR,j}-\tilde m_{\cR,k}\right)
+  = W\!\left(\mu_j-\mu_k\right)
+  \label{eq:scsn-margin}
+\end{equation}
+for every recording: the logit margin the classifier was trained on is
+restored, whereas under marginal correction it is perturbed by
+$s_{\cR,j}-s_{\cR,k}$ as in \eqref{eq:marginal-margin}. This is the formal
+content of the accuracy result: SCSN does not merely remove a nuisance, it
+maps every recording back to the class geometry on which the head was fitted.
+
+Two controls follow from the algebra. If the correction is constrained to the
+null space of $W$, the logits are unchanged exactly, so any change in identity
+cannot be attributed to a change in predictions; we implement this by
+projecting each $\hat\delta_{\cR,k}$ off the row space of $W$. If the shifts of
+a \emph{different} recording are applied, the correction is a non-zero
+recording-specific vector and the identity is replaced rather than removed;
+this is the matched-versus-mismatched control.
+
+\begin{remark}[Estimation error]
+With $n_{\cR,k}=\sum_i p_{ik}$ effective epochs, the shrunk estimator
+\eqref{eq:estimator} has bias at most
+$\lambda_s\|m_{\cR,k}-\mu_k\|/(n_{\cR,k}+\lambda_s)$ towards the cohort
+prototype and standard deviation of order $\|s_{\cR,k}\|/\sqrt{n_{\cR,k}}$.
+Both terms are small for the stages that dominate a night (N2, REM) and large
+for N1, which is why the shrinkage is kept in all experiments. On HMC a
+recording averages about 900 epochs, of which roughly 100 are scored N1 and
+330 N2, so a pseudo-count of ten moves the N1 estimate by at most a tenth
+towards the prototype and the N2 estimate by at most a thirtieth. The estimator
+is a soft, regularized version of the stage-conditional sample mean; no
+gradient, iteration or held-out label enters it.
+\end{remark}
+
+\begin{algorithm}[t]
+\caption{Stage-conditional shift normalization (one recording)}
+\label{alg:scsn}
+\begin{algorithmic}[1]
+\Require frozen stager $f=W\phi+b$, unlabeled epochs $x_1,\dots,x_n$ of a recording $\cR$
+\Require cohort class means $\mu_k$ and cohort mean $\mu_{\mathrm{coh}}$
+\State $z_i\gets\phi(x_i)$ \Comment{forward pass}
+\State $p_{ik}\gets\mathrm{softmax}(Wz_i+b)$
+\For{$k=1,\dots,K$}
+  \State $\hat m_{\cR,k}\gets(\sum_i p_{ik}z_i+\lambda_s\mu_k)/(\sum_i p_{ik}+\lambda_s)$
+  \State $\hat\delta_{\cR,k}\gets\hat m_{\cR,k}-\mu_k$
+\EndFor
+\State $\tilde z_i\gets z_i-\sum_k p_{ik}\hat\delta_{\cR,k}$ \Comment{correction}
+\State \Return $\mathrm{softmax}(W\tilde z_i+b)$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Relation to existing normalizers}
+
+\paragraph{Batch normalization and AdaBN}
+A batch-normalized stager at inference is an affine map with cohort
+statistics. AdaBN replaces those statistics by the recording's at every layer
+\citep{li2018adabn}. That is a nonlinear, layer-wise operation and is not the
+same object as the representation-level marginal correction of
+Proposition~\ref{prop:marginal}; the proposition describes the post-hoc
+operation that subtracts one vector from the frozen penultimate
+representation, which is the operation SCSN generalises. We report both: the
+post-hoc marginal arm isolates the algebra, and layerwise AdaBN is the
+stronger inference-time baseline that a practitioner with access to the model
+would use. Setting $\lambda=0$ in the interpolated form
+$z_i-\delta_{\cR}-\lambda(\sum_k p_{ik}\hat\delta_{\cR,k}-\delta_{\cR})$
+recovers the post-hoc marginal correction; $\lambda=1$ is SCSN. We report the
+whole $\lambda$ path.
+
+\paragraph{Group and instance normalization}
+Group normalization removes the batch from the computation
+\citep{wu2018group}: the output of a group-normalized layer depends only on
+the epoch it is applied to. Standard AdaBN therefore has no batch statistic to
+replace. Standard Tent updates batch-normalization affine parameters; an
+entropy objective on the affine parameters of group normalization would be a
+different test-time method and is not evaluated here. It does not follow that
+the learned representation is free of the recording. Group normalization
+removes the per-epoch mean at each layer, but the network that follows maps
+the remaining recording-dependent variation into the penultimate space; the
+experiments below show that a linear probe still identifies the patient from
+a group-normalized representation, and that the post-hoc marginal correction
+still changes both accuracy and calibration. The post-hoc marginal correction
+can remove only the recording-wide offset, and the experiments show that it
+moves the within-stage probe by no more than a third of what SCSN removes.
+SCSN is the only stage-aware statistics-replacement method evaluated there,
+and we therefore apply it to these checkpoints.
+
+\paragraph{Class-conditional and entropy-based test-time adaptation}
+Tent minimizes the entropy of the posterior over the affine parameters of the
+normalization layers \citep{wang2021tent}; it is class-agnostic and optimizes a
+surrogate. SCSN has a closed form, one hyperparameter (the shrinkage), and a
+target: the per-stage mean. The two are compared directly in
+Section~\ref{sec:accuracy}.
+
+\paragraph{Subject-invariant architectures}
+Adversarial subject classifiers and subject identifiers
+\citep{liao2020trifeaturenet,phan2022sleepformer} change the weights and need
+retraining; disentangled architectures \citep{perslev2021} do the same. SCSN
+is applied to a frozen checkpoint and changes no parameter. It is therefore
+not a competitor to those methods but a post-hoc alternative for models that
+already exist, and it can be stacked on top of any of them.

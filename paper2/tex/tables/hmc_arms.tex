@@ -1,0 +1,9 @@
+\begin{tabular}{llrrrrrrrrrr}
+\toprule
+Backbone & normalization & \textbf{Acc.} & \textbf{$\kappa$} & \textbf{mF1} & \textbf{ECE} & \textbf{Cov.} & \textbf{Set} & \textbf{Wkld} & \textbf{Worst} & \textbf{SD} & \textbf{Probe} \\
+\midrule
+\multirow{3}{*}{EEGNet} & Batch (cohort) & 0.672 & 0.564 & 0.594 & 0.028 & 0.895 & 2.44 & 0.755 & 0.649 & 0.086 & 0.432 \\
+ & Group (per sample) & 0.693 & 0.595 & 0.628 & 0.026 & 0.898 & 2.43 & 0.754 & 0.695 & 0.067 & 0.241 \\
+ & Batch + AdaBN (per recording) & 0.674 & 0.563 & 0.591 & 0.029 & 0.898 & 2.48 & 0.759 & 0.698 & 0.069 & 0.244 \\
+\bottomrule
+\end{tabular}

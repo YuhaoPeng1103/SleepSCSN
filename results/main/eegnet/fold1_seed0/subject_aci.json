@@ -1,0 +1,498 @@
+{
+  "alpha": 0.1,
+  "schedule": "sqrt",
+  "poly_power": null,
+  "transitions": [
+    [
+      0.9173441734417345,
+      0.07588075880758807,
+      0.0027100271002710027,
+      0.0013550135501355014,
+      0.0027100271002710027
+    ],
+    [
+      0.11387163561076605,
+      0.5693581780538303,
+      0.2587991718426501,
+      0.004140786749482402,
+      0.053830227743271224
+    ],
+    [
+      0.011066707654472794,
+      0.0205963725791577,
+      0.9028588994774055,
+      0.05318167845066093,
+      0.012296341838303105
+    ],
+    [
+      0.004792332268370607,
+      0.004792332268370607,
+      0.13099041533546327,
+      0.8578274760383386,
+      0.001597444089456869
+    ],
+    [
+      0.017170329670329672,
+      0.015796703296703296,
+      0.015796703296703296,
+      0.0006868131868131869,
+      0.9505494505494505
+    ]
+  ],
+  "methods": {
+    "global_aps": {
+      "coverage": 0.8857528393118183,
+      "per_class_coverage": [
+        0.8221153846153846,
+        0.9708879184861717,
+        0.8759407623209516,
+        0.781010719754977,
+        0.9740112994350283
+      ],
+      "set_size": 2.7026875070279996,
+      "singleton_rate": 0.20577982683009108,
+      "empty_rate": 0.07016754750927696,
+      "review_workload": 0.724052625660632,
+      "temporal_consistency": 0.678244231851435,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8886498117267349,
+        "SC410": 0.8779599271402551,
+        "SC412": 0.9334647609659931,
+        "SC419": 0.8554645781416874
+      },
+      "mean_subject_coverage": 0.8888847694936676,
+      "worst_subject_coverage": 0.8554645781416874,
+      "p10_subject_coverage": 0.8622131828412577,
+      "std_subject_coverage": 0.032780544104060366,
+      "subject_violation_rate": 0.75
+    },
+    "global_deficit": {
+      "coverage": 0.885977735297425,
+      "per_class_coverage": [
+        0.7914663461538461,
+        0.4672489082969432,
+        0.9810633648943918,
+        0.9770290964777948,
+        0.8824858757062147
+      ],
+      "set_size": 1.8971100865849544,
+      "singleton_rate": 0.7503654559766109,
+      "empty_rate": 0.0,
+      "review_workload": 0.2496345440233892,
+      "temporal_consistency": 0.935854436315888,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8945669714900484,
+        "SC410": 0.9039162112932605,
+        "SC412": 0.8215869886643666,
+        "SC419": 0.9127803488786045
+      },
+      "mean_subject_coverage": 0.88321263008157,
+      "worst_subject_coverage": 0.8215869886643666,
+      "p10_subject_coverage": 0.8434809835120711,
+      "std_subject_coverage": 0.04175136332605035,
+      "subject_violation_rate": 0.5
+    },
+    "subject_aci_aps_g0.005": {
+      "coverage": 0.8886764871247048,
+      "per_class_coverage": [
+        0.8137019230769231,
+        0.9737991266375546,
+        0.8846807477543093,
+        0.781010719754977,
+        0.9751412429378531
+      ],
+      "set_size": 2.723715281682222,
+      "singleton_rate": 0.20611717080850106,
+      "empty_rate": 0.0663443157539638,
+      "review_workload": 0.7275385134375352,
+      "temporal_consistency": 0.6814612643031326,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8897256589564282,
+        "SC410": 0.8897996357012751,
+        "SC412": 0.92114342040414,
+        "SC419": 0.8636525453898184
+      },
+      "mean_subject_coverage": 0.8910803151129153,
+      "worst_subject_coverage": 0.8636525453898184,
+      "p10_subject_coverage": 0.8714744794598014,
+      "std_subject_coverage": 0.023519836201188426,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_aps_g0.01": {
+      "coverage": 0.8919374789160014,
+      "per_class_coverage": [
+        0.8118990384615384,
+        0.9723435225618632,
+        0.8922068463219228,
+        0.7840735068912711,
+        0.9751412429378531
+      ],
+      "set_size": 2.7378837287754414,
+      "singleton_rate": 0.20690430675812438,
+      "empty_rate": 0.06252108399865063,
+      "review_workload": 0.730574609243225,
+      "temporal_consistency": 0.6862821234290002,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8929532006455083,
+        "SC410": 0.895264116575592,
+        "SC412": 0.9142434696895022,
+        "SC419": 0.8725525097899608
+      },
+      "mean_subject_coverage": 0.8937533241751409,
+      "worst_subject_coverage": 0.8725525097899608,
+      "p10_subject_coverage": 0.8786727170466251,
+      "std_subject_coverage": 0.01705132727125656,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_aps_g0.02": {
+      "coverage": 0.8950860227144946,
+      "per_class_coverage": [
+        0.8070913461538461,
+        0.9737991266375546,
+        0.8999757222626851,
+        0.7871362940275651,
+        0.9757062146892655
+      ],
+      "set_size": 2.7536264477679073,
+      "singleton_rate": 0.20679185876532105,
+      "empty_rate": 0.058360508264927474,
+      "review_workload": 0.7348476329697515,
+      "temporal_consistency": 0.6908422434815231,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8940290478752018,
+        "SC410": 0.8998178506375227,
+        "SC412": 0.9029078363725973,
+        "SC419": 0.8864364542541829
+      },
+      "mean_subject_coverage": 0.8957977972848762,
+      "worst_subject_coverage": 0.8864364542541829,
+      "p10_subject_coverage": 0.8887142323404886,
+      "std_subject_coverage": 0.0072451524621542545,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_aps_g0.05": {
+      "coverage": 0.8975598785561678,
+      "per_class_coverage": [
+        0.8167067307692307,
+        0.9723435225618632,
+        0.9014323865015781,
+        0.7978560490045942,
+        0.9723163841807909
+      ],
+      "set_size": 2.738108624761048,
+      "singleton_rate": 0.2097155065782076,
+      "empty_rate": 0.05622399640166423,
+      "review_workload": 0.7340604970201282,
+      "temporal_consistency": 0.6918889514162446,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.900484131253362,
+        "SC410": 0.8984517304189436,
+        "SC412": 0.8979793001478561,
+        "SC419": 0.894624421502314
+      },
+      "mean_subject_coverage": 0.8978848958306189,
+      "worst_subject_coverage": 0.894624421502314,
+      "p10_subject_coverage": 0.8956308850959767,
+      "std_subject_coverage": 0.002430153030436006,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_aps_g0.1": {
+      "coverage": 0.8980096705273811,
+      "per_class_coverage": [
+        0.8275240384615384,
+        0.9665211062590975,
+        0.898761835396941,
+        0.8024502297090352,
+        0.9711864406779661
+      ],
+      "set_size": 2.6930169796469134,
+      "singleton_rate": 0.21477566625435737,
+      "empty_rate": 0.05678623636568087,
+      "review_workload": 0.7284380973799618,
+      "temporal_consistency": 0.6880979178390546,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.9026358257127488,
+        "SC410": 0.8970856102003643,
+        "SC412": 0.8969935929029078,
+        "SC419": 0.8964044143823424
+      },
+      "mean_subject_coverage": 0.8982798607995908,
+      "worst_subject_coverage": 0.8964044143823424,
+      "p10_subject_coverage": 0.8965811679385121,
+      "std_subject_coverage": 0.00291961465404961,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_aps": {
+      "coverage": 0.8980096705273811,
+      "per_class_coverage": [
+        0.8275240384615384,
+        0.9665211062590975,
+        0.898761835396941,
+        0.8024502297090352,
+        0.9711864406779661
+      ],
+      "set_size": 2.6930169796469134,
+      "singleton_rate": 0.21477566625435737,
+      "empty_rate": 0.05678623636568087,
+      "review_workload": 0.7284380973799618,
+      "temporal_consistency": 0.6880979178390546,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.9026358257127488,
+        "SC410": 0.8970856102003643,
+        "SC412": 0.8969935929029078,
+        "SC419": 0.8964044143823424
+      },
+      "mean_subject_coverage": 0.8982798607995908,
+      "worst_subject_coverage": 0.8964044143823424,
+      "p10_subject_coverage": 0.8965811679385121,
+      "std_subject_coverage": 0.00291961465404961,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_deficit_g0.005": {
+      "coverage": 0.8887889351175081,
+      "per_class_coverage": [
+        0.7998798076923077,
+        0.4978165938864629,
+        0.9810633648943918,
+        0.9754977029096478,
+        0.8774011299435028
+      ],
+      "set_size": 1.9319689643539864,
+      "singleton_rate": 0.7401326886315079,
+      "empty_rate": 0.0,
+      "review_workload": 0.25986731136849206,
+      "temporal_consistency": 0.9333295816919904,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8929532006455083,
+        "SC410": 0.9039162112932605,
+        "SC412": 0.838344011828487,
+        "SC419": 0.9106443574225703
+      },
+      "mean_subject_coverage": 0.8864644452974565,
+      "worst_subject_coverage": 0.838344011828487,
+      "p10_subject_coverage": 0.8547267684735934,
+      "std_subject_coverage": 0.032898390791237415,
+      "subject_violation_rate": 0.5
+    },
+    "subject_aci_deficit_g0.01": {
+      "coverage": 0.8912627909591814,
+      "per_class_coverage": [
+        0.8070913461538461,
+        0.5181950509461426,
+        0.9813061422675406,
+        0.9724349157733537,
+        0.8757062146892656
+      ],
+      "set_size": 1.949960643202519,
+      "singleton_rate": 0.7339480490273249,
+      "empty_rate": 0.0,
+      "review_workload": 0.26605195097267514,
+      "temporal_consistency": 0.9311086100168824,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8908015061861215,
+        "SC410": 0.9039162112932605,
+        "SC412": 0.8511582060128142,
+        "SC419": 0.9106443574225703
+      },
+      "mean_subject_coverage": 0.8891300702286916,
+      "worst_subject_coverage": 0.8511582060128142,
+      "p10_subject_coverage": 0.8630511960648064,
+      "std_subject_coverage": 0.026621737303882852,
+      "subject_violation_rate": 0.5
+    },
+    "subject_aci_deficit_g0.02": {
+      "coverage": 0.8930619588440346,
+      "per_class_coverage": [
+        0.8118990384615384,
+        0.5342066957787481,
+        0.9825200291332847,
+        0.9678407350689127,
+        0.8728813559322034
+      ],
+      "set_size": 1.957269762734735,
+      "singleton_rate": 0.731249297200045,
+      "empty_rate": 0.0,
+      "review_workload": 0.268750702799955,
+      "temporal_consistency": 0.9290564622022136,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8870360408821947,
+        "SC410": 0.9034608378870674,
+        "SC412": 0.8654509610645639,
+        "SC419": 0.9088643645425418
+      },
+      "mean_subject_coverage": 0.8912030510940919,
+      "worst_subject_coverage": 0.8654509610645639,
+      "p10_subject_coverage": 0.8719264850098531,
+      "std_subject_coverage": 0.01951674020579441,
+      "subject_violation_rate": 0.5
+    },
+    "subject_aci_deficit_g0.05": {
+      "coverage": 0.894523782750478,
+      "per_class_coverage": [
+        0.8311298076923077,
+        0.5342066957787481,
+        0.9810633648943918,
+        0.9617151607963247,
+        0.8677966101694915
+      ],
+      "set_size": 1.92263578095131,
+      "singleton_rate": 0.7370965928258181,
+      "empty_rate": 0.0,
+      "review_workload": 0.2629034071741819,
+      "temporal_consistency": 0.92974488838867,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.8838084991931145,
+        "SC410": 0.8984517304189436,
+        "SC412": 0.8851651059635288,
+        "SC419": 0.9053043787824848
+      },
+      "mean_subject_coverage": 0.893182428589518,
+      "worst_subject_coverage": 0.8838084991931145,
+      "p10_subject_coverage": 0.8842154812242389,
+      "std_subject_coverage": 0.010437995220480329,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_deficit_g0.1": {
+      "coverage": 0.8946362307432812,
+      "per_class_coverage": [
+        0.8503605769230769,
+        0.5211062590975255,
+        0.9757222626851177,
+        0.9525267993874426,
+        0.8711864406779661
+      ],
+      "set_size": 1.8989092544698076,
+      "singleton_rate": 0.7437310244012144,
+      "empty_rate": 0.0,
+      "review_workload": 0.2562689755987856,
+      "temporal_consistency": 0.928581879572313,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.884884346422808,
+        "SC410": 0.8957194899817851,
+        "SC412": 0.8925579103006407,
+        "SC419": 0.9017443930224279
+      },
+      "mean_subject_coverage": 0.8937265349319155,
+      "worst_subject_coverage": 0.884884346422808,
+      "p10_subject_coverage": 0.8871864155861579,
+      "std_subject_coverage": 0.007019209341747144,
+      "subject_violation_rate": 0.75
+    },
+    "subject_aci_deficit": {
+      "coverage": 0.8946362307432812,
+      "per_class_coverage": [
+        0.8503605769230769,
+        0.5211062590975255,
+        0.9757222626851177,
+        0.9525267993874426,
+        0.8711864406779661
+      ],
+      "set_size": 1.8989092544698076,
+      "singleton_rate": 0.7437310244012144,
+      "empty_rate": 0.0,
+      "review_workload": 0.2562689755987856,
+      "temporal_consistency": 0.928581879572313,
+      "n_epochs": 8893,
+      "per_subject_coverage": {
+        "SC406": 0.884884346422808,
+        "SC410": 0.8957194899817851,
+        "SC412": 0.8925579103006407,
+        "SC419": 0.9017443930224279
+      },
+      "mean_subject_coverage": 0.8937265349319155,
+      "worst_subject_coverage": 0.884884346422808,
+      "p10_subject_coverage": 0.8871864155861579,
+      "std_subject_coverage": 0.007019209341747144,
+      "subject_violation_rate": 0.75
+    }
+  },
+  "selected_gamma0_aps": 0.1,
+  "gamma_loso_aps": {
+    "0.005": {
+      "mean_shortfall": 0.028455476327802404,
+      "mean_set_size": 2.597067645568153,
+      "mean_coverage": 0.8945585245369195,
+      "worst_coverage": 0.7965646806226516,
+      "n_subjects": 4
+    },
+    "0.01": {
+      "mean_shortfall": 0.02400938432610536,
+      "mean_set_size": 2.568532837002281,
+      "mean_coverage": 0.8954952603749298,
+      "worst_coverage": 0.8148148148148148,
+      "n_subjects": 4
+    },
+    "0.02": {
+      "mean_shortfall": 0.017380716479897695,
+      "mean_set_size": 2.533062928742557,
+      "mean_coverage": 0.8952355600022102,
+      "worst_coverage": 0.8427267847557702,
+      "n_subjects": 4
+    },
+    "0.05": {
+      "mean_shortfall": 0.007225426083556419,
+      "mean_set_size": 2.5000318193989832,
+      "mean_coverage": 0.8966909110138604,
+      "worst_coverage": 0.878690284487386,
+      "n_subjects": 4
+    },
+    "0.1": {
+      "mean_shortfall": 0.005373673361843828,
+      "mean_set_size": 2.459483326498286,
+      "mean_coverage": 0.8959982778576684,
+      "worst_coverage": 0.8899624261943102,
+      "n_subjects": 4
+    }
+  },
+  "selected_gamma0_deficit": 0.1,
+  "gamma_loso_deficit": {
+    "0.005": {
+      "mean_shortfall": 0.014859459060415081,
+      "mean_set_size": 1.8062007893266256,
+      "mean_coverage": 0.8992705256875,
+      "worst_coverage": 0.8672566371681416,
+      "n_subjects": 4
+    },
+    "0.01": {
+      "mean_shortfall": 0.011213284486974812,
+      "mean_set_size": 1.8235010535926484,
+      "mean_coverage": 0.9012509582110078,
+      "worst_coverage": 0.8761061946902655,
+      "n_subjects": 4
+    },
+    "0.02": {
+      "mean_shortfall": 0.00643572062382558,
+      "mean_set_size": 1.8293492991311435,
+      "mean_coverage": 0.9029511030149422,
+      "worst_coverage": 0.8863530507685142,
+      "n_subjects": 4
+    },
+    "0.05": {
+      "mean_shortfall": 0.0028679074243577185,
+      "mean_set_size": 1.8060639138498014,
+      "mean_coverage": 0.9036135740571238,
+      "worst_coverage": 0.8936392075078207,
+      "n_subjects": 4
+    },
+    "0.1": {
+      "mean_shortfall": 0.002497400837363578,
+      "mean_set_size": 1.740958735394503,
+      "mean_coverage": 0.9010318530542092,
+      "worst_coverage": 0.8936392075078207,
+      "n_subjects": 4
+    }
+  }
+}

@@ -1,0 +1,290 @@
+{
+  "alpha": 0.1,
+  "repeats": 30,
+  "block_lengths": {
+    "5": {
+      "n_blocks": 3190,
+      "by_beta": {
+        "0.0": {
+          "block_score_coverage": {
+            "mean": 0.8997492163009404,
+            "std": 0.008267455759484694,
+            "min": 0.8840125391849529
+          },
+          "simultaneous_coverage": {
+            "mean": 0.9086938349007316,
+            "std": 0.008083647701475958,
+            "min": 0.8940438871473354
+          },
+          "marginal_coverage": {
+            "mean": 0.9093625914315571,
+            "std": 0.007718869124188004,
+            "min": 0.8952978056426333
+          },
+          "set_size": {
+            "mean": 4.497387669801464,
+            "std": 0.03600092452441368,
+            "min": 4.434608150470219
+          }
+        },
+        "0.5": {
+          "block_score_coverage": {
+            "mean": 0.9003761755485892,
+            "std": 0.01102690112077744,
+            "min": 0.8721003134796238
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        },
+        "1.0": {
+          "block_score_coverage": {
+            "mean": 0.9009195402298851,
+            "std": 0.012274233926562112,
+            "min": 0.8789968652037617
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        }
+      }
+    },
+    "10": {
+      "n_blocks": 1592,
+      "by_beta": {
+        "0.0": {
+          "block_score_coverage": {
+            "mean": 0.9070770519262982,
+            "std": 0.01345992551501475,
+            "min": 0.878140703517588
+          },
+          "simultaneous_coverage": {
+            "mean": 0.9105946398659965,
+            "std": 0.012692466191346799,
+            "min": 0.8831658291457286
+          },
+          "marginal_coverage": {
+            "mean": 0.911574539363484,
+            "std": 0.011790169020769051,
+            "min": 0.8854271356783919
+          },
+          "set_size": {
+            "mean": 4.539128978224456,
+            "std": 0.05969855311521064,
+            "min": 4.410427135678392
+          }
+        },
+        "0.5": {
+          "block_score_coverage": {
+            "mean": 0.9007118927973199,
+            "std": 0.012689893278222427,
+            "min": 0.8680904522613065
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        },
+        "1.0": {
+          "block_score_coverage": {
+            "mean": 0.9009212730318257,
+            "std": 0.01456021136617409,
+            "min": 0.8768844221105527
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        }
+      }
+    },
+    "20": {
+      "n_blocks": 794,
+      "by_beta": {
+        "0.0": {
+          "block_score_coverage": {
+            "mean": 0.9007556675062973,
+            "std": 0.018983822349034524,
+            "min": 0.8589420654911839
+          },
+          "simultaneous_coverage": {
+            "mean": 0.9052896725440807,
+            "std": 0.01820729694030771,
+            "min": 0.8664987405541562
+          },
+          "marginal_coverage": {
+            "mean": 0.9073635600335852,
+            "std": 0.017768170246498006,
+            "min": 0.8688916876574307
+          },
+          "set_size": {
+            "mean": 4.528371116708649,
+            "std": 0.08986244279996508,
+            "min": 4.322292191435769
+          }
+        },
+        "0.5": {
+          "block_score_coverage": {
+            "mean": 0.9032745591939547,
+            "std": 0.02289187605360543,
+            "min": 0.8387909319899244
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        },
+        "1.0": {
+          "block_score_coverage": {
+            "mean": 0.9029387069689339,
+            "std": 0.021040619447095607,
+            "min": 0.8413098236775819
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        }
+      }
+    },
+    "30": {
+      "n_blocks": 526,
+      "by_beta": {
+        "0.0": {
+          "block_score_coverage": {
+            "mean": 0.9103929024081115,
+            "std": 0.023261273751947545,
+            "min": 0.8631178707224335
+          },
+          "simultaneous_coverage": {
+            "mean": 0.9157160963244613,
+            "std": 0.02192407651110343,
+            "min": 0.870722433460076
+          },
+          "marginal_coverage": {
+            "mean": 0.9226615969581748,
+            "std": 0.018768029764099768,
+            "min": 0.8780735107731306
+          },
+          "set_size": {
+            "mean": 4.607693282636249,
+            "std": 0.09417593276912517,
+            "min": 4.387072243346007
+          }
+        },
+        "0.5": {
+          "block_score_coverage": {
+            "mean": 0.9111533586818759,
+            "std": 0.0210990487857249,
+            "min": 0.8631178707224335
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        },
+        "1.0": {
+          "block_score_coverage": {
+            "mean": 0.9093789607097592,
+            "std": 0.0272560347842957,
+            "min": 0.8403041825095057
+          },
+          "simultaneous_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "marginal_coverage": {
+            "mean": 1.0,
+            "std": 0.0,
+            "min": 1.0
+          },
+          "set_size": {
+            "mean": 5.0,
+            "std": 0.0,
+            "min": 5.0
+          }
+        }
+      }
+    }
+  }
+}

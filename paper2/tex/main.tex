@@ -1,0 +1,131 @@
+% Neurocomputing submission (Elsevier elsarticle).
+% Build: latexmk -pdf main.tex
+\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cleveref}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\usepackage{xcolor}
+\usepackage{lineno}
+\usepackage{setspace}
+
+\graphicspath{{../figures/}{figures/}}
+\bibliographystyle{elsarticle-num-names}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cR}{\mathcal{R}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\bE}{\mathbb{E}}
+\newcommand{\bR}{\mathbb{R}}
+\newcommand{\wh}[1]{\widehat{#1}}
+
+\setlength{\emergencystretch}{2em}
+
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.07}
+\renewcommand{\floatpagefraction}{0.75}
+
+\journal{Neurocomputing}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\title{Stage-conditional shift normalization for subject-robust EEG sleep
+staging}
+
+\author[aff1]{Zhiwen Song}
+\author[aff1]{Yuhao Peng\corref{cor1}}
+\ead{pngyuo@cug.edu.cn}
+\cortext[cor1]{Corresponding author. ORCID: 0009-0004-3302-9050.}
+\affiliation[aff1]{organization={School of Mathematics and Physics,
+            China University of Geosciences (Wuhan)},
+            addressline={388 Lumo Road, Hongshan District},
+            city={Wuhan},
+            postcode={430074},
+            country={China}}
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\begin{keyword}
+Sleep staging \sep Test-time adaptation \sep normalization \sep
+Subject variability \sep Electroencephalography \sep Conformal prediction
+\end{keyword}
+
+\end{frontmatter}
+
+\ifdefined\REVIEWCOPY
+\doublespacing
+\linenumbers
+\fi
+
+\input{sections/01_intro}
+\input{sections/02_related}
+\input{sections/03_method}
+\input{sections/04_setup}
+\input{sections/05_results}
+\input{sections/06_discussion}
+\input{sections/07_conclusion}
+
+\section*{Declaration of competing interest}
+The authors declare that they have no known competing financial interests or
+personal relationships that could have appeared to influence the work
+reported in this paper.
+
+\section*{Funding}
+This research did not receive any specific grant from funding agencies in the
+public, commercial, or not-for-profit sectors.
+
+\section*{Data availability}
+Sleep-EDF and the Haaglanden Medisch Centrum Sleep Staging Database are
+publicly available from PhysioNet at
+\url{https://physionet.org/content/sleep-edfx/1.0.0/} and
+\url{https://physionet.org/content/hmc-sleep-staging/1.1.0/}, respectively.
+
+\section*{Code availability}
+The code that produces every number and figure of this paper, together with
+the trained-checkpoint evaluation scripts and released result summaries, is
+available at \url{https://github.com/YuhaoPeng1103/SleepSCSN}.
+
+\section*{Ethics statement}
+This study used publicly available, de-identified Sleep-EDF and HMC recordings
+from PhysioNet. No new human-subject data were collected, and additional
+ethics approval was therefore not required.
+
+\section*{CRediT authorship contribution statement}
+\textbf{Zhiwen Song:} Conceptualization, Methodology, Software, Validation,
+Formal analysis, Investigation, Writing -- original draft. \textbf{Yuhao
+Peng:} Supervision, Writing -- review \& editing.
+
+\section*{Declaration of generative AI and AI-assisted technologies}
+During the preparation of this work, the authors used OpenAI Codex to assist
+with language editing, manuscript organization, and consistency checks. The
+authors reviewed and edited the content as needed and take full responsibility
+for the content of the publication.
+
+\bibliography{refs}
+
+\end{document}

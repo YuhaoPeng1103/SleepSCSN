@@ -1,0 +1,153 @@
+\section{Experimental protocol}
+\label{sec:setup}
+
+\subsection{Cohorts}
+\label{sec:cohorts}
+
+\paragraph{Sleep-EDF}
+The first cohort is the Sleep-EDF expanded database \citep{goldberger2000}: 20
+healthy adults, 39 overnight polysomnograms, one EEG derivation (Fpz-Cz)
+recorded at 100~Hz and scored in 30~s epochs under the R\&K rules
+\citep{berry2012manual}. Wake, N1, N2, N3 and REM are retained; movement and
+unscoreable epochs are dropped. Signals are band-pass filtered between 0.5 and
+30~Hz, resampled to 100~Hz and standardised per recording, so that the raw mean
+and variance of a night carry no information about the patient into the network.
+
+\paragraph{HMC}
+The second cohort is the Haaglanden Medisch Centrum sleep staging database
+\citep{hmc2022}: 151 overnight recordings from 151 patients, one EEG channel
+(C4-M1) recorded at 256~Hz and scored in 30~s epochs under the AASM rules. The
+same five classes are retained, the signal is band-pass filtered between 0.5
+and 30~Hz, resampled to 100~Hz and standardised per recording. The processed
+cohort contains 137{,}243 labeled epochs, between 470 and 1{,}311 per
+recording. It differs from the first cohort in population, montage, equipment,
+raw sampling rate and scoring manual, which is what makes it a test of whether
+a statement about patients survives a change of cohort.
+
+\subsection{Backbones}
+
+Two convolutional backbones are used. EEGNet \citep{lawhern2018}, adapted to a
+single channel, has $1{,}445$ parameters; SleepCNN is a four-block VGG-style
+one-dimensional network with 256 channels in its last block and
+$2.24\times10^{5}$ parameters. Both were trained with batch normalization; a
+group-normalized copy of each was trained separately for the compatibility
+experiment. Architectures, optimization and splits are identical between the
+batch and group copies except for the normalization layer.
+
+\subsection{Arms}
+
+All arms are evaluated on the same checkpoint, the same split and the same test
+epochs; only the inference-time transformation of the penultimate
+representation differs.
+
+\begin{description}
+  \item[BN.] The trained checkpoint with its cohort statistics, no correction.
+  \item[Marginal.] The post-hoc representation-level correction
+  $z-\wh\delta_{\cR}$, with $\wh\delta_{\cR}$ the difference between the
+  recording's mean representation and the training cohort's. It is the
+  representation-level counterpart of AdaBN and the operation SCSN
+  generalises; unlike AdaBN it applies to a group-normalized checkpoint,
+  because it reads only the penultimate features.
+  \item[AdaBN.] The same checkpoint with the statistics of every
+  normalization layer replaced by those of the recording being scored
+  \citep{li2018adabn}. This is a nonlinear, layer-wise operation; the
+  representation-level marginal correction of
+  Proposition~\ref{prop:marginal} is the post-hoc arm
+  \emph{Marginal} below, which removes one vector per recording and is the
+  operation SCSN generalises.
+  \item[SCSN.] Stage-conditional shift normalization of
+  Equations~\eqref{eq:estimator}--\eqref{eq:scsn}, $\lambda=1$,
+  $\lambda_s=10$. The posterior of the uncorrected model is used.
+  \item[AdaBN+SCSN.] The stacked arm: layerwise AdaBN first, then SCSN in the
+  adapted feature space, with prototypes estimated on source subjects that
+  have each been adapted to their own recording in the same way. It tests
+  whether the two corrections remove the same component or different ones.
+  \item[SCSN-$\lambda$.] The interpolated correction
+  $z-\delta_{\cR}-\lambda(\sum_k p_k\hat\delta_{\cR,k}-\delta_{\cR})$ for
+  $\lambda\in\{0.25,0.5,0.75\}$; $\lambda=0$ is the post-hoc marginal
+  correction and $\lambda=1$ is SCSN.
+  \item[SCSN-$r$.] The correction restricted to the top-$r$ principal
+  directions of the between-subject, within-stage covariance estimated on the
+  training subjects, for $r\in\{1,2,4\}$.
+  \item[SCSN-hard.] The same estimator with one-hot pseudo-labels.
+  \item[SCSN-orth.] The correction projected off the row space of the
+  classifier, so that the logits are unchanged exactly.
+  \item[Mismatched.] The shifts of another recording of the same fold, applied
+  cyclically; the control for whether the effect requires the recording's own
+  statistics.
+  \item[Tent.] Entropy minimization over the affine parameters of the
+  normalization layers \citep{wang2021tent}, with the published optimizer
+  (SGD, momentum $0.9$, learning rate $2.5\times10^{-4}$, one pass over the
+  recording), and two Adam variants (one and five steps, learning rate
+  $10^{-3}$). Calibration recordings are adapted in the same way as test
+  recordings.
+\end{description}
+
+The group-normalized checkpoints are evaluated with the arms that do not
+require batch statistics: the uncorrected model, the post-hoc marginal
+correction and SCSN. Standard AdaBN has no batch statistic to re-estimate on
+these checkpoints. Standard Tent updates batch-normalization affine
+parameters; a separate GroupNorm-specific entropy objective is not evaluated
+here because it would introduce a new optimizer, learning-rate choice, and
+step-count protocol rather than measuring the effect of stage conditioning.
+
+\subsection{Training and splits}
+
+Evaluation uses five subject-wise folds. Within a fold the 20\% of subjects
+with the lowest hash are held out for testing, a further disjoint 20\% form
+the conformal calibration set, 15\% of the remaining subjects are used for
+early stopping, and the rest for training. No subject appears in more than one
+of the four groups of a fold. On Sleep-EDF each fold is run with three seeds
+for EEGNet and one seed for SleepCNN, giving fifteen and five runs per arm;
+on HMC each fold is run with two seeds for both backbones, giving ten runs per
+arm. Optimization uses Adam with learning rate
+$10^{-3}$, weight decay $10^{-4}$ and cross-entropy without class weights, for
+at most 40 epochs with early stopping on the validation split (patience 8).
+The best validation checkpoint is kept.
+
+\subsection{Conformal evaluation}
+
+For each run, the calibration subjects' epochs fit a split-conformal predictor
+with the cumulative (APS) non-conformity score \citep{romano2020} at
+$\alpha=0.1$, and the test subjects' epochs are predicted as sets. We report
+coverage, mean set size, and review workload (the fraction of epochs whose set
+holds more than one stage). Because the guarantee is marginal over patients,
+coverage is also computed per test subject, from which we report the
+worst-covered subject, the standard deviation of per-subject coverage, the
+10th percentile and the median. The calibration split is disjoint from the test
+split, and the quantile is refitted after every correction.
+
+\subsection{Identity measurements}
+
+For every run the penultimate representation of every test epoch is extracted
+under each arm, and two probes are fitted. The \emph{overall} probe is a
+multinomial logistic regression from the representation to the patient index,
+fitted with three-fold cross-validation over epochs. The \emph{within-stage}
+probe repeats the fit separately for the epochs of each stage and averages the
+five accuracies over the stages that contain at least fifty epochs. The overall
+probe is sensitive to any recording-specific offset, including the one that a
+marginal correction adds; the within-stage probe holds the stage fixed, so it
+measures the part of the identity that is not a difference in sleep
+architecture and does not react to a correction that removes only a
+recording-wide mean. To keep the cost bounded on the large cohort, a fixed
+random subsample of at most 5{,}000 epochs per run (3{,}000 for the
+256-dimensional SleepCNN features) is used; the subsample is drawn with a fixed
+seed, so every arm of a run is probed on exactly the same epochs. Chance is
+$1/|\cS|$ for $|\cS|$ held-out subjects: four on Sleep-EDF and thirty-one on
+HMC. Both probes use the test patients' identifiers, and the within-stage
+probe additionally uses the true stage of each test epoch to form the groups.
+They are diagnostics of the representation, not components of any arm: no
+correction reads a test label, and the probe is fitted after the arm has
+produced its representation.
+
+\subsection{Statistics}
+
+All comparisons between arms are paired: the arms of a run share the
+checkpoint, the fold, the seed, the test epochs and the probe subsample.
+Reported differences are the mean of the per-run differences, a 95\% confidence
+interval from the $t$ distribution over runs, the standardised mean difference
+$d_z$, and a two-sided Wilcoxon signed-rank test. Because the seeds of a fold
+share their test subjects, runs within a fold are not independent; every paired
+effect is therefore also reported as a sign count over folds (the sign of the
+fold-averaged difference). $p$-values are unadjusted, and the number of paired
+runs behind every contrast is reported so that the evidence can be weighed.

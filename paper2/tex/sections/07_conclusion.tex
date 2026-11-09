@@ -1,0 +1,32 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+A stager's representation of a patient has two parts. One is a recording-wide
+offset manufactured by the normalization statistics; the other is a
+stage-conditional signature that describes how this patient's sleep stages
+differ from the cohort prototypes. Marginal adaptation removes the first and,
+as the within-stage probe shows, cannot target the second. Layerwise
+adaptation may absorb part of it as a nonlinear side effect, but a
+stage-conditional operation is required to remove the signature explicitly.
+Stage-conditional shift normalization removes it with the model's own
+posterior, in closed form, at the cost of one pass over the unlabeled night.
+
+The experiments support three statements. The within-stage probe separates the
+two components where the overall probe cannot, and it is the measurement a
+subject-invariance claim should report. SCSN reduces that probe in every
+setting, by between $0.19$ and $0.44$, and on the group-normalized checkpoints
+it is the only stage-aware statistics-replacement method evaluated that does
+so. Where it changes accuracy, it improves
+it: significantly on the HMC backbones and on three of four group-normalized
+settings, not measurably on Sleep-EDF EEGNet, and within noise of layerwise
+AdaBN on both SleepCNN settings; the gains survive chance correction and class
+balancing, and they come with a better worst-covered patient and a smaller
+coverage dispersion.
+
+The limitations define the next experiments. The method is evaluated on two
+single-channel convolutional backbones, its estimate is only as good as the
+posterior that indexes the stages, and it assumes the whole night is available.
+A multi-channel or attention-based stager, a recalibrated posterior, and a
+prefix-based online variant are the natural places to test whether the
+decomposition --- rather than the particular estimator --- is what carries the
+result.

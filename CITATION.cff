@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the manuscripts below."
+title: "Stage-conditional shift normalization for subject-robust EEG sleep staging"
+abstract: >-
+  Code, fitted checkpoints, and released result summaries for
+  stage-conditional shift normalization (SCSN), a closed-form label-free
+  test-time correction for subject shift in single-channel EEG sleep staging.
+  The repository contains the training, probe, adaptation, conformal-reliability,
+  and statistical-analysis code and regenerates every table and figure.
+type: software
+authors:
+  - family-names: Song
+    given-names: Zhiwen
+    affiliation: "School of Mathematics and Physics, China University of Geosciences (Wuhan), Wuhan 430074, China"
+  - family-names: Peng
+    given-names: Yuhao
+    affiliation: "School of Mathematics and Physics, China University of Geosciences (Wuhan), Wuhan 430074, China"
+    email: pngyuo@cug.edu.cn
+    orcid: "https://orcid.org/0009-0004-3302-9050"
+keywords:
+  - sleep staging
+  - single-channel EEG
+  - conformal prediction
+  - uncertainty quantification
+  - subject variability
+  - batch normalization
+  - test-time adaptation
+  - domain shift
+version: 0.3.0
+repository-code: "https://github.com/YuhaoPeng1103/SleepSCSN"
+license: MIT

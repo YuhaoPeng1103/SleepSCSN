@@ -1,0 +1,89 @@
+\documentclass[10pt]{letter}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.82in]{geometry}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\hypersetup{hidelinks}
+\setlength{\parskip}{0.45em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{flushright}
+Yuhao Peng\\
+School of Mathematics and Physics\\
+China University of Geosciences (Wuhan)\\
+Wuhan, Hubei 430074, China\\
+\href{mailto:pngyuo@cug.edu.cn}{pngyuo@cug.edu.cn}
+\end{flushright}
+
+\vspace{0.5em}
+9 November 2026
+
+\vspace{0.5em}
+Dear Editors,
+
+\textbf{Re: Submission of ``Stage-conditional shift normalization for
+subject-robust EEG sleep staging''}
+
+We submit the enclosed manuscript for consideration as a research article in
+\emph{Neurocomputing}.
+
+Sleep stage classifiers lose accuracy when they are transferred to a new
+patient or clinical center. The common label-free response is to replace the
+batch-normalization statistics of the target recording. That operation
+implicitly treats subject shift as one recording-wide offset. Our diagnostic
+results show that this view is incomplete: after marginal mean correction, a
+subject probe refitted inside each sleep stage still performs well above
+chance, whereas the ordinary overall probe is dominated by the removable
+offset. The finding locates a stage-conditional component of subject
+dependence that global normalization cannot address.
+
+We introduce stage-conditional shift normalization (SCSN). SCSN estimates a
+separate first-moment shift for each sleep stage from the model's own soft
+posterior and subtracts the posterior-weighted shift before classification.
+It is closed form, requires no target labels, optimizer, or weight update, and
+contains the conventional marginal correction as one endpoint of a
+one-parameter family. The method applies unchanged to batch- and
+group-normalized stagers and leaves the backbone and classifier frozen.
+
+The study evaluates SCSN on Sleep-EDF and the independent HMC Sleep Staging
+Database, using two backbones and two normalization architectures. The key
+results are:
+
+\begin{enumerate}[leftmargin=1.2em,itemsep=0.08em,topsep=0.2em]
+\item SCSN reduces the within-stage subject probe from 0.74 to 0.47 on
+Sleep-EDF EEGNet and from 0.53 to 0.21 on HMC EEGNet;
+\item accuracy is preserved on Sleep-EDF and improves by 1.4--1.9 points on
+HMC;
+\item on group-normalized models, SCSN improves accuracy significantly in
+three of four settings and worst-patient conformal coverage in all four;
+\item matched-statistic, mismatched-statistic, hard-label, low-rank, and
+classifier-null-space controls isolate the mechanism;
+\item cross-cohort transfer identifies the practical boundary of the method:
+a weak target posterior reduces SCSN to marginal correction.
+\end{enumerate}
+
+The manuscript reports these qualifications rather than presenting SCSN as
+universally superior. Code, evaluation scripts, and released result summaries
+will be available at \url{https://github.com/YuhaoPeng1103/SleepSCSN}.
+
+The manuscript is original, is not under consideration elsewhere, and has not
+been published previously. Both authors approved the submission. The authors
+declare no competing interests, received no specific funding, suggest no
+reviewers, and request the subscription publication route.
+
+Thank you for considering the manuscript.
+
+\vspace{0.8em}
+Sincerely,
+
+\vspace{0.8em}
+Yuhao Peng\\
+On behalf of Zhiwen Song and Yuhao Peng
+
+\end{document}

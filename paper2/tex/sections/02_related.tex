@@ -1,0 +1,151 @@
+\section{Related work}
+\label{sec:related}
+
+\subsection{Normalization as a statistical interface}
+
+Batch normalization \citep{ioffe2015bn} is usually discussed for what it does
+during training. At inference it is a different object: a fixed affine map
+whose slope and offset were estimated on the training cohort, so that the
+representation of a test recording carries a term determined by how far that
+recording's statistics lie from the cohort's. Group normalization
+\citep{wu2018group}, instance normalization \citep{ulyanov2016instance} and
+layer normalization \citep{ba2016layer} remove the batch from the computation
+and make the output of the layer depend only on the example it is applied to.
+\citet{frankle2021bn} show how much of a trained network's function is
+reproduced by its normalization parameters alone, and \citet{nado2020}
+evaluate prediction-time batch normalization under covariate shift; both
+locate a large part of the model's behavior in statistics rather than in
+filters.
+
+Re-estimating the statistics on the test domain is adaptive batch
+normalization \citep{li2018adabn}. In sleep staging the operation is
+attractive because a night is a natural adaptation domain: its epochs are
+exchangeable enough to estimate a mean and variance, and no label is needed.
+What the operation cannot do is distinguish one sleep stage from another. It
+estimates one mean per recording, so any patient-dependent component that
+differs between stages survives it. This is the gap the present paper
+addresses.
+
+A related line conditions normalization on a label. Conditional batch
+normalization and feature-wise transformations modulate the activations of a
+network with a class or text embedding
+\citep{devries2017modulating,dumoulin2018feature,perez2018film}; the
+conditioning signal is known during training and supplied at inference. SCSN
+conditions on the stage as well, but it does not learn a conditioning map and
+it does not receive the stage: the stage is unknown at test time and is
+replaced by the model's own soft posterior. The weights stay frozen, and the
+only quantity estimated from the test recording is the shift itself.
+
+The ingredients of the method are ordinary --- estimate a mean, subtract it,
+index the estimate by a class --- so the question is what the paper contributes
+beyond their assembly. The answer is the result that links them. The
+decomposition of Section~\ref{sec:method} proves that no correction subtracting
+one vector per recording can change the relative configuration of the
+stage-conditional means, however well that vector is estimated
+(Corollary~\ref{cor:no-marginal}); feature-wise modulation, in turn, is
+supplied with a class taken from an annotation, whereas in staging the class is
+unknown and the index has to be estimated from the model.
+The two observations only become one contribution when the first shows that the
+marginal route cannot work and the second shows what has to replace it. SCSN is
+the normalizer that results: class-conditional statistics, conditioned on a
+test-time estimate of the class rather than on a label. The experiments test
+the derivation rather than a combination --- the interpolation between the
+marginal and conditional endpoints, the matched-versus-mismatched control, and
+the cross-cohort test in which a weak posterior should and does reduce the
+method to its marginal special case.
+
+\subsection{Test-time adaptation beyond marginal statistics}
+
+Tent \citep{wang2021tent} updates the affine parameters of normalization
+layers by minimizing the entropy of the posterior on the test recording;
+test-time training \citep{sun2020ttt} uses a self-supervised objective. Both
+change weights with an optimizer. CAFA \citep{cafa2023} aligns target features
+to the source distribution with a class-aware objective, and UnMix-TNS
+\citep{unmixtns2024} improves the estimation of normalization statistics when
+test labels are temporally correlated. PSDNorm \citep{psdnorm2026} replaces
+mean-and-variance normalization by a test-time alignment of the power spectral
+density of each feature map and reports strong cross-dataset sleep staging;
+the operation is input-domain and frequency-resolved, and it does not use the
+predicted stage. FairAdaBN \citep{fairadabn2023} makes adaptive normalization
+attribute-aware for fairness.
+
+SCSN differs from this family in three respects. It is closed-form: no
+optimizer, step size or number of steps is chosen at test time. It is
+stage-conditional: the statistic it removes is indexed by the sleep stage, and
+the index comes from the model's own posterior rather than from a label or a
+frequency band. And its target is explicit: the class-conditional mean of the
+representation, which is the quantity the classifier's decision boundaries were
+fitted around. The interpolated form in Section~\ref{sec:method} contains the
+post-hoc marginal correction as the endpoint $\lambda=0$, so the comparison is
+a nested one rather than a comparison of unrelated methods.
+Cross-domain sleep staging has also been addressed directly by test-time
+adaptation \citep{guo2025tta}. The distinction from SCSN is the conditioning
+variable: these methods adapt a shared target-domain or test-domain
+transformation, whereas SCSN updates a separate first-moment correction for
+each posterior-indexed sleep stage before the shared classifier is applied.
+
+The family also has a blind spot that matters for the present paper. AdaBN,
+Tent and their descendants operate on batch-normalization statistics or
+affine normalization parameters. A group-normalized stager has no batch
+statistic to replace; a bespoke entropy objective on its affine parameters
+would be a different method from standard Tent and is not evaluated here.
+Group normalization is an increasingly common choice precisely because it
+removes dependence on batch composition, so the lack of a comparable
+statistics-replacement correction is a practical gap. SCSN is defined on the
+representation and therefore applies unchanged. The other correction compared
+for such a checkpoint is post-hoc centering, which
+removes one vector per recording; the experiments show that this removes the
+overall subject probe while moving the within-stage probe by no more than a
+third of what SCSN removes.
+
+\subsection{Subject variability in automatic sleep staging}
+
+Deep stagers have moved from single-cohort evaluation
+\citep{supratak2017,phan2019seqsleepnet} to multi-cohort and cross-cohort
+settings \citep{perslev2021,phan2022sleepformer}, and the gap between
+within-cohort and cross-cohort accuracy has become an object of study.
+\citet{nasiri2021subgrouping} show that population subgrouping improves staging
+for under-represented patients. Adversarial subject classifiers
+\citep{liao2020trifeaturenet} and disentangled architectures
+\citep{s3dnet2026} change the weights so that the representation carries less
+of the subject; both require retraining and, in the disentangled case, a
+subject-invariance objective. \citet{cross2026} use subject-aware batch
+normalization during training for cross-subject brain decoding. Normalization
+has also been used as a cross-subject alignment device for EEG
+\citep{katthi2021cca}, usually on the raw signal rather than inside the
+network.
+Recent Neurocomputing studies target subject generalization through few-shot
+meta-learning \citep{metasth2026}, semi-supervised domain adaptation
+\citep{sedaeeg2025}, and generalizable representation learning for EEG
+\citep{transformeeg2026}. Like the methods above, these approaches alter
+training or the learned representation; the inference-time decomposition
+studied here is complementary and can be applied to their frozen outputs.
+
+These methods answer the question \emph{how do we train a model that does not
+encode the subject}. The present paper answers a different question: given a
+model that already encodes the subject, which part of the encoding is
+removable at inference, and which part is not. The answer separates a
+recording-wide offset from a stage-conditional signature; the first is removed
+by marginal adaptation and the second by SCSN, and only the second requires a
+stage posterior. A disentangled architecture can be combined with SCSN, and we
+test SCSN on group-normalized checkpoints for exactly that reason.
+
+\subsection{Uncertainty and patient-level reliability}
+
+Sleep staging is scored with a set of stages, and disagreement on boundary
+epochs is documented \citep{rosenberg2013}. Calibration measures whether a
+predicted probability means what it says \citep{guo2017}; conformal prediction
+produces a set with a finite-sample coverage guarantee
+\citep{vovk2005,angelopoulos2023gentle}. Adaptive and regularized scores
+tighten the sets \citep{romano2020,angelopoulos2021raps}, and the guarantee has
+been extended to time series and distribution drift
+\citep{gibbs2021,stankeviciute2021}.
+
+The guarantee is marginal over the exchangeable unit. When the unit is the
+patient, a stager can honour it on average while under-covering particular
+patients, and a representation that separates patients concentrates the
+failures. We therefore report per-patient coverage, its dispersion and the
+worst-covered patient, and we ask whether the correction that removes the
+patient signature also equalises the coverage. The question is not whether the
+guarantee is restored --- it remains marginal --- but whether the mechanism
+that concentrates the failures is the mechanism that carries the patient.

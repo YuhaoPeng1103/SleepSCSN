@@ -1,0 +1,407 @@
+\begin{thebibliography}{41}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Li et~al.(2018)Li, Wang, Shi, Hou, and Liu}]{li2018adabn}
+\bibinfo{author}{Y.~Li}, \bibinfo{author}{N.~Wang}, \bibinfo{author}{J.~Shi},
+  \bibinfo{author}{X.~Hou}, \bibinfo{author}{J.~Liu},
+\newblock \bibinfo{title}{Adaptive batch normalization for practical domain
+  adaptation},
+\newblock \bibinfo{journal}{Pattern Recognition} \bibinfo{volume}{80}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{109--117}.
+  \DOIprefix\doi{10.1016/j.patcog.2018.03.005}.
+%Type = Inproceedings
+\bibitem[{Wang et~al.(2021)Wang, Shelhamer, Liu, Olshausen, and
+  Darrell}]{wang2021tent}
+\bibinfo{author}{D.~Wang}, \bibinfo{author}{E.~Shelhamer},
+  \bibinfo{author}{S.~Liu}, \bibinfo{author}{B.~Olshausen},
+  \bibinfo{author}{T.~Darrell},
+\newblock \bibinfo{title}{Tent: Fully test-time adaptation by entropy
+  minimization},
+\newblock in: \bibinfo{booktitle}{International Conference on Learning
+  Representations}, \bibinfo{year}{2021}.
+%Type = Inproceedings
+\bibitem[{Jung et~al.(2023)Jung, Lee, Kim, Shaban, Boots, and Choo}]{cafa2023}
+\bibinfo{author}{S.~Jung}, \bibinfo{author}{J.~Lee}, \bibinfo{author}{N.~Kim},
+  \bibinfo{author}{A.~Shaban}, \bibinfo{author}{B.~Boots},
+  \bibinfo{author}{J.~Choo},
+\newblock \bibinfo{title}{{CAFA}: Class-aware feature alignment for test-time
+  adaptation},
+\newblock in: \bibinfo{booktitle}{Proceedings of the IEEE/CVF International
+  Conference on Computer Vision (ICCV)}, \bibinfo{year}{2023}, pp.
+  \bibinfo{pages}{19060--19071}. \DOIprefix\doi{10.1109/ICCV51070.2023.01747}.
+%Type = Inproceedings
+\bibitem[{Tomar et~al.(2024)Tomar, Vray, Thiran, and
+  Bozorgtabar}]{unmixtns2024}
+\bibinfo{author}{D.~Tomar}, \bibinfo{author}{G.~Vray}, \bibinfo{author}{J.-P.
+  Thiran}, \bibinfo{author}{B.~Bozorgtabar},
+\newblock \bibinfo{title}{Un-mixing test-time normalization statistics:
+  Combatting label temporal correlation},
+\newblock in: \bibinfo{booktitle}{International Conference on Learning
+  Representations (ICLR)}, \bibinfo{year}{2024}.
+  \bibinfo{note}{ArXiv:2401.08328}.
+%Type = Inproceedings
+\bibitem[{Gnassounou et~al.(2026)Gnassounou, Collas, Flamary, and
+  Gramfort}]{psdnorm2026}
+\bibinfo{author}{T.~Gnassounou}, \bibinfo{author}{A.~Collas},
+  \bibinfo{author}{R.~Flamary}, \bibinfo{author}{A.~Gramfort},
+\newblock \bibinfo{title}{{PSDNorm}: Test-time temporal normalization for deep
+  learning on {EEG} signals},
+\newblock in: \bibinfo{booktitle}{International Conference on Learning
+  Representations (ICLR)}, \bibinfo{year}{2026}.
+  \bibinfo{note}{ArXiv:2503.04582}.
+%Type = Article
+\bibitem[{Guo et~al.(2025)Guo, Li, Peng, Han, and Chen}]{guo2025tta}
+\bibinfo{author}{H.~Guo}, \bibinfo{author}{C.~Li}, \bibinfo{author}{H.~Peng},
+  \bibinfo{author}{Z.~Han}, \bibinfo{author}{X.~Chen},
+\newblock \bibinfo{title}{Test time adaptation for cross-domain sleep stage
+  classification},
+\newblock \bibinfo{journal}{Biomedical Signal Processing and Control}
+  \bibinfo{volume}{100} (\bibinfo{year}{2025}) \bibinfo{pages}{106980}.
+  \DOIprefix\doi{10.1016/j.bspc.2024.106980}.
+%Type = Article
+\bibitem[{Li et~al.(2026)Li, Zhang, Wang, Zhang, Li, Zhao, Shen, Wu, and
+  Liu}]{metasth2026}
+\bibinfo{author}{J.~Li}, \bibinfo{author}{T.~Zhang}, \bibinfo{author}{J.~Wang},
+  \bibinfo{author}{Y.~Zhang}, \bibinfo{author}{Y.~Li},
+  \bibinfo{author}{Y.~Zhao}, \bibinfo{author}{Z.~Shen},
+  \bibinfo{author}{L.~Wu}, \bibinfo{author}{J.~Liu},
+\newblock \bibinfo{title}{{MetaSTH-Sleep}: Towards effective few-shot sleep
+  stage classification with spatial-temporal hypergraph enhanced
+  meta-learning},
+\newblock \bibinfo{journal}{Neurocomputing} \bibinfo{volume}{701}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{134535}.
+  \DOIprefix\doi{10.1016/j.neucom.2026.134535}.
+%Type = Article
+\bibitem[{Tan et~al.(2025)Tan, Zhang, Wang, Wen, Chen, Li, Gao, and
+  Zeng}]{sedaeeg2025}
+\bibinfo{author}{W.~Tan}, \bibinfo{author}{H.~Zhang},
+  \bibinfo{author}{Y.~Wang}, \bibinfo{author}{W.~Wen},
+  \bibinfo{author}{L.~Chen}, \bibinfo{author}{H.~Li}, \bibinfo{author}{X.~Gao},
+  \bibinfo{author}{N.~Zeng},
+\newblock \bibinfo{title}{{SEDA-EEG}: A semi-supervised emotion recognition
+  network with domain adaptation for cross-subject {EEG} analysis},
+\newblock \bibinfo{journal}{Neurocomputing} \bibinfo{volume}{622}
+  (\bibinfo{year}{2025}) \bibinfo{pages}{129315}.
+  \DOIprefix\doi{10.1016/j.neucom.2024.129315}.
+%Type = Article
+\bibitem[{Del~Pup et~al.(2026)Del~Pup, Brun, Iotti, Paccagnella, Pezzato,
+  Bertozzo, Zanola, Tshimanga, M{\"u}ller, and Atzori}]{transformeeg2026}
+\bibinfo{author}{F.~Del~Pup}, \bibinfo{author}{R.~Brun},
+  \bibinfo{author}{F.~Iotti}, \bibinfo{author}{E.~Paccagnella},
+  \bibinfo{author}{M.~Pezzato}, \bibinfo{author}{S.~Bertozzo},
+  \bibinfo{author}{A.~Zanola}, \bibinfo{author}{L.~F. Tshimanga},
+  \bibinfo{author}{H.~M{\"u}ller}, \bibinfo{author}{M.~Atzori},
+\newblock \bibinfo{title}{{TransformEEG}: Towards improving model
+  generalizability in deep learning-based {EEG} {Parkinson's} disease
+  detection},
+\newblock \bibinfo{journal}{Neurocomputing} \bibinfo{volume}{664}
+  (\bibinfo{year}{2026}) \bibinfo{pages}{132075}.
+  \DOIprefix\doi{10.1016/j.neucom.2025.132075}.
+%Type = Inproceedings
+\bibitem[{Ioffe and Szegedy(2015)}]{ioffe2015bn}
+\bibinfo{author}{S.~Ioffe}, \bibinfo{author}{C.~Szegedy},
+\newblock \bibinfo{title}{Batch normalization: Accelerating deep network
+  training by reducing internal covariate shift},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 32nd International
+  Conference on Machine Learning}, volume~\bibinfo{volume}{37} of
+  \textit{\bibinfo{series}{Proceedings of Machine Learning Research}},
+  \bibinfo{year}{2015}, pp. \bibinfo{pages}{448--456}.
+%Type = Article
+\bibitem[{Wu and He(2020)}]{wu2018group}
+\bibinfo{author}{Y.~Wu}, \bibinfo{author}{K.~He},
+\newblock \bibinfo{title}{Group normalization},
+\newblock \bibinfo{journal}{International Journal of Computer Vision}
+  \bibinfo{volume}{128} (\bibinfo{year}{2020}) \bibinfo{pages}{742--755}.
+  \DOIprefix\doi{10.1007/s11263-019-01198-w}.
+%Type = Article
+\bibitem[{Ulyanov et~al.(2016)Ulyanov, Vedaldi, and
+  Lempitsky}]{ulyanov2016instance}
+\bibinfo{author}{D.~Ulyanov}, \bibinfo{author}{A.~Vedaldi},
+  \bibinfo{author}{V.~Lempitsky},
+\newblock \bibinfo{title}{Instance normalization: The missing ingredient for
+  fast stylization},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1607.08022}
+  (\bibinfo{year}{2016}).
+%Type = Article
+\bibitem[{Ba et~al.(2016)Ba, Kiros, and Hinton}]{ba2016layer}
+\bibinfo{author}{J.~L. Ba}, \bibinfo{author}{J.~R. Kiros},
+  \bibinfo{author}{G.~E. Hinton},
+\newblock \bibinfo{title}{Layer normalization},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:1607.06450}
+  (\bibinfo{year}{2016}).
+%Type = Inproceedings
+\bibitem[{Frankle et~al.(2021)Frankle, Schwab, and Morcos}]{frankle2021bn}
+\bibinfo{author}{J.~Frankle}, \bibinfo{author}{D.~J. Schwab},
+  \bibinfo{author}{A.~S. Morcos},
+\newblock \bibinfo{title}{Training {BatchNorm} and only {BatchNorm}: On the
+  expressive power of random features in {CNNs}},
+\newblock in: \bibinfo{booktitle}{International Conference on Learning
+  Representations}, \bibinfo{year}{2021}.
+%Type = Article
+\bibitem[{Nado et~al.(2020)Nado, Padhy, Sculley, D'Amour, Lakshminarayanan, and
+  Snoek}]{nado2020}
+\bibinfo{author}{Z.~Nado}, \bibinfo{author}{S.~Padhy},
+  \bibinfo{author}{D.~Sculley}, \bibinfo{author}{A.~D'Amour},
+  \bibinfo{author}{B.~Lakshminarayanan}, \bibinfo{author}{J.~Snoek},
+\newblock \bibinfo{title}{Evaluating prediction-time batch normalization for
+  robustness under covariate shift},
+\newblock \bibinfo{journal}{arXiv preprint arXiv:2006.10963}
+  (\bibinfo{year}{2020}).
+%Type = Inproceedings
+\bibitem[{de~Vries et~al.(2017)de~Vries, Strub, Mary, Larochelle, Pietquin, and
+  Courville}]{devries2017modulating}
+\bibinfo{author}{H.~de~Vries}, \bibinfo{author}{F.~Strub},
+  \bibinfo{author}{J.~Mary}, \bibinfo{author}{H.~Larochelle},
+  \bibinfo{author}{O.~Pietquin}, \bibinfo{author}{A.~Courville},
+\newblock \bibinfo{title}{Modulating early visual processing by language},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems (NeurIPS)}, volume~\bibinfo{volume}{30}, \bibinfo{year}{2017}.
+%Type = Article
+\bibitem[{Dumoulin et~al.(2018)Dumoulin, Perez, Schucher, Strub, de~Vries,
+  Courville, and Bengio}]{dumoulin2018feature}
+\bibinfo{author}{V.~Dumoulin}, \bibinfo{author}{E.~Perez},
+  \bibinfo{author}{N.~Schucher}, \bibinfo{author}{F.~Strub},
+  \bibinfo{author}{H.~de~Vries}, \bibinfo{author}{A.~Courville},
+  \bibinfo{author}{Y.~Bengio},
+\newblock \bibinfo{title}{Feature-wise transformations},
+\newblock \bibinfo{journal}{Distill}  (\bibinfo{year}{2018}).
+  \bibinfo{note}{Doi:10.23915/distill.00011}.
+%Type = Inproceedings
+\bibitem[{Perez et~al.(2018)Perez, Strub, de~Vries, Dumoulin, and
+  Courville}]{perez2018film}
+\bibinfo{author}{E.~Perez}, \bibinfo{author}{F.~Strub},
+  \bibinfo{author}{H.~de~Vries}, \bibinfo{author}{V.~Dumoulin},
+  \bibinfo{author}{A.~Courville},
+\newblock \bibinfo{title}{{FiLM}: Visual reasoning with a general conditioning
+  layer},
+\newblock in: \bibinfo{booktitle}{Proceedings of the AAAI Conference on
+  Artificial Intelligence}, volume~\bibinfo{volume}{32}, \bibinfo{year}{2018}.
+%Type = Inproceedings
+\bibitem[{Sun et~al.(2020)Sun, Wang, Liu, Miller, Efros, and
+  Hardt}]{sun2020ttt}
+\bibinfo{author}{Y.~Sun}, \bibinfo{author}{X.~Wang}, \bibinfo{author}{Z.~Liu},
+  \bibinfo{author}{J.~Miller}, \bibinfo{author}{A.~A. Efros},
+  \bibinfo{author}{M.~Hardt},
+\newblock \bibinfo{title}{Test-time training with self-supervision for
+  generalization under distribution shifts},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 37th International
+  Conference on Machine Learning}, volume \bibinfo{volume}{119} of
+  \textit{\bibinfo{series}{Proceedings of Machine Learning Research}},
+  \bibinfo{year}{2020}, pp. \bibinfo{pages}{9229--9248}.
+%Type = Inproceedings
+\bibitem[{Xu et~al.(2023)Xu, Zhao, Quan, Yao, and Zhou}]{fairadabn2023}
+\bibinfo{author}{Z.~Xu}, \bibinfo{author}{S.~Zhao}, \bibinfo{author}{Q.~Quan},
+  \bibinfo{author}{Q.~Yao}, \bibinfo{author}{S.~K. Zhou},
+\newblock \bibinfo{title}{{FairAdaBN}: Mitigating unfairness with adaptive
+  batch normalization and its application to dermatological disease
+  classification},
+\newblock in: \bibinfo{booktitle}{Medical Image Computing and Computer Assisted
+  Intervention (MICCAI)}, volume \bibinfo{volume}{14221} of
+  \textit{\bibinfo{series}{Lecture Notes in Computer Science}},
+  \bibinfo{year}{2023}, pp. \bibinfo{pages}{307--317}.
+  \DOIprefix\doi{10.1007/978-3-031-43895-0_29}.
+%Type = Article
+\bibitem[{Supratak et~al.(2017)Supratak, Dong, Wu, and Guo}]{supratak2017}
+\bibinfo{author}{A.~Supratak}, \bibinfo{author}{H.~Dong},
+  \bibinfo{author}{C.~Wu}, \bibinfo{author}{Y.~Guo},
+\newblock \bibinfo{title}{{DeepSleepNet}: A model for automatic sleep stage
+  scoring based on raw single-channel {EEG}},
+\newblock \bibinfo{journal}{IEEE Transactions on Neural Systems and
+  Rehabilitation Engineering} \bibinfo{volume}{25} (\bibinfo{year}{2017})
+  \bibinfo{pages}{1998--2008}. \DOIprefix\doi{10.1109/TNSRE.2017.2721116}.
+%Type = Article
+\bibitem[{Phan et~al.(2019)Phan, Andreotti, Cooray, Chen, and
+  De~Vos}]{phan2019seqsleepnet}
+\bibinfo{author}{H.~Phan}, \bibinfo{author}{F.~Andreotti},
+  \bibinfo{author}{N.~Cooray}, \bibinfo{author}{O.~Y. Chen},
+  \bibinfo{author}{M.~De~Vos},
+\newblock \bibinfo{title}{{SeqSleepNet}: End-to-end hierarchical recurrent
+  neural network for sequence-to-sequence automatic sleep staging},
+\newblock \bibinfo{journal}{IEEE Transactions on Neural Systems and
+  Rehabilitation Engineering} \bibinfo{volume}{27} (\bibinfo{year}{2019})
+  \bibinfo{pages}{400--410}. \DOIprefix\doi{10.1109/TNSRE.2019.2896659}.
+%Type = Article
+\bibitem[{Perslev et~al.(2021)Perslev, Darkner, Kempfner, Nikolic, Jennum, and
+  Igel}]{perslev2021}
+\bibinfo{author}{M.~Perslev}, \bibinfo{author}{S.~Darkner},
+  \bibinfo{author}{L.~Kempfner}, \bibinfo{author}{M.~Nikolic},
+  \bibinfo{author}{P.~J. Jennum}, \bibinfo{author}{C.~Igel},
+\newblock \bibinfo{title}{{U-Sleep}: Resilient high-frequency sleep staging},
+\newblock \bibinfo{journal}{npj Digital Medicine} \bibinfo{volume}{4}
+  (\bibinfo{year}{2021}) \bibinfo{pages}{72}.
+  \DOIprefix\doi{10.1038/s41746-021-00440-5}.
+%Type = Article
+\bibitem[{Phan et~al.(2022)Phan, Mikkelsen, Chen, Koch, Mertins, and
+  De~Vos}]{phan2022sleepformer}
+\bibinfo{author}{H.~Phan}, \bibinfo{author}{K.~Mikkelsen},
+  \bibinfo{author}{O.~Y. Chen}, \bibinfo{author}{P.~Koch},
+  \bibinfo{author}{A.~Mertins}, \bibinfo{author}{M.~De~Vos},
+\newblock \bibinfo{title}{{SleepTransformer}: Automatic sleep staging with
+  interpretability and uncertainty quantification},
+\newblock \bibinfo{journal}{IEEE Transactions on Biomedical Engineering}
+  \bibinfo{volume}{69} (\bibinfo{year}{2022}) \bibinfo{pages}{2456--2467}.
+  \DOIprefix\doi{10.1109/TBME.2022.3147187}.
+%Type = Article
+\bibitem[{Nasiri and Clifford(2021)}]{nasiri2021subgrouping}
+\bibinfo{author}{S.~Nasiri}, \bibinfo{author}{G.~D. Clifford},
+\newblock \bibinfo{title}{Boosting automated sleep staging performance in big
+  datasets using population subgrouping},
+\newblock \bibinfo{journal}{Sleep} \bibinfo{volume}{44} (\bibinfo{year}{2021})
+  \bibinfo{pages}{zsab027}. \DOIprefix\doi{10.1093/sleep/zsab027}.
+%Type = Inproceedings
+\bibitem[{Liao et~al.(2020)Liao, Zhang, Wang, and Xie}]{liao2020trifeaturenet}
+\bibinfo{author}{Y.~Liao}, \bibinfo{author}{M.~Zhang},
+  \bibinfo{author}{Z.~Wang}, \bibinfo{author}{X.~Xie},
+\newblock \bibinfo{title}{Tri-{FeatureNet}: An adversarial learning-based
+  invariant feature extraction for sleep staging using single-channel {EEG}},
+\newblock in: \bibinfo{booktitle}{2020 IEEE International Symposium on Circuits
+  and Systems (ISCAS)}, \bibinfo{year}{2020}, pp. \bibinfo{pages}{1--5}.
+  \DOIprefix\doi{10.1109/iscas45731.2020.9180501}.
+%Type = Inproceedings
+\bibitem[{Luo et~al.(2026)Luo, Long, He, Li, Degenaar, and Li}]{s3dnet2026}
+\bibinfo{author}{J.~Luo}, \bibinfo{author}{J.~Long}, \bibinfo{author}{X.~He},
+  \bibinfo{author}{J.~Li}, \bibinfo{author}{P.~Degenaar},
+  \bibinfo{author}{J.~Li},
+\newblock \bibinfo{title}{{S3D-Net}: Learning disentangled subject-invariant
+  representations for {EEG} sleep staging via spectral-spatial-sequential
+  feature fusion},
+\newblock in: \bibinfo{booktitle}{Database Systems for Advanced Applications
+  (DASFAA)}, volume \bibinfo{volume}{16537} of \textit{\bibinfo{series}{Lecture
+  Notes in Computer Science}}, \bibinfo{year}{2026}, pp.
+  \bibinfo{pages}{249--264}. \DOIprefix\doi{10.1007/978-981-92-0369-7_16}.
+%Type = Inproceedings
+\bibitem[{Kim et~al.(2026)Kim, Choi, Choi, Kim, and Kam}]{cross2026}
+\bibinfo{author}{J.-M. Kim}, \bibinfo{author}{W.~Choi},
+  \bibinfo{author}{Y.~Choi}, \bibinfo{author}{S.~Kim}, \bibinfo{author}{T.-E.
+  Kam},
+\newblock \bibinfo{title}{{CroSS}: Cross-subject visual brain decoding via soft
+  alignment and subject-aware batch normalization},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 41st ACM/SIGAPP Symposium
+  on Applied Computing (SAC)}, \bibinfo{year}{2026}, pp.
+  \bibinfo{pages}{1917--1924}. \DOIprefix\doi{10.1145/3748522.3779936}.
+%Type = Inproceedings
+\bibitem[{Katthi and Ganapathy(2021)}]{katthi2021cca}
+\bibinfo{author}{J.~R. Katthi}, \bibinfo{author}{S.~Ganapathy},
+\newblock \bibinfo{title}{Deep multiway canonical correlation analysis for
+  multi-subject {EEG} normalization},
+\newblock in: \bibinfo{booktitle}{2021 IEEE International Conference on
+  Acoustics, Speech and Signal Processing (ICASSP)}, \bibinfo{year}{2021}, pp.
+  \bibinfo{pages}{1245--1249}.
+  \DOIprefix\doi{10.1109/icassp39728.2021.9414274}.
+%Type = Article
+\bibitem[{Rosenberg and Van~Hout(2013)}]{rosenberg2013}
+\bibinfo{author}{R.~S. Rosenberg}, \bibinfo{author}{S.~Van~Hout},
+\newblock \bibinfo{title}{The {American Academy of Sleep Medicine} inter-scorer
+  reliability program: Sleep stage scoring},
+\newblock \bibinfo{journal}{Journal of Clinical Sleep Medicine}
+  \bibinfo{volume}{9} (\bibinfo{year}{2013}) \bibinfo{pages}{81--87}.
+  \DOIprefix\doi{10.5664/jcsm.2350}.
+%Type = Inproceedings
+\bibitem[{Guo et~al.(2017)Guo, Pleiss, Sun, and Weinberger}]{guo2017}
+\bibinfo{author}{C.~Guo}, \bibinfo{author}{G.~Pleiss},
+  \bibinfo{author}{Y.~Sun}, \bibinfo{author}{K.~Q. Weinberger},
+\newblock \bibinfo{title}{On calibration of modern neural networks},
+\newblock in: \bibinfo{booktitle}{Proceedings of the 34th International
+  Conference on Machine Learning}, volume~\bibinfo{volume}{70} of
+  \textit{\bibinfo{series}{Proceedings of Machine Learning Research}},
+  \bibinfo{publisher}{PMLR}, \bibinfo{year}{2017}, pp.
+  \bibinfo{pages}{1321--1330}.
+%Type = Book
+\bibitem[{Vovk et~al.(2005)Vovk, Gammerman, and Shafer}]{vovk2005}
+\bibinfo{author}{V.~Vovk}, \bibinfo{author}{A.~Gammerman},
+  \bibinfo{author}{G.~Shafer}, \bibinfo{title}{Algorithmic Learning in a Random
+  World}, \bibinfo{publisher}{Springer}, \bibinfo{address}{Boston, MA},
+  \bibinfo{year}{2005}. \DOIprefix\doi{10.1007/b106715}.
+%Type = Article
+\bibitem[{Angelopoulos and Bates(2023)}]{angelopoulos2023gentle}
+\bibinfo{author}{A.~N. Angelopoulos}, \bibinfo{author}{S.~Bates},
+\newblock \bibinfo{title}{Conformal prediction: A gentle introduction},
+\newblock \bibinfo{journal}{Foundations and Trends in Machine Learning}
+  \bibinfo{volume}{16} (\bibinfo{year}{2023}) \bibinfo{pages}{494--591}.
+  \DOIprefix\doi{10.1561/2200000101}.
+%Type = Inproceedings
+\bibitem[{Romano et~al.(2020)Romano, Sesia, and Cand{\`e}s}]{romano2020}
+\bibinfo{author}{Y.~Romano}, \bibinfo{author}{M.~Sesia}, \bibinfo{author}{E.~J.
+  Cand{\`e}s},
+\newblock \bibinfo{title}{Classification with valid and adaptive coverage},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems}, volume~\bibinfo{volume}{33}, \bibinfo{year}{2020}.
+%Type = Inproceedings
+\bibitem[{Angelopoulos et~al.(2021)Angelopoulos, Bates, Malik, and
+  Jordan}]{angelopoulos2021raps}
+\bibinfo{author}{A.~N. Angelopoulos}, \bibinfo{author}{S.~Bates},
+  \bibinfo{author}{J.~Malik}, \bibinfo{author}{M.~I. Jordan},
+\newblock \bibinfo{title}{Uncertainty sets for image classifiers using
+  conformal prediction},
+\newblock in: \bibinfo{booktitle}{International Conference on Learning
+  Representations (ICLR)}, \bibinfo{year}{2021}. \URLprefix
+  \url{https://openreview.net/forum?id=eNdiU_DbM9}.
+%Type = Inproceedings
+\bibitem[{Gibbs and Cand{\`e}s(2021)}]{gibbs2021}
+\bibinfo{author}{I.~Gibbs}, \bibinfo{author}{E.~J. Cand{\`e}s},
+\newblock \bibinfo{title}{Adaptive conformal inference under distribution
+  shift},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems}, volume~\bibinfo{volume}{34}, \bibinfo{year}{2021}.
+%Type = Inproceedings
+\bibitem[{Stankeviciute et~al.(2021)Stankeviciute, Alaa, and van~der
+  Schaar}]{stankeviciute2021}
+\bibinfo{author}{K.~Stankeviciute}, \bibinfo{author}{A.~M. Alaa},
+  \bibinfo{author}{M.~van~der Schaar},
+\newblock \bibinfo{title}{Conformal time-series forecasting},
+\newblock in: \bibinfo{booktitle}{Advances in Neural Information Processing
+  Systems}, volume~\bibinfo{volume}{34}, \bibinfo{year}{2021}, pp.
+  \bibinfo{pages}{6216--6228}.
+%Type = Article
+\bibitem[{Goldberger et~al.(2000)Goldberger, Amaral, Glass, Hausdorff, Ivanov,
+  Mark, Mietus, Moody, Peng, and Stanley}]{goldberger2000}
+\bibinfo{author}{A.~L. Goldberger}, \bibinfo{author}{L.~A.~N. Amaral},
+  \bibinfo{author}{L.~Glass}, \bibinfo{author}{J.~M. Hausdorff},
+  \bibinfo{author}{P.~C. Ivanov}, \bibinfo{author}{R.~G. Mark},
+  \bibinfo{author}{J.~E. Mietus}, \bibinfo{author}{G.~B. Moody},
+  \bibinfo{author}{C.-K. Peng}, \bibinfo{author}{H.~E. Stanley},
+\newblock \bibinfo{title}{{PhysioBank}, {PhysioToolkit}, and {PhysioNet}:
+  Components of a new research resource for complex physiologic signals},
+\newblock \bibinfo{journal}{Circulation} \bibinfo{volume}{101}
+  (\bibinfo{year}{2000}) \bibinfo{pages}{e215--e220}.
+  \DOIprefix\doi{10.1161/01.CIR.101.23.E215}.
+%Type = Book
+\bibitem[{Berry et~al.(2012)Berry, Brooks, Gamaldo, Harding, Marcus, and
+  Vaughn}]{berry2012manual}
+\bibinfo{author}{R.~B. Berry}, \bibinfo{author}{R.~Brooks},
+  \bibinfo{author}{C.~E. Gamaldo}, \bibinfo{author}{S.~M. Harding},
+  \bibinfo{author}{C.~L. Marcus}, \bibinfo{author}{B.~V. Vaughn},
+  \bibinfo{title}{The {AASM} Manual for the Scoring of Sleep and Associated
+  Events: Rules, Terminology and Technical Specifications},
+  \bibinfo{edition}{2.0} ed., \bibinfo{publisher}{American Academy of Sleep
+  Medicine}, \bibinfo{address}{Darien, IL}, \bibinfo{year}{2012}.
+%Type = Misc
+\bibitem[{Alvarez-Estevez and Rijsman(2022)}]{hmc2022}
+\bibinfo{author}{D.~Alvarez-Estevez}, \bibinfo{author}{R.~Rijsman},
+  \bibinfo{title}{Haaglanden medisch centrum sleep staging database},
+  \bibinfo{howpublished}{PhysioNet, version 1.1}, \bibinfo{year}{2022}.
+  \DOIprefix\doi{10.13026/t79q-fr32}.
+%Type = Article
+\bibitem[{Lawhern et~al.(2018)Lawhern, Solon, Waytowich, Gordon, Hung, and
+  Lance}]{lawhern2018}
+\bibinfo{author}{V.~J. Lawhern}, \bibinfo{author}{A.~J. Solon},
+  \bibinfo{author}{N.~R. Waytowich}, \bibinfo{author}{S.~M. Gordon},
+  \bibinfo{author}{C.~P. Hung}, \bibinfo{author}{B.~J. Lance},
+\newblock \bibinfo{title}{{EEGNet}: A compact convolutional neural network for
+  {EEG}-based brain--computer interfaces},
+\newblock \bibinfo{journal}{Journal of Neural Engineering} \bibinfo{volume}{15}
+  (\bibinfo{year}{2018}) \bibinfo{pages}{056013}.
+  \DOIprefix\doi{10.1088/1741-2552/aace8c}.
+
+\end{thebibliography}

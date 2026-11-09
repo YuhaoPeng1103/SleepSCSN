@@ -1,0 +1,13 @@
+\begin{tabular}{llrrrrrrrrrr}
+\toprule
+Backbone & normalization & \textbf{Acc.} & \textbf{$\kappa$} & \textbf{mF1} & \textbf{ECE} & \textbf{Cov.} & \textbf{Set} & \textbf{Wkld} & \textbf{Worst} & \textbf{SD} & \textbf{Probe} \\
+\midrule
+\multirow{3}{*}{EEGNet} & Batch (cohort) & 0.781 & 0.698 & 0.644 & 0.030 & 0.896 & 2.52 & 0.750 & 0.828 & 0.055 & 0.681 \\
+ & Group (per sample) & 0.770 & 0.683 & 0.634 & 0.041 & 0.899 & 2.25 & 0.713 & 0.855 & 0.038 & 0.506 \\
+ & Batch + AdaBN (per recording) & 0.782 & 0.695 & 0.645 & 0.043 & 0.898 & 2.40 & 0.724 & 0.866 & 0.028 & 0.376 \\
+\midrule
+\multirow{3}{*}{SleepCNN} & Batch (cohort) & 0.803 & 0.728 & 0.711 & 0.032 & 0.899 & 2.55 & 0.779 & 0.848 & 0.044 & 0.683 \\
+ & Group (per sample) & 0.794 & 0.714 & 0.689 & 0.027 & 0.897 & 2.24 & 0.748 & 0.855 & 0.035 & 0.648 \\
+ & Batch + AdaBN (per recording) & 0.818 & 0.745 & 0.729 & 0.030 & 0.899 & 2.36 & 0.747 & 0.870 & 0.026 & 0.457 \\
+\bottomrule
+\end{tabular}

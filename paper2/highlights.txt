@@ -1,0 +1,5 @@
+Within-stage probes reveal subject shift hidden by global normalization.
+SCSN removes stage-conditioned subject signatures without labels.
+SCSN contains global mean correction as a single endpoint.
+SCSN improves HMC accuracy and patient-level conformal reliability.
+Weak target posteriors reduce SCSN to global correction.

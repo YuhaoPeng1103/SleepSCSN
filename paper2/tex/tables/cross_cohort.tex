@@ -1,0 +1,15 @@
+\begin{tabular}{lrrr}
+\toprule
+ & \multicolumn{3}{c}{EEGNet} \\
+\cmidrule(lr){2-4}
+ & Acc & Worst & SD \\
+\midrule
+Cohort statistics & 0.475 & 0.128 & 0.150 \\
+Marginal & 0.505 & 0.115 & 0.143 \\
+SCSN & 0.489 & 0.114 & 0.156 \\
+SCSN-$\lambda_{0.5}$ & 0.497 & 0.113 & 0.152 \\
+AdaBN & 0.553 & 0.214 & 0.134 \\
+AdaBN + SCSN & 0.555 & 0.204 & 0.139 \\
+SCSN (oracle labels) & 0.727 & 0.245 & 0.120 \\
+\bottomrule
+\end{tabular}

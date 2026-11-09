@@ -1,0 +1,173 @@
+\section{Introduction}
+\label{sec:intro}
+
+A deep network trained to stage sleep agrees with a human scorer about as well
+as two human scorers agree with each other, provided the patient comes from the
+cohort it was trained on. Applied to a patient from another clinic, the same
+network loses a substantial part of that agreement. The loss is not a failure
+of the filters: a slow oscillation is a slow oscillation in every laboratory.
+It is a failure of the statistics with which the network represents the
+patient, and those statistics are produced, to a large extent, by the
+normalization layers.
+
+The default label-free remedy is marginal adaptation. Re-estimating the
+batch-normalization statistics on the recording being scored --- adaptive batch
+normalization, AdaBN \citep{li2018adabn} --- removes one mean and one variance
+per layer and per night, uses no label and changes no weight. It is cheap,
+deterministic and widely used. Its premise is that the patient is a
+recording-wide offset. This paper shows that the premise is only half true,
+and that the half it misses is the one that a single vector per recording
+cannot address.
+
+\paragraph{Two parts of the patient}
+The class-conditional mean of the representation in a recording decomposes
+exactly into three terms (Section~\ref{sec:method}): the stage prototype
+$\mu_k$ the classifier was trained on, a recording-wide offset
+$a_{\cR}$ that is the same for every epoch of the night, and a
+stage-conditional signature $s_{\cR,k}$ that describes how this patient's
+wake, N2 or REM differs from the prototype. The post-hoc mean subtraction
+that mimics AdaBN at the representation removes $a_{\cR}$ and leaves
+$s_{\cR,k}$ untouched; layerwise AdaBN removes $a_{\cR}$ and, as a nonlinear
+side effect, in some settings part of $s_{\cR,k}$, but it has no stage index
+and cannot target it. The residual is not small either way. Within each stage a linear probe
+still identifies the patient far above chance after layerwise AdaBN, and the
+conditional part of the residue is what the classifier compares when it
+decides between two stages: the logit margin under a marginal correction is
+perturbed by $s_{\cR,j}-s_{\cR,k}$.
+
+\paragraph{Stage-conditional shift normalization}
+If the shift is indexed by the stage, it can be removed stage by stage. SCSN
+estimates, for each stage $k$ and recording $\cR$, the shift
+$\hat\delta_{\cR,k}$ between the recording's stage-conditional mean and the
+cohort prototype, and subtracts the posterior-weighted average of those shifts
+from every epoch:
+$\tilde z_i=z_i-\sum_k p_{ik}\hat\delta_{\cR,k}$, where $p_{ik}$ is the
+model's own softmax on the uncorrected representation. The estimator is
+closed-form with one shrinkage constant, uses no label, changes no weight, and
+needs no additional forward pass: the representation and the posterior come
+from the same pass over the night. The offset cancels for any
+posterior that sums to one; the stage-conditional signature cancels when the
+posterior is informative. Under the population correction the class-conditional
+means of every recording are mapped back to $\mu_k$, so the logit margin
+between any two stages is restored to the one the head was trained on.
+Setting the mixing parameter of the interpolated form to zero recovers the
+marginal correction, so the two are endpoints of one family rather than
+unrelated methods.
+
+\paragraph{Why the distinction matters in practice}
+The distinction is not only analytical. A batch-normalized stager can be
+adapted by replacing its statistics, and the test-time adaptation literature
+has produced a family of increasingly elaborate ways to do so
+\citep{li2018adabn,wang2021tent,cafa2023,unmixtns2024,psdnorm2026}. A
+group-normalized stager cannot use the standard AdaBN replacement: its
+normalization is computed within an epoch and therefore has no test-time batch
+statistic to re-estimate. A bespoke entropy objective on GroupNorm's affine
+parameters could be constructed, but this is not the usual Tent procedure and
+we treat it as a separate method outside this study. Yet group normalization
+is an increasingly common choice precisely because it removes dependence on
+batch composition, and the representation it produces still carries the
+patient. On these checkpoints we compare the uncorrected model, the post-hoc
+marginal correction, and SCSN; SCSN is the only stage-aware method among the
+statistics-replacement approaches evaluated here.
+
+The same failure separates SCSN from existing transfer methods for sleep and
+EEG. Cross-domain sleep staging has been addressed by test-time adaptation
+\citep{guo2025tta}, whereas recent cross-subject models use meta-learning,
+domain alignment, or self-supervised representation learning
+\citep{metasth2026,sedaeeg2025,transformeeg2026}. These approaches improve
+subject generalization by changing training objectives or learned
+representations. SCSN leaves both the trained filters and the classifier
+unchanged and corrects only recording-level statistics that remain after
+training.
+
+\paragraph{Measuring the right quantity}
+A subject-identification probe fitted to the penultimate representation is
+the natural diagnostic, but the overall probe is dominated by the marginal
+component: any per-recording centering collapses it, whether or not the
+conditional signature survives. We therefore refit the probe \emph{within
+each stage}. The within-stage probe is unchanged by a correction that removes
+only $a_{\cR}$, and falls only when the correction removes $s_{\cR,k}$. The
+distinction is what separates the two families empirically, and it is the
+measurement we report throughout.
+
+\paragraph{What kind of contribution this is}
+The contribution is analytical before it is algorithmic. The paper adds no
+layer, no loss and no training procedure; it characterizes what a trained
+stager's representation contains and which inference-time operations can change
+which part of it, and the algorithm follows from that characterization. Two
+results carry it. The first is an identity: the class-conditional means of a
+recording decompose exactly into a cohort prototype, a recording-wide offset
+and a stage-conditional signature, and the two parts are identifiable from each
+other by construction. The second is an impossibility statement, which we
+prove rather than observe: every correction that subtracts one vector per
+recording --- an oracle that knows the patient's stage mix, an estimate of the
+recording mean, any vector learned from the recording --- leaves the relative
+configuration of the stage-conditional means unchanged
+(Corollary~\ref{cor:no-marginal}). No better estimate of the marginal statistic
+can remove the signature, because the signature is not a statistic of the
+recording's mean; only an operation indexed by the stage can reach it. SCSN is
+then derived rather than designed: given the posterior, the posterior-weighted
+average of the per-stage shifts is the minimum-mean-square-error estimate of
+the shift that affects an epoch, and the residual is the posterior mass placed
+on the wrong stage (Remark~\ref{rem:mmse}). That it has a closed form is a
+consequence of the setting the method is meant for --- a checkpoint whose
+weights are frozen and a night that carries no labels --- and the closed form
+is the reason the method is deployable, not the reason it is new. Read as a
+normalization operator, SCSN is the class-conditional counterpart of AdaBN: its
+sufficient statistics are indexed by the classes the model assigns, rather than
+by the batch or by the epoch.
+
+\paragraph{What the paper contributes}
+\begin{enumerate}
+  \item A decomposition of the penultimate representation into a stage
+  prototype, a recording offset and a stage-conditional subject signature,
+  with propositions that state exactly what marginal adaptation leaves behind
+  (Proposition~\ref{prop:marginal}) and what a stage-conditional correction
+  removes (Proposition~\ref{prop:conditional}), and a corollary that no
+  correction subtracting one vector per recording can alter the relative
+  geometry of the stage-conditional means
+  (Corollary~\ref{cor:no-marginal}).
+  \item SCSN, a closed-form, label-free normalization of the representation
+  that needs no retraining and no optimizer, applies unchanged to
+  batch-normalized and group-normalized stagers, and contains the marginal
+  correction as the endpoint $\lambda=0$ of a one-parameter family
+  (Algorithm~\ref{alg:scsn}).
+  \item A measurement protocol that separates the two components of patient
+  identity, and evidence on two cohorts, two backbones and two normalization
+  regimes that layerwise AdaBN leaves a large within-stage signature while
+  SCSN removes several times more of it.
+  \item Evidence that on group-normalized stagers, where the standard AdaBN
+  statistics replacement is undefined, SCSN remains applicable and removes
+  the conditional signature; it also improves accuracy and per-patient
+  conformal-coverage dispersion over the uncorrected model.
+  \item Controls that isolate the mechanism --- mismatched statistics,
+  orthogonalised corrections, hard pseudo-labels, low-rank restrictions ---
+  a Tent baseline evaluated on the same runs, and a cross-cohort experiment
+  that delimits the regime in which a stage-conditional correction is useful.
+\end{enumerate}
+
+The method is offline in the same sense as AdaBN: it reads the unlabeled
+epochs of the night it is about to score. Clinical staging is performed after
+the night, so this is the setting in which a deployed stager operates. No
+label, no epoch of another patient and no weight is used.
+
+The paper reports where the method is not the best available one. On
+Sleep-EDF SleepCNN, layerwise AdaBN is $1.4$ points more accurate than SCSN,
+a difference that is not significant; on Sleep-EDF EEGNet the two are
+indistinguishable; and Tent is competitive on the same cohort. On both HMC
+backbones SCSN has the highest mean accuracy of the arms, by a margin that is
+significant over the uncorrected model in both cases and not significant over
+layerwise AdaBN on HMC SleepCNN. The claim defended here is not that
+SCSN dominates every baseline on accuracy, but that it removes a component of
+patient identity that none of them removes, and that this component can be
+measured, predicted and corrected without labels.
+
+\paragraph{Organisation}
+Section~\ref{sec:related} places the work among test-time normalization and
+subject-variability methods. Section~\ref{sec:method} derives the
+decomposition, states the propositions and defines the algorithm.
+Section~\ref{sec:setup} describes the cohorts, arms, metrics and statistics.
+Section~\ref{sec:results} reports the main comparison, the mechanism analyses,
+the ablations, the Tent baseline, the group-normalized setting and
+cross-cohort transfer. Section~\ref{sec:discussion} discusses what the results
+do and do not license.

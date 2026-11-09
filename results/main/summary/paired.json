@@ -1,0 +1,98 @@
+{
+  "aci_aps_vs_global_aps": {
+    "a": "global",
+    "b": "subject_aci_aps",
+    "n_subjects": 20,
+    "mean_a": 0.8957419771546844,
+    "mean_b": 0.9035078078996974,
+    "n_b_greater": 10,
+    "n_b_lower": 10,
+    "median_diff": 0.0009714706834528797,
+    "wilcoxon_stat": 99.0,
+    "p_value": 0.8408222198486328
+  },
+  "aci_deficit_vs_global_deficit": {
+    "a": "global_deficit",
+    "b": "subject_aci_deficit",
+    "n_subjects": 20,
+    "mean_a": 0.8900012562548689,
+    "mean_b": 0.8978615361207,
+    "n_b_greater": 12,
+    "n_b_lower": 8,
+    "median_diff": 0.00611745850785228,
+    "wilcoxon_stat": 96.0,
+    "p_value": 0.7561664581298828
+  },
+  "aci_aps_vs_mondrian": {
+    "a": "class_conditional",
+    "b": "subject_aci_aps",
+    "n_subjects": 20,
+    "mean_a": 0.8957998360681921,
+    "mean_b": 0.9035078078996974,
+    "n_b_greater": 10,
+    "n_b_lower": 10,
+    "median_diff": -0.0011861242316207887,
+    "wilcoxon_stat": 95.0,
+    "p_value": 0.7285060882568359
+  },
+  "mondrian_vs_global_aps": {
+    "a": "global",
+    "b": "class_conditional",
+    "n_subjects": 20,
+    "mean_a": 0.8957419771546844,
+    "mean_b": 0.8957998360681921,
+    "n_b_greater": 9,
+    "n_b_lower": 11,
+    "median_diff": -0.00411566897354243,
+    "wilcoxon_stat": 98.0,
+    "p_value": 0.8123550415039062
+  },
+  "absdev_aci_aps_vs_global_aps": {
+    "a": "global",
+    "b": "subject_aci_aps",
+    "n_subjects": 20,
+    "mean_a": 0.040449312429492665,
+    "mean_b": 0.00885257744703632,
+    "n_b_greater": 1,
+    "n_b_lower": 19,
+    "median_diff": -0.024505167279733786,
+    "wilcoxon_stat": 3.0,
+    "p_value": 9.5367431640625e-06
+  },
+  "absdev_aci_deficit_vs_global_deficit": {
+    "a": "global_deficit",
+    "b": "subject_aci_deficit",
+    "n_subjects": 20,
+    "mean_a": 0.03590070008696221,
+    "mean_b": 0.007229734699180335,
+    "n_b_greater": 0,
+    "n_b_lower": 20,
+    "median_diff": -0.020798282757856,
+    "wilcoxon_stat": 0.0,
+    "p_value": 1.9073486328125e-06
+  },
+  "absdev_aci_aps_vs_mondrian": {
+    "a": "class_conditional",
+    "b": "subject_aci_aps",
+    "n_subjects": 20,
+    "mean_a": 0.038475362571217545,
+    "mean_b": 0.00885257744703632,
+    "n_b_greater": 1,
+    "n_b_lower": 19,
+    "median_diff": -0.018763740424645403,
+    "wilcoxon_stat": 1.0,
+    "p_value": 3.814697265625e-06
+  },
+  "absdev_mondrian_vs_global_aps": {
+    "a": "global",
+    "b": "class_conditional",
+    "n_subjects": 20,
+    "mean_a": 0.040449312429492665,
+    "mean_b": 0.038475362571217545,
+    "n_b_greater": 8,
+    "n_b_lower": 12,
+    "median_diff": -0.005380638451946695,
+    "wilcoxon_stat": 83.0,
+    "p_value": 0.4304332733154297
+  }
+}

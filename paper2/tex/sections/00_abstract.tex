@@ -1,0 +1,21 @@
+Automatic sleep staging models can lose accuracy when applied to unseen
+patients, yet a single label-free remedy is usually applied: replace the
+normalization statistics of the target recording. This assumes that subject
+shift is a recording-wide offset. We introduce a patient-identity diagnostic
+that tests this assumption by refitting a linear subject probe within each
+sleep stage. After marginal mean correction, the within-stage probe remains
+well above chance, whereas the overall probe is dominated by the removable
+offset. We therefore propose stage-conditional shift normalization (SCSN), a
+closed-form, label-free correction that estimates a separate shift for each
+stage from the model's soft posterior and subtracts the posterior-weighted
+shift during inference. SCSN contains marginal correction as its $\lambda=0$
+endpoint and applies unchanged to batch- and group-normalized networks.
+Across Sleep-EDF (39 recordings), HMC (151 recordings), two backbones and two
+normalization schemes, SCSN reduced the within-stage subject probe from
+$0.74$ to $0.47$ and from $0.53$ to $0.21$ on EEGNet. Classification accuracy
+was preserved on Sleep-EDF and improved by $1.4$--$1.9$ points on HMC. On
+group-normalized models, SCSN significantly improved accuracy in three of four
+settings and improved worst-patient conformal coverage in all four. Cross-cohort
+transfer also exposes the method's precondition: a weak target posterior
+reduces SCSN to marginal correction, whereas oracle stages recover most of the
+gap.

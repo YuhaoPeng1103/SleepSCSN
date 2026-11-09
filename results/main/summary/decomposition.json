@@ -1,0 +1,2871 @@
+{
+ "summary": {
+  "merged": {
+   "n_groups": 7,
+   "n_subjects": 20.0,
+   "coverage_sd": 0.0588606902153879,
+   "worst_coverage": 0.7599064810016011,
+   "mean_abs_terms": {
+    "prior": 0.007286361646776507,
+    "score": 0.03727686030391026,
+    "interaction": 0.007897725118094664
+   },
+   "score_dominant_fraction": 0.8571428571428573,
+   "correlations": {
+    "coverage_vs_set_size": 0.5726761654048679,
+    "coverage_vs_accuracy": 0.217273968551353,
+    "coverage_vs_prior_l1": 0.09099336028711195
+   }
+  },
+  "n_runs": 30,
+  "coverage_sd": 0.04948735806481027,
+  "worst_coverage": 0.8380119841270856,
+  "mean_abs_terms": {
+   "prior": 0.0073930979999390885,
+   "score": 0.03793403159720368,
+   "interaction": 0.007995133062135371
+  },
+  "score_dominant_fraction": 0.8666666666666667,
+  "correlations": {
+   "coverage_vs_set_size": 0.6419032295443052,
+   "coverage_vs_accuracy": -0.10801499788327626,
+   "coverage_vs_prior_l1": -0.04543835594567335
+  },
+  "location_vs_spread": {
+   "mean_abs_median_shift": 0.01743941388092935,
+   "mean_abs_iqr_shift": 0.026979380859896384
+  },
+  "max_abs_residual": 2.983724378680108e-16,
+  "n_subjects": 4.0
+ },
+ "merged": [
+  {
+   "model": "all",
+   "seed": "all",
+   "n_subjects": 20,
+   "coverage_sd": 0.05097114590547389,
+   "worst_coverage": 0.7739884393063585,
+   "mean_abs_terms": {
+    "prior": 0.006645943527801024,
+    "score": 0.03333383254414966,
+    "interaction": 0.007313277453850418
+   },
+   "score_dominant_fraction": 0.8,
+   "correlations": {
+    "coverage_vs_set_size": 0.5766092589111297,
+    "coverage_vs_accuracy": 0.3206297061158001,
+    "coverage_vs_prior_l1": 0.10314321190503044
+   }
+  },
+  {
+   "model": "eegnet",
+   "seed": "0",
+   "n_subjects": 20,
+   "coverage_sd": 0.06177305148985518,
+   "worst_coverage": 0.7722543352601157,
+   "mean_abs_terms": {
+    "prior": 0.0043655119152950375,
+    "score": 0.045365488833501846,
+    "interaction": 0.007937458553372316
+   },
+   "score_dominant_fraction": 0.9,
+   "correlations": {
+    "coverage_vs_set_size": 0.7339952001325877,
+    "coverage_vs_accuracy": 0.03436411543733883,
+    "coverage_vs_prior_l1": 0.28572590532729053
+   }
+  },
+  {
+   "model": "eegnet",
+   "seed": "1",
+   "n_subjects": 20,
+   "coverage_sd": 0.058094968969606066,
+   "worst_coverage": 0.7751445086705202,
+   "mean_abs_terms": {
+    "prior": 0.004982785347086605,
+    "score": 0.03944193749485538,
+    "interaction": 0.007249595324116549
+   },
+   "score_dominant_fraction": 0.95,
+   "correlations": {
+    "coverage_vs_set_size": 0.49103996173363507,
+    "coverage_vs_accuracy": 0.16177339925853973,
+    "coverage_vs_prior_l1": 0.23472453917650954
+   }
+  },
+  {
+   "model": "eegnet",
+   "seed": "2",
+   "n_subjects": 20,
+   "coverage_sd": 0.060609612523660386,
+   "worst_coverage": 0.7676300578034683,
+   "mean_abs_terms": {
+    "prior": 0.005640718380315322,
+    "score": 0.04454277138758634,
+    "interaction": 0.009168102065501598
+   },
+   "score_dominant_fraction": 0.95,
+   "correlations": {
+    "coverage_vs_set_size": 0.66947643613468,
+    "coverage_vs_accuracy": 0.08792085309894014,
+    "coverage_vs_prior_l1": 0.2246194803937245
+   }
+  },
+  {
+   "model": "sleepcnn",
+   "seed": "0",
+   "n_subjects": 20,
+   "coverage_sd": 0.0625048167188035,
+   "worst_coverage": 0.7248554913294798,
+   "mean_abs_terms": {
+    "prior": 0.008399692784967232,
+    "score": 0.034065532090236904,
+    "interaction": 0.007400676971996272
+   },
+   "score_dominant_fraction": 0.75,
+   "correlations": {
+    "coverage_vs_set_size": 0.3403293005774356,
+    "coverage_vs_accuracy": 0.6484595992848993,
+    "coverage_vs_prior_l1": -0.08008649495279457
+   }
+  },
+  {
+   "model": "sleepcnn",
+   "seed": "1",
+   "n_subjects": 20,
+   "coverage_sd": 0.05112237580643807,
+   "worst_coverage": 0.7950819672131147,
+   "mean_abs_terms": {
+    "prior": 0.007079655139494698,
+    "score": 0.030618222108653025,
+    "interaction": 0.008210871730787394
+   },
+   "score_dominant_fraction": 0.9,
+   "correlations": {
+    "coverage_vs_set_size": 0.4723884567791373,
+    "coverage_vs_accuracy": 0.2616545769525508,
+    "coverage_vs_prior_l1": -0.02723745808302386
+   }
+  },
+  {
+   "model": "sleepcnn",
+   "seed": "2",
+   "n_subjects": 20,
+   "coverage_sd": 0.06694886009387824,
+   "worst_coverage": 0.7103905674281503,
+   "mean_abs_terms": {
+    "prior": 0.01389022443247564,
+    "score": 0.03357023766838863,
+    "interaction": 0.008004093727038097
+   },
+   "score_dominant_fraction": 0.75,
+   "correlations": {
+    "coverage_vs_set_size": 0.7248945435654698,
+    "coverage_vs_accuracy": 0.006115529711402061,
+    "coverage_vs_prior_l1": -0.10393566175695268
+   }
+  }
+ ],
+ "runs": [
+  {
+   "run": "results\\main\\eegnet\\fold0_seed0",
+   "threshold": 0.999619722366333,
+   "pooled_coverage": 0.9364281813216822,
+   "n_subjects": 4,
+   "coverage_sd": 0.05603609787275672,
+   "worst_coverage": 0.8568507157464214,
+   "mean_abs_terms": {
+    "prior": 0.0024197818478967443,
+    "score": 0.03655707268273501,
+    "interaction": 0.004346293693964438
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 7.3075226425523e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.9897714781444249,
+    "coverage_vs_accuracy": -0.26920301553968706,
+    "coverage_vs_prior_l1": 0.20244992522673821
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.02247646995820105,
+    "mean_abs_iqr_shift": 0.031915936409495776
+   },
+   "rows": [
+    {
+     "subject": "SC407",
+     "n": 2249,
+     "coverage": 0.9857714539795466,
+     "prior_term": -0.00467378055037385,
+     "score_term": 0.05016185257435568,
+     "interaction": 0.003855200633882531,
+     "residual": 5.724587470723463e-17,
+     "mean_set_size": 3.3072476656291685,
+     "mean_confidence": 0.7642525772006313,
+     "mean_score": 0.8172287123086668,
+     "accuracy": 0.8328145842596709,
+     "prior_l1": 0.058807081926575036,
+     "median_shift": -0.05180911868810654,
+     "iqr_shift": 0.026120372116565704
+    },
+    {
+     "subject": "SC409",
+     "n": 2236,
+     "coverage": 0.9619856887298748,
+     "prior_term": 0.0021283604621978314,
+     "score_term": 0.015005484448756039,
+     "interaction": 0.00842366249723878,
+     "residual": -2.42861286636753e-17,
+     "mean_set_size": 3.212432915921288,
+     "mean_confidence": 0.7770039594344035,
+     "mean_score": 0.8512472726293393,
+     "accuracy": 0.7249552772808586,
+     "prior_l1": 0.12770649390491134,
+     "median_shift": 0.022021198645234108,
+     "iqr_shift": 0.023530529532581567
+    },
+    {
+     "subject": "SC414",
+     "n": 1956,
+     "coverage": 0.8568507157464214,
+     "prior_term": -0.00044021896538130184,
+     "score_term": -0.07511570766814266,
+     "interaction": -0.0040215389417368385,
+     "residual": -7.806255641895632e-18,
+     "mean_set_size": 2.5178936605316973,
+     "mean_confidence": 0.8215353347071597,
+     "mean_score": 0.8664542812247157,
+     "accuracy": 0.8241308793456033,
+     "prior_l1": 0.06548122038199203,
+     "median_shift": 0.012412265501916408,
+     "iqr_shift": -0.043406574241817
+    },
+    {
+     "subject": "SC415",
+     "n": 2714,
+     "coverage": 0.931834929992631,
+     "prior_term": 0.0024367674136339945,
+     "score_term": -0.00594524603968566,
+     "interaction": -0.0010847727029996035,
+     "residual": 7.3075226425523e-17,
+     "mean_set_size": 2.902358142962417,
+     "mean_confidence": 0.8248829817016422,
+     "mean_score": 0.8708678535375133,
+     "accuracy": 0.823876197494473,
+     "prior_l1": 0.12402092513805674,
+     "median_shift": 0.00366329699754715,
+     "iqr_shift": -0.03460626974701882
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold0_seed1",
+   "threshold": 0.9989705085754395,
+   "pooled_coverage": 0.9331512834516658,
+   "n_subjects": 4,
+   "coverage_sd": 0.01129115381495379,
+   "worst_coverage": 0.9230769230769231,
+   "mean_abs_terms": {
+    "prior": 0.0017225661385085814,
+    "score": 0.013230300272826007,
+    "interaction": 0.0036137269214037864
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 8.977193988179977e-17,
+   "correlations": {
+    "coverage_vs_set_size": -0.10214693791590454,
+    "coverage_vs_accuracy": 0.6997674218094713,
+    "coverage_vs_prior_l1": 0.32009951253904984
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.01585740502923727,
+    "mean_abs_iqr_shift": 0.022796513279899955
+   },
+   "rows": [
+    {
+     "subject": "SC407",
+     "n": 2249,
+     "coverage": 0.9306358381502889,
+     "prior_term": -0.0015245157117156558,
+     "score_term": -0.002948137436503021,
+     "interaction": 0.0019572078468419493,
+     "residual": -8.977193988179977e-17,
+     "mean_set_size": 2.4877723432636727,
+     "mean_confidence": 0.7973571086576537,
+     "mean_score": 0.84955999531043,
+     "accuracy": 0.8359270787016452,
+     "prior_l1": 0.058807081926575036,
+     "median_shift": -0.02680850327014923,
+     "iqr_shift": 0.010807965323328972
+    },
+    {
+     "subject": "SC409",
+     "n": 2236,
+     "coverage": 0.9230769230769231,
+     "prior_term": 0.0020431661862513224,
+     "score_term": -0.01993568585785481,
+     "interaction": 0.007818159296860845,
+     "residual": 1.214306433183765e-17,
+     "mean_set_size": 2.4700357781753133,
+     "mean_confidence": 0.7954724038649543,
+     "mean_score": 0.8505871660007494,
+     "accuracy": 0.7947227191413238,
+     "prior_l1": 0.12770649390491134,
+     "median_shift": -0.006768537312746048,
+     "iqr_shift": 0.021413593366742135
+    },
+    {
+     "subject": "SC414",
+     "n": 1956,
+     "coverage": 0.9263803680981595,
+     "prior_term": 0.001686853441489878,
+     "score_term": -0.010682288769672138,
+     "interaction": 0.0022245199746760277,
+     "residual": -3.5561831257524545e-17,
+     "mean_set_size": 2.062883435582822,
+     "mean_confidence": 0.8342991840315255,
+     "mean_score": 0.8729842131794068,
+     "accuracy": 0.8665644171779141,
+     "prior_l1": 0.06548122038199203,
+     "median_shift": 0.014013327658176422,
+     "iqr_shift": -0.03538730908185243
+    },
+    {
+     "subject": "SC415",
+     "n": 2714,
+     "coverage": 0.948415622697126,
+     "prior_term": -0.0016357292145774693,
+     "score_term": 0.019355089027274057,
+     "interaction": -0.002455020567236325,
+     "residual": -3.946495907847236e-17,
+     "mean_set_size": 2.285924834193073,
+     "mean_confidence": 0.836063982472757,
+     "mean_score": 0.8725096631129919,
+     "accuracy": 0.8780397936624907,
+     "prior_l1": 0.12402092513805674,
+     "median_shift": -0.01583925187587738,
+     "iqr_shift": -0.023577185347676277
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold0_seed2",
+   "threshold": 0.999352753162384,
+   "pooled_coverage": 0.9214636810486073,
+   "n_subjects": 4,
+   "coverage_sd": 0.015247916442750725,
+   "worst_coverage": 0.9028629856850716,
+   "mean_abs_terms": {
+    "prior": 0.009028529526236312,
+    "score": 0.020181328537140327,
+    "interaction": 0.003168809789424732
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 1.0148132334464322e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.8392080975663598,
+    "coverage_vs_accuracy": -0.19646646518170718,
+    "coverage_vs_prior_l1": -0.09976537992416457
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.016300933808088305,
+    "mean_abs_iqr_shift": 0.019268295727670193
+   },
+   "rows": [
+    {
+     "subject": "SC407",
+     "n": 2249,
+     "coverage": 0.9399733214762116,
+     "prior_term": -0.0023000365566066897,
+     "score_term": 0.020252147559837213,
+     "interaction": 0.0005575294243738557,
+     "residual": -9.974659986866641e-17,
+     "mean_set_size": 2.6371720764784348,
+     "mean_confidence": 0.8125021865946709,
+     "mean_score": 0.855663326792651,
+     "accuracy": 0.858603823921743,
+     "prior_l1": 0.058807081926575036,
+     "median_shift": -0.03904524892568588,
+     "iqr_shift": 0.007559903990477323
+    },
+    {
+     "subject": "SC409",
+     "n": 2236,
+     "coverage": 0.9226296958855098,
+     "prior_term": 0.013816522289567465,
+     "score_term": -0.019785617212204818,
+     "interaction": 0.00713510975953992,
+     "residual": -8.239936510889834e-17,
+     "mean_set_size": 2.65742397137746,
+     "mean_confidence": 0.7963372813887588,
+     "mean_score": 0.8608079367547031,
+     "accuracy": 0.7602862254025045,
+     "prior_l1": 0.12770649390491134,
+     "median_shift": 0.005118410289287567,
+     "iqr_shift": 0.01704547433182597
+    },
+    {
+     "subject": "SC414",
+     "n": 1956,
+     "coverage": 0.9028629856850716,
+     "prior_term": 0.006114007324334203,
+     "score_term": -0.02730909609901812,
+     "interaction": 0.0025943934111482443,
+     "residual": -2.7755575615628914e-17,
+     "mean_set_size": 2.0756646216768915,
+     "mean_confidence": 0.8445067305597791,
+     "mean_score": 0.883071095385791,
+     "accuracy": 0.8747443762781186,
+     "prior_l1": 0.06548122038199203,
+     "median_shift": 0.016321438550949096,
+     "iqr_shift": -0.024558031279593707
+    },
+    {
+     "subject": "SC415",
+     "n": 2714,
+     "coverage": 0.9185703758290348,
+     "prior_term": -0.013883551934436892,
+     "score_term": 0.013378453277501158,
+     "interaction": -0.002388206562636907,
+     "residual": 1.0148132334464322e-16,
+     "mean_set_size": 2.2324981577008107,
+     "mean_confidence": 0.8537829773186232,
+     "mean_score": 0.8875216573067193,
+     "accuracy": 0.8806190125276345,
+     "prior_l1": 0.12402092513805674,
+     "median_shift": -0.004718637466430664,
+     "iqr_shift": -0.027909773308783768
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold1_seed0",
+   "threshold": 0.9968133568763733,
+   "pooled_coverage": 0.8857528393118181,
+   "n_subjects": 4,
+   "coverage_sd": 0.03278054410406047,
+   "worst_coverage": 0.8554645781416873,
+   "mean_abs_terms": {
+    "prior": 0.005105159943369939,
+    "score": 0.03005246421487629,
+    "interaction": 0.010431052285313889
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 1.8735013540549517e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9896651544374474,
+    "coverage_vs_accuracy": -0.6730809353262662,
+    "coverage_vs_prior_l1": 0.43926910050650314
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.014387129433453084,
+    "mean_abs_iqr_shift": 0.02767064142972231
+   },
+   "rows": [
+    {
+     "subject": "SC406",
+     "n": 1859,
+     "coverage": 0.8886498117267347,
+     "prior_term": -0.01034101340036523,
+     "score_term": 0.026102489231051736,
+     "interaction": -0.012864503415769961,
+     "residual": 5.377642775528102e-17,
+     "mean_set_size": 2.6557288864981174,
+     "mean_confidence": 0.8067837711814401,
+     "mean_score": 0.8645334213956921,
+     "accuracy": 0.799354491662184,
+     "prior_l1": 0.07040629534553018,
+     "median_shift": 0.004759463667869568,
+     "iqr_shift": -0.06334094908088446
+    },
+    {
+     "subject": "SC410",
+     "n": 2196,
+     "coverage": 0.877959927140255,
+     "prior_term": 0.007519617561444574,
+     "score_term": 0.0026014476332218176,
+     "interaction": -0.017913977366229655,
+     "residual": 6.938893903907228e-17,
+     "mean_set_size": 2.54143897996357,
+     "mean_confidence": 0.7637475837558128,
+     "mean_score": 0.8409729160201649,
+     "accuracy": 0.73816029143898,
+     "prior_l1": 0.12442011962909777,
+     "median_shift": -0.016666800528764725,
+     "iqr_shift": -0.022859891317784785
+    },
+    {
+     "subject": "SC412",
+     "n": 2029,
+     "coverage": 0.9334647609659932,
+     "prior_term": -0.0009260440276217773,
+     "score_term": 0.05929886302878689,
+     "interaction": -0.010660897346990258,
+     "residual": 1.8735013540549517e-16,
+     "mean_set_size": 3.467718087727945,
+     "mean_confidence": 0.6612280908918781,
+     "mean_score": 0.7971866600765782,
+     "accuracy": 0.6318383440118285,
+     "prior_l1": 0.09353306550131603,
+     "median_shift": -0.026536616683006286,
+     "iqr_shift": 0.0013211501762270927
+    },
+    {
+     "subject": "SC419",
+     "n": 2809,
+     "coverage": 0.8554645781416873,
+     "prior_term": 0.0016339647840481752,
+     "score_term": -0.032207056966444714,
+     "interaction": 0.00028483101226568265,
+     "residual": 1.8973538018496328e-17,
+     "mean_set_size": 2.3072267710929157,
+     "mean_confidence": 0.7655179445940474,
+     "mean_score": 0.8532583959896377,
+     "accuracy": 0.7333570665717337,
+     "prior_l1": 0.0346439095521027,
+     "median_shift": -0.009585636854171752,
+     "iqr_shift": 0.0231605751439929
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold1_seed1",
+   "threshold": 0.9984831213951111,
+   "pooled_coverage": 0.8660744405712357,
+   "n_subjects": 4,
+   "coverage_sd": 0.05891745742595625,
+   "worst_coverage": 0.822000711997152,
+   "mean_abs_terms": {
+    "prior": 0.00564854364334363,
+    "score": 0.04448006458832207,
+    "interaction": 0.01038711445510091
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.3530843112619095e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9848944528385775,
+    "coverage_vs_accuracy": -0.3386054746714209,
+    "coverage_vs_prior_l1": 0.3122493683557971
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.022502841427922245,
+    "mean_abs_iqr_shift": 0.025250771176069976
+   },
+   "rows": [
+    {
+     "subject": "SC406",
+     "n": 1859,
+     "coverage": 0.8649811726734803,
+     "prior_term": -0.011700611801964377,
+     "score_term": 0.024676714940043743,
+     "interaction": -0.014069371035834794,
+     "residual": -6.938893903907228e-18,
+     "mean_set_size": 2.3270575578267887,
+     "mean_confidence": 0.837885656941636,
+     "mean_score": 0.8894526628877847,
+     "accuracy": 0.8230231307154384,
+     "prior_l1": 0.07040629534553018,
+     "median_shift": 0.013179878890514373,
+     "iqr_shift": -0.05725736021995544
+    },
+    {
+     "subject": "SC410",
+     "n": 2196,
+     "coverage": 0.8410746812386157,
+     "prior_term": -0.0007464346517779864,
+     "score_term": -0.009942077667420566,
+     "interaction": -0.01431124701342158,
+     "residual": 1.3530843112619095e-16,
+     "mean_set_size": 2.331056466302368,
+     "mean_confidence": 0.8012670979500902,
+     "mean_score": 0.8697177859267903,
+     "accuracy": 0.7545537340619308,
+     "prior_l1": 0.12442011962909777,
+     "median_shift": 0.0036691009998321535,
+     "iqr_shift": -0.02499205730855465
+    },
+    {
+     "subject": "SC412",
+     "n": 2029,
+     "coverage": 0.9551503203548546,
+     "prior_term": 0.00655471160626982,
+     "score_term": 0.09566216430343705,
+     "interaction": -0.013140996126088045,
+     "residual": 4.163336342344337e-17,
+     "mean_set_size": 3.0335140463282406,
+     "mean_confidence": 0.7255938115702761,
+     "mean_score": 0.806595149360498,
+     "accuracy": 0.7649088220798422,
+     "prior_l1": 0.09353306550131603,
+     "median_shift": -0.047960148006677625,
+     "iqr_shift": 0.01579674184322357
+    },
+    {
+     "subject": "SC419",
+     "n": 2809,
+     "coverage": 0.822000711997152,
+     "prior_term": 0.0035924165133623363,
+     "score_term": -0.04763930144238693,
+     "interaction": -2.684364505921782e-05,
+     "residual": 4.6458063091003865e-17,
+     "mean_set_size": 2.079743681025276,
+     "mean_confidence": 0.8032972994500863,
+     "mean_score": 0.8624306104679443,
+     "accuracy": 0.8038447846208615,
+     "prior_l1": 0.0346439095521027,
+     "median_shift": -0.02520223781466484,
+     "iqr_shift": 0.002956925332546234
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold1_seed2",
+   "threshold": 0.9977455735206604,
+   "pooled_coverage": 0.8647250646575959,
+   "n_subjects": 4,
+   "coverage_sd": 0.06913773339006071,
+   "worst_coverage": 0.8212887148451407,
+   "mean_abs_terms": {
+    "prior": 0.00459117980569803,
+    "score": 0.04941137148591102,
+    "interaction": 0.0132637499486782
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.2663481374630692e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9696214646530552,
+    "coverage_vs_accuracy": -0.3003016845145703,
+    "coverage_vs_prior_l1": 0.18529995253424306
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.023444973584264516,
+    "mean_abs_iqr_shift": 0.025844638887792825
+   },
+   "rows": [
+    {
+     "subject": "SC406",
+     "n": 1859,
+     "coverage": 0.8671328671328671,
+     "prior_term": -0.009730002353077596,
+     "score_term": 0.027995004177742918,
+     "interaction": -0.015857199349394054,
+     "residual": -9.71445146547012e-17,
+     "mean_set_size": 2.3136094674556213,
+     "mean_confidence": 0.8170569651289741,
+     "mean_score": 0.8700839649925709,
+     "accuracy": 0.8305540613232921,
+     "prior_l1": 0.07040629534553018,
+     "median_shift": 0.017611339688301086,
+     "iqr_shift": -0.04031853228807449
+    },
+    {
+     "subject": "SC410",
+     "n": 2196,
+     "coverage": 0.8224043715846995,
+     "prior_term": -0.0003858939278864066,
+     "score_term": -0.018064347723180774,
+     "interaction": -0.02387045142182927,
+     "residual": 1.734723475976807e-17,
+     "mean_set_size": 2.243624772313297,
+     "mean_confidence": 0.7820777330947921,
+     "mean_score": 0.8485967817054376,
+     "accuracy": 0.7595628415300546,
+     "prior_l1": 0.12442011962909777,
+     "median_shift": -0.021138009428977967,
+     "iqr_shift": -0.02636016793549061
+    },
+    {
+     "subject": "SC412",
+     "n": 2029,
+     "coverage": 0.968457368161656,
+     "prior_term": 0.005430059235365808,
+     "score_term": 0.10848030690799333,
+     "interaction": -0.010178062639298975,
+     "residual": -1.2663481374630692e-16,
+     "mean_set_size": 3.0961064563824543,
+     "mean_confidence": 0.6941536195234691,
+     "mean_score": 0.7786100828502499,
+     "accuracy": 0.7570231641202563,
+     "prior_l1": 0.09353306550131603,
+     "median_shift": -0.04807299673557282,
+     "iqr_shift": 0.018378271162509917
+    },
+    {
+     "subject": "SC419",
+     "n": 2809,
+     "coverage": 0.8212887148451407,
+     "prior_term": 0.0028187637064623107,
+     "score_term": -0.04310582713472707,
+     "interaction": -0.003149286384190499,
+     "residual": 6.071532165918825e-18,
+     "mean_set_size": 1.9747241011035956,
+     "mean_confidence": 0.8064478694565062,
+     "mean_score": 0.8629763558548771,
+     "accuracy": 0.7949448202207191,
+     "prior_l1": 0.0346439095521027,
+     "median_shift": -0.0069575484842061995,
+     "iqr_shift": -0.018321584165096282
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold2_seed0",
+   "threshold": 0.9984731078147888,
+   "pooled_coverage": 0.8837386018237081,
+   "n_subjects": 4,
+   "coverage_sd": 0.08240834277916184,
+   "worst_coverage": 0.7745571658615138,
+   "mean_abs_terms": {
+    "prior": 0.0034681000328001315,
+    "score": 0.06290870402026195,
+    "interaction": 0.009739303199387666
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.942890293094024e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9332775903733856,
+    "coverage_vs_accuracy": 0.12510038849634658,
+    "coverage_vs_prior_l1": 0.11304891224785701
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.016444858536124228,
+    "mean_abs_iqr_shift": 0.03281126571819186
+   },
+   "rows": [
+    {
+     "subject": "SC400",
+     "n": 1968,
+     "coverage": 0.959349593495935,
+     "prior_term": 0.006779557964041203,
+     "score_term": 0.08879859719324194,
+     "interaction": -0.019967163485056377,
+     "residual": 7.979727989493313e-17,
+     "mean_set_size": 2.763211382113821,
+     "mean_confidence": 0.8015255336687575,
+     "mean_score": 0.8482577886756693,
+     "accuracy": 0.8313008130081301,
+     "prior_l1": 0.10686794177972171,
+     "median_shift": -0.006541752815246582,
+     "iqr_shift": -0.008540138229727745
+    },
+    {
+     "subject": "SC403",
+     "n": 1863,
+     "coverage": 0.7745571658615138,
+     "prior_term": -0.004439843064847841,
+     "score_term": -0.09038681077626462,
+     "interaction": -0.014354782121082044,
+     "residual": 1.942890293094024e-16,
+     "mean_set_size": 1.940955448201825,
+     "mean_confidence": 0.817609459641667,
+     "mean_score": 0.8590189835573696,
+     "accuracy": 0.8357487922705314,
+     "prior_l1": 0.09893041912005836,
+     "median_shift": -0.01839459389448166,
+     "iqr_shift": -0.01827173326164484
+    },
+    {
+     "subject": "SC405",
+     "n": 1918,
+     "coverage": 0.9327424400417101,
+     "prior_term": -0.00264864243938108,
+     "score_term": 0.05519388495016989,
+     "interaction": -0.0035414042927868535,
+     "residual": 6.765421556309548e-17,
+     "mean_set_size": 2.372262773722628,
+     "mean_confidence": 0.849120714073385,
+     "mean_score": 0.8944112825650282,
+     "accuracy": 0.8394160583941606,
+     "prior_l1": 0.08256790835607422,
+     "median_shift": 0.008213812112808227,
+     "iqr_shift": -0.04559225011616945
+    },
+    {
+     "subject": "SC416",
+     "n": 2147,
+     "coverage": 0.8653935724266418,
+     "prior_term": 4.356662930402044e-06,
+     "score_term": -0.01725552316137137,
+     "interaction": -0.0010938628986253802,
+     "residual": 6.613633252161577e-17,
+     "mean_set_size": 2.1960875640428505,
+     "mean_confidence": 0.7730172773572418,
+     "mean_score": 0.8504268637437995,
+     "accuracy": 0.7624592454587797,
+     "prior_l1": 0.03926209564581763,
+     "median_shift": -0.03262927532196045,
+     "iqr_shift": 0.05884094126522541
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold2_seed1",
+   "threshold": 0.9985848665237427,
+   "pooled_coverage": 0.90919452887538,
+   "n_subjects": 4,
+   "coverage_sd": 0.06895575941202416,
+   "worst_coverage": 0.8207192699946324,
+   "mean_abs_terms": {
+    "prior": 0.001988528521674252,
+    "score": 0.05526131056586316,
+    "interaction": 0.006519276354654857
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.0028870095490916e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9624309516006483,
+    "coverage_vs_accuracy": -0.12289547193868523,
+    "coverage_vs_prior_l1": 0.12507774895698312
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.010194995626807212,
+    "mean_abs_iqr_shift": 0.026588145922869445
+   },
+   "rows": [
+    {
+     "subject": "SC400",
+     "n": 1968,
+     "coverage": 0.961890243902439,
+     "prior_term": 0.0032051960234802442,
+     "score_term": 0.06363374604223006,
+     "interaction": -0.014143227038651191,
+     "residual": -5.898059818321144e-17,
+     "mean_set_size": 2.643292682926829,
+     "mean_confidence": 0.8038915937569567,
+     "mean_score": 0.855665034435858,
+     "accuracy": 0.8201219512195121,
+     "prior_l1": 0.10686794177972171,
+     "median_shift": 0.0012442052364349365,
+     "iqr_shift": -0.01619512028992176
+    },
+    {
+     "subject": "SC403",
+     "n": 1863,
+     "coverage": 0.8207192699946324,
+     "prior_term": -0.0010916872868433972,
+     "score_term": -0.07587144306854415,
+     "interaction": -0.011512128525360082,
+     "residual": 3.8163916471489756e-17,
+     "mean_set_size": 1.9592055823939882,
+     "mean_confidence": 0.8232817097306572,
+     "mean_score": 0.8653424527642837,
+     "accuracy": 0.8497047772410091,
+     "prior_l1": 0.09893041912005836,
+     "median_shift": 0.0035396352410316466,
+     "iqr_shift": -0.02990397550165653
+    },
+    {
+     "subject": "SC405",
+     "n": 1918,
+     "coverage": 0.9655891553701774,
+     "prior_term": -0.0029830471920524668,
+     "score_term": 0.05903910106290854,
+     "interaction": 0.00033857262394131646,
+     "residual": 3.5778671692021646e-17,
+     "mean_set_size": 2.4671532846715327,
+     "mean_confidence": 0.8373216188768152,
+     "mean_score": 0.8849018608606921,
+     "accuracy": 0.8362877997914494,
+     "prior_l1": 0.08256790835607422,
+     "median_shift": 0.005786588788032532,
+     "iqr_shift": -0.024289939552545547
+    },
+    {
+     "subject": "SC416",
+     "n": 2147,
+     "coverage": 0.8872845831392641,
+     "prior_term": 0.000674183584320899,
+     "score_term": -0.022500952089769894,
+     "interaction": -8.31772306668369e-05,
+     "residual": -1.0028870095490916e-16,
+     "mean_set_size": 2.1863064741499767,
+     "mean_confidence": 0.7669929660749146,
+     "mean_score": 0.8406425401158362,
+     "accuracy": 0.7782952957615277,
+     "prior_l1": 0.03926209564581763,
+     "median_shift": -0.030209553241729737,
+     "iqr_shift": 0.035963548347353935
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold2_seed2",
+   "threshold": 0.9989438652992249,
+   "pooled_coverage": 0.9100810536980751,
+   "n_subjects": 4,
+   "coverage_sd": 0.06547353473751677,
+   "worst_coverage": 0.8223295759527643,
+   "mean_abs_terms": {
+    "prior": 0.0013834604831801096,
+    "score": 0.05108651053078962,
+    "interaction": 0.008695385598317153
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 2.1510571102112408e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9193013843108772,
+    "coverage_vs_accuracy": 0.15012005096889317,
+    "coverage_vs_prior_l1": 0.02336095765258719
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.014062144048511981,
+    "mean_abs_iqr_shift": 0.026812068512663247
+   },
+   "rows": [
+    {
+     "subject": "SC400",
+     "n": 1968,
+     "coverage": 0.9517276422764227,
+     "prior_term": 0.0019953267376986075,
+     "score_term": 0.059081348176497996,
+     "interaction": -0.019430086335848813,
+     "residual": -2.1510571102112408e-16,
+     "mean_set_size": 2.8389227642276422,
+     "mean_confidence": 0.7963057868485528,
+     "mean_score": 0.844282448832329,
+     "accuracy": 0.8302845528455285,
+     "prior_l1": 0.10686794177972171,
+     "median_shift": -0.006428661942481995,
+     "iqr_shift": -0.011322171613574027
+    },
+    {
+     "subject": "SC403",
+     "n": 1863,
+     "coverage": 0.8223295759527643,
+     "prior_term": -0.001982640526207849,
+     "score_term": -0.07336379088547218,
+     "interaction": -0.012405046333630588,
+     "residual": -1.6306400674181987e-16,
+     "mean_set_size": 2.0552871712292,
+     "mean_confidence": 0.8209462324362318,
+     "mean_score": 0.8663800325384052,
+     "accuracy": 0.8346752549651101,
+     "prior_l1": 0.09893041912005836,
+     "median_shift": 0.0047833651304245,
+     "iqr_shift": -0.028262595273554326
+    },
+    {
+     "subject": "SC405",
+     "n": 1918,
+     "coverage": 0.9671532846715329,
+     "prior_term": -0.0008791160229788542,
+     "score_term": 0.05955326023482104,
+     "interaction": -0.001601913238384277,
+     "residual": -9.432558900623889e-17,
+     "mean_set_size": 2.613660062565172,
+     "mean_confidence": 0.8340275153377879,
+     "mean_score": 0.8796403532804608,
+     "accuracy": 0.8404588112617309,
+     "prior_l1": 0.08256790835607422,
+     "median_shift": 0.003214118629693985,
+     "iqr_shift": -0.02153121791779995
+    },
+    {
+     "subject": "SC416",
+     "n": 2147,
+     "coverage": 0.8970656730321379,
+     "prior_term": 0.000676758645835128,
+     "score_term": -0.012347642826367262,
+     "interaction": -0.0013444964854049323,
+     "residual": -1.489693784995083e-16,
+     "mean_set_size": 2.307405682347462,
+     "mean_confidence": 0.7702336672799333,
+     "mean_score": 0.8416319196132137,
+     "accuracy": 0.7755006986492781,
+     "prior_l1": 0.03926209564581763,
+     "median_shift": -0.041822430491447446,
+     "iqr_shift": 0.04613228924572468
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold3_seed0",
+   "threshold": 0.9950608611106873,
+   "pooled_coverage": 0.8536434492144005,
+   "n_subjects": 4,
+   "coverage_sd": 0.07616959765755416,
+   "worst_coverage": 0.7722543352601157,
+   "mean_abs_terms": {
+    "prior": 0.0016073488964705863,
+    "score": 0.06132651486165113,
+    "interaction": 0.005463910417835524
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.95590071916385e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.369429055998882,
+    "coverage_vs_accuracy": -0.14990200074274307,
+    "coverage_vs_prior_l1": 0.16892841720067361
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.010530708357691765,
+    "mean_abs_iqr_shift": 0.01747168991714716
+   },
+   "rows": [
+    {
+     "subject": "SC402",
+     "n": 2034,
+     "coverage": 0.9272369714847591,
+     "prior_term": 0.0005097667647206484,
+     "score_term": 0.07053345534470498,
+     "interaction": 0.0025503001609328267,
+     "residual": 1.95590071916385e-16,
+     "mean_set_size": 2.6258603736479844,
+     "mean_confidence": 0.7728342566576913,
+     "mean_score": 0.8457488248306954,
+     "accuracy": 0.7335299901671584,
+     "prior_l1": 0.052847783401584164,
+     "median_shift": -0.01574088931083679,
+     "iqr_shift": -0.015541329607367515
+    },
+    {
+     "subject": "SC404",
+     "n": 2435,
+     "coverage": 0.806570841889117,
+     "prior_term": 0.0019904452056393636,
+     "score_term": -0.0472048769867763,
+     "interaction": -0.0018581755441466426,
+     "residual": 7.090682208055199e-17,
+     "mean_set_size": 1.9593429158110882,
+     "mean_confidence": 0.7997995586488281,
+     "mean_score": 0.87397048148361,
+     "accuracy": 0.7404517453798768,
+     "prior_l1": 0.07670820778570178,
+     "median_shift": -0.0007831916213035583,
+     "iqr_shift": -0.008410969749093056
+    },
+    {
+     "subject": "SC411",
+     "n": 1730,
+     "coverage": 0.7722543352601157,
+     "prior_term": -0.0036763092437237417,
+     "score_term": -0.06598161754658964,
+     "interaction": -0.011731187163971585,
+     "residual": 1.3357370765021415e-16,
+     "mean_set_size": 2.645664739884393,
+     "mean_confidence": 0.726878859059659,
+     "mean_score": 0.8363900548890537,
+     "accuracy": 0.7242774566473988,
+     "prior_l1": 0.0800643468522747,
+     "median_shift": -0.02472841665148735,
+     "iqr_shift": 0.007399798184633255
+    },
+    {
+     "subject": "SC418",
+     "n": 1884,
+     "coverage": 0.9097664543524417,
+     "prior_term": 0.00025287437179859207,
+     "score_term": 0.06158610956853359,
+     "interaction": -0.0057159788022910435,
+     "residual": 1.1188966420050406e-16,
+     "mean_set_size": 2.5902335456475583,
+     "mean_confidence": 0.7880026386485232,
+     "mean_score": 0.857008402679933,
+     "accuracy": 0.720276008492569,
+     "prior_l1": 0.1379375287128526,
+     "median_shift": -0.0008703358471393585,
+     "iqr_shift": -0.03853466212749481
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold3_seed1",
+   "threshold": 0.9968029838055372,
+   "pooled_coverage": 0.8505505381665224,
+   "n_subjects": 4,
+   "coverage_sd": 0.058087908494633404,
+   "worst_coverage": 0.7751445086705202,
+   "mean_abs_terms": {
+    "prior": 0.007941083150367305,
+    "score": 0.04220526442507052,
+    "interaction": 0.009128857794800315
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 7.632783294297951e-17,
+   "correlations": {
+    "coverage_vs_set_size": -0.09151129658375766,
+    "coverage_vs_accuracy": -0.043483747129025016,
+    "coverage_vs_prior_l1": -0.028758863670938307
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.01073483219370246,
+    "mean_abs_iqr_shift": 0.01321324398741126
+   },
+   "rows": [
+    {
+     "subject": "SC402",
+     "n": 2034,
+     "coverage": 0.9110127826941986,
+     "prior_term": 0.00487104420148101,
+     "score_term": 0.0559910128128628,
+     "interaction": -0.0003998124866675225,
+     "residual": -5.117434254131581e-17,
+     "mean_set_size": 2.523598820058997,
+     "mean_confidence": 0.7802932955317323,
+     "mean_score": 0.8580303520713763,
+     "accuracy": 0.7340216322517208,
+     "prior_l1": 0.052847783401584164,
+     "median_shift": -0.008565524220466613,
+     "iqr_shift": 0.004334196448326111
+    },
+    {
+     "subject": "SC404",
+     "n": 2435,
+     "coverage": 0.8353182751540041,
+     "prior_term": 0.009113777008852436,
+     "score_term": -0.012838667356566084,
+     "interaction": -0.011507372664804595,
+     "residual": 1.0408340855860843e-17,
+     "mean_set_size": 2.04435318275154,
+     "mean_confidence": 0.8121495419214394,
+     "mean_score": 0.8823382762016431,
+     "accuracy": 0.740041067761807,
+     "prior_l1": 0.07670820778570178,
+     "median_shift": 0.0015661876648664474,
+     "iqr_shift": -0.02689659148454666
+    },
+    {
+     "subject": "SC411",
+     "n": 1730,
+     "coverage": 0.7751445086705202,
+     "prior_term": -0.009070445055401971,
+     "score_term": -0.05467818305923081,
+     "interaction": -0.011657401381369314,
+     "residual": -7.112366251504909e-17,
+     "mean_set_size": 2.720809248554913,
+     "mean_confidence": 0.7124238024384989,
+     "mean_score": 0.8344302687002421,
+     "accuracy": 0.7289017341040462,
+     "prior_l1": 0.0800643468522747,
+     "median_shift": -0.014257501065731048,
+     "iqr_shift": 0.00515634585171938
+    },
+    {
+     "subject": "SC418",
+     "n": 1884,
+     "coverage": 0.874203821656051,
+     "prior_term": -0.008709066335733803,
+     "score_term": 0.045313194471622374,
+     "interaction": -0.01295084464635983,
+     "residual": -7.632783294297951e-17,
+     "mean_set_size": 2.6491507430997876,
+     "mean_confidence": 0.7744107239755096,
+     "mean_score": 0.8516011838367197,
+     "accuracy": 0.7197452229299363,
+     "prior_l1": 0.1379375287128526,
+     "median_shift": -0.018550115823745727,
+     "iqr_shift": -0.01646584216505289
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold3_seed2",
+   "threshold": 0.9968758821487427,
+   "pooled_coverage": 0.8462204626994929,
+   "n_subjects": 4,
+   "coverage_sd": 0.06857867313390917,
+   "worst_coverage": 0.7676300578034683,
+   "mean_abs_terms": {
+    "prior": 0.007280510242994115,
+    "score": 0.05466222850314011,
+    "interaction": 0.00885355686024749
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.5612511283791264e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.26063756009638095,
+    "coverage_vs_accuracy": 0.7949646466265355,
+    "coverage_vs_prior_l1": 0.07985422675846576
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.014207028970122337,
+    "mean_abs_iqr_shift": 0.012989341886714101
+   },
+   "rows": [
+    {
+     "subject": "SC402",
+     "n": 2034,
+     "coverage": 0.9169124877089478,
+     "prior_term": 0.005406379662772414,
+     "score_term": 0.06619509924675757,
+     "interaction": -0.0009094539000749038,
+     "residual": -1.4300626655083803e-16,
+     "mean_set_size": 2.6155358898721732,
+     "mean_confidence": 0.7862190377981848,
+     "mean_score": 0.8565769176000698,
+     "accuracy": 0.7448377581120944,
+     "prior_l1": 0.052847783401584164,
+     "median_shift": -0.013967358320951462,
+     "iqr_shift": 0.00869838073849678
+    },
+    {
+     "subject": "SC404",
+     "n": 2435,
+     "coverage": 0.811088295687885,
+     "prior_term": 0.007462280844859819,
+     "score_term": -0.03292100913700441,
+     "interaction": -0.009673438719463186,
+     "residual": -1.5612511283791264e-16,
+     "mean_set_size": 1.9901437371663244,
+     "mean_confidence": 0.8123605936214909,
+     "mean_score": 0.8847294380326585,
+     "accuracy": 0.7412731006160165,
+     "prior_l1": 0.07670820778570178,
+     "median_shift": 0.007068680971860886,
+     "iqr_shift": -0.017190321162343026
+    },
+    {
+     "subject": "SC411",
+     "n": 1730,
+     "coverage": 0.7676300578034683,
+     "prior_term": -0.009442459113713594,
+     "score_term": -0.05789274860832567,
+     "interaction": -0.011255197173985357,
+     "residual": -2.6020852139652106e-17,
+     "mean_set_size": 2.6670520231213874,
+     "mean_confidence": 0.7166048996710364,
+     "mean_score": 0.8389404305735045,
+     "accuracy": 0.7289017341040462,
+     "prior_l1": 0.0800643468522747,
+     "median_shift": -0.01901770457625389,
+     "iqr_shift": 0.002243613637983799
+    },
+    {
+     "subject": "SC418",
+     "n": 1884,
+     "coverage": 0.8874734607218685,
+     "prior_term": -0.006810921350630633,
+     "score_term": 0.06164005702047282,
+     "interaction": -0.013576137647466511,
+     "residual": -9.194034422677078e-17,
+     "mean_set_size": 2.6040339702760087,
+     "mean_confidence": 0.7916539482566708,
+     "mean_score": 0.8589643019488743,
+     "accuracy": 0.7563694267515924,
+     "prior_l1": 0.1379375287128526,
+     "median_shift": -0.01677437201142311,
+     "iqr_shift": -0.0238250520080328
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold4_seed0",
+   "threshold": 0.9977990984916687,
+   "pooled_coverage": 0.9272946859903382,
+   "n_subjects": 4,
+   "coverage_sd": 0.04741812439657312,
+   "worst_coverage": 0.8570038910505837,
+   "mean_abs_terms": {
+    "prior": 0.009227168855937787,
+    "score": 0.035982688387984824,
+    "interaction": 0.009706733170360068
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 8.673617379884035e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.8516079471724975,
+    "coverage_vs_accuracy": -0.5179154071689722,
+    "coverage_vs_prior_l1": 0.43299914204588436
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.019211059808731078,
+    "mean_abs_iqr_shift": 0.03595979753881694
+   },
+   "rows": [
+    {
+     "subject": "SC401",
+     "n": 2289,
+     "coverage": 0.9558759283529925,
+     "prior_term": 0.013480375712316564,
+     "score_term": 0.024854495501926182,
+     "interaction": -0.009753628851588387,
+     "residual": -1.734723475976807e-18,
+     "mean_set_size": 2.713848842289209,
+     "mean_confidence": 0.7824895379583926,
+     "mean_score": 0.8425448117460538,
+     "accuracy": 0.7859327217125383,
+     "prior_l1": 0.16816643556771202,
+     "median_shift": -0.0006363362073898316,
+     "iqr_shift": -0.02856346555054188
+    },
+    {
+     "subject": "SC408",
+     "n": 2188,
+     "coverage": 0.8980804387568557,
+     "prior_term": -0.010371608052057852,
+     "score_term": 0.004473582628813293,
+     "interaction": -0.023316221810237955,
+     "residual": 8.673617379884035e-17,
+     "mean_set_size": 2.7193784277879343,
+     "mean_confidence": 0.7384141683987115,
+     "mean_score": 0.8127152618395598,
+     "accuracy": 0.7413162705667276,
+     "prior_l1": 0.13916863171095745,
+     "median_shift": -0.026246336102485657,
+     "iqr_shift": -0.00965561680495739
+    },
+    {
+     "subject": "SC413",
+     "n": 1028,
+     "coverage": 0.8570038910505837,
+     "prior_term": 0.007380704119689986,
+     "score_term": -0.0816286223749547,
+     "interaction": 0.003957123315510245,
+     "residual": 4.597017211338539e-17,
+     "mean_set_size": 2.093385214007782,
+     "mean_confidence": 0.8420388975727883,
+     "mean_score": 0.8902896879591249,
+     "accuracy": 0.835603112840467,
+     "prior_l1": 0.09137060847008402,
+     "median_shift": 0.04655900597572327,
+     "iqr_shift": -0.0951253216713667
+    },
+    {
+     "subject": "SC417",
+     "n": 2775,
+     "coverage": 0.9527927927927928,
+     "prior_term": -0.005675987539686746,
+     "score_term": 0.032974053046245136,
+     "interaction": -0.0017999587041036913,
+     "residual": -1.8865117801247777e-17,
+     "mean_set_size": 3.131891891891892,
+     "mean_confidence": 0.736057002898809,
+     "mean_score": 0.8079736144577314,
+     "accuracy": 0.7628828828828829,
+     "prior_l1": 0.0935957696827262,
+     "median_shift": -0.0034025609493255615,
+     "iqr_shift": 0.010494786128401757
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold4_seed1",
+   "threshold": 0.9983212649822235,
+   "pooled_coverage": 0.9211352657004832,
+   "n_subjects": 4,
+   "coverage_sd": 0.06181283647742253,
+   "worst_coverage": 0.8210116731517512,
+   "mean_abs_terms": {
+    "prior": 0.007613205281539258,
+    "score": 0.04203274762219515,
+    "interaction": 0.006599001094622877
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 1.732555071631836e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9098651110867085,
+    "coverage_vs_accuracy": -0.765892208791897,
+    "coverage_vs_prior_l1": 0.4390150572352389
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.02571769431233406,
+    "mean_abs_iqr_shift": 0.038011568924412126
+   },
+   "rows": [
+    {
+     "subject": "SC401",
+     "n": 2289,
+     "coverage": 0.9484491044124072,
+     "prior_term": 0.011144454217017511,
+     "score_term": 0.017377764199932064,
+     "interaction": -0.0012083797050254912,
+     "residual": -1.4289784633358948e-16,
+     "mean_set_size": 2.5753604193971165,
+     "mean_confidence": 0.8109407782580667,
+     "mean_score": 0.8710145945616015,
+     "accuracy": 0.7680209698558322,
+     "prior_l1": 0.16816643556771202,
+     "median_shift": 0.015458889305591583,
+     "iqr_shift": -0.04524675477296114
+    },
+    {
+     "subject": "SC408",
+     "n": 2188,
+     "coverage": 0.8971663619744059,
+     "prior_term": -0.007718970826374159,
+     "score_term": 0.006551195329194023,
+     "interaction": -0.02280112822889702,
+     "residual": -1.3877787807814457e-16,
+     "mean_set_size": 2.5859232175502744,
+     "mean_confidence": 0.7467781069809384,
+     "mean_score": 0.827532242065429,
+     "accuracy": 0.7184643510054844,
+     "prior_l1": 0.13916863171095745,
+     "median_shift": -0.0340436801314354,
+     "iqr_shift": 0.006370213627815246
+    },
+    {
+     "subject": "SC413",
+     "n": 1028,
+     "coverage": 0.8210116731517512,
+     "prior_term": 0.0061898571114983114,
+     "score_term": -0.10702155459953762,
+     "interaction": 0.0007081049393072536,
+     "residual": 4.445228907190568e-18,
+     "mean_set_size": 1.9474708171206225,
+     "mean_confidence": 0.856999532837812,
+     "mean_score": 0.904292783734993,
+     "accuracy": 0.8404669260700389,
+     "prior_l1": 0.09137060847008402,
+     "median_shift": 0.029310564696788787,
+     "iqr_shift": -0.09793410766869784
+    },
+    {
+     "subject": "SC417",
+     "n": 2775,
+     "coverage": 0.9545945945945946,
+     "prior_term": -0.005399538971267052,
+     "score_term": 0.037180476360116885,
+     "interaction": 0.0016783915052617432,
+     "residual": -1.732555071631836e-16,
+     "mean_set_size": 3.0407207207207207,
+     "mean_confidence": 0.7348886073763307,
+     "mean_score": 0.8109757844354205,
+     "accuracy": 0.714954954954955,
+     "prior_l1": 0.0935957696827262,
+     "median_shift": -0.02405764311552048,
+     "iqr_shift": -0.002495199628174305
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\eegnet\\fold4_seed2",
+   "threshold": 0.9976522326469421,
+   "pooled_coverage": 0.932487922705314,
+   "n_subjects": 4,
+   "coverage_sd": 0.05824845578036599,
+   "worst_coverage": 0.8336575875486383,
+   "mean_abs_terms": {
+    "prior": 0.005919911843468043,
+    "score": 0.0473724178809506,
+    "interaction": 0.011859008130840424
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.214306433183765e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9025234451687678,
+    "coverage_vs_accuracy": -0.8377185393451729,
+    "coverage_vs_prior_l1": 0.4034988530802657
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.020879221335053447,
+    "mean_abs_iqr_shift": 0.05039557525888085
+   },
+   "rows": [
+    {
+     "subject": "SC401",
+     "n": 2289,
+     "coverage": 0.9462647444298821,
+     "prior_term": 0.008711618566225522,
+     "score_term": 0.014188073200749888,
+     "interaction": -0.009122870042407371,
+     "residual": 2.7755575615628914e-17,
+     "mean_set_size": 2.6199213630406293,
+     "mean_confidence": 0.780862483513725,
+     "mean_score": 0.8425999162269063,
+     "accuracy": 0.7889908256880734,
+     "prior_l1": 0.16816643556771202,
+     "median_shift": -0.0036090284585952757,
+     "iqr_shift": -0.0424763448536396
+    },
+    {
+     "subject": "SC408",
+     "n": 2188,
+     "coverage": 0.9227605118829983,
+     "prior_term": -0.0047097469568006915,
+     "score_term": 0.014704400215969372,
+     "interaction": -0.019722064081484452,
+     "residual": 1.214306433183765e-16,
+     "mean_set_size": 2.7646252285191957,
+     "mean_confidence": 0.7317053209411378,
+     "mean_score": 0.8045793417121582,
+     "accuracy": 0.7330895795246801,
+     "prior_l1": 0.13916863171095745,
+     "median_shift": -0.035846561193466187,
+     "iqr_shift": -0.02117629162967205
+    },
+    {
+     "subject": "SC413",
+     "n": 1028,
+     "coverage": 0.8336575875486383,
+     "prior_term": 0.0049515549775145514,
+     "score_term": -0.12225144571183395,
+     "interaction": 0.018469555577643598,
+     "residual": 8.326672684688674e-17,
+     "mean_set_size": 2.1021400778210118,
+     "mean_confidence": 0.8428014644968834,
+     "mean_score": 0.8871734135410134,
+     "accuracy": 0.8472762645914397,
+     "prior_l1": 0.09137060847008402,
+     "median_shift": 0.0415761336684227,
+     "iqr_shift": -0.10777717754244805
+    },
+    {
+     "subject": "SC417",
+     "n": 2775,
+     "coverage": 0.9654054054054055,
+     "prior_term": -0.005306726873331405,
+     "score_term": 0.038345752395249184,
+     "interaction": -0.00012154282182627254,
+     "residual": 3.12792326762068e-17,
+     "mean_set_size": 3.2482882882882884,
+     "mean_confidence": 0.735662949858485,
+     "mean_score": 0.8087894911983371,
+     "accuracy": 0.6962162162162162,
+     "prior_l1": 0.0935957696827262,
+     "median_shift": -0.002485162019729614,
+     "iqr_shift": -0.030152487009763716
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold0_seed0",
+   "threshold": 0.9996055960655212,
+   "pooled_coverage": 0.9245221190606226,
+   "n_subjects": 4,
+   "coverage_sd": 0.018600146819960386,
+   "worst_coverage": 0.9008843036109064,
+   "mean_abs_terms": {
+    "prior": 0.014066643664802654,
+    "score": 0.006016225448231655,
+    "interaction": 0.003583954857859225
+   },
+   "score_dominant_fraction": 0.25,
+   "max_abs_residual": 1.734723475976807e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9402227043068845,
+    "coverage_vs_accuracy": -0.8847355075264373,
+    "coverage_vs_prior_l1": -0.11542842500899071
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.016069005709141493,
+    "mean_abs_iqr_shift": 0.01356342154322192
+   },
+   "rows": [
+    {
+     "subject": "SC407",
+     "n": 2249,
+     "coverage": 0.9284126278345932,
+     "prior_term": -0.001361055583885426,
+     "score_term": 0.004478464931178835,
+     "interaction": 0.000773099426677189,
+     "residual": -2.905661822261152e-17,
+     "mean_set_size": 2.742996887505558,
+     "mean_confidence": 0.8457689601190889,
+     "mean_score": 0.884789666156386,
+     "accuracy": 0.8634948866162739,
+     "prior_l1": 0.058807081926575036,
+     "median_shift": -0.026729376614093782,
+     "iqr_shift": 0.0011568047106266023
+    },
+    {
+     "subject": "SC409",
+     "n": 2236,
+     "coverage": 0.9458855098389982,
+     "prior_term": 0.02143409234580903,
+     "score_term": -0.007358661238414024,
+     "interaction": 0.007287959670980656,
+     "residual": -9.280770596475918e-17,
+     "mean_set_size": 3.0250447227191413,
+     "mean_confidence": 0.8272573693733736,
+     "mean_score": 0.8765066832756518,
+     "accuracy": 0.8036672629695886,
+     "prior_l1": 0.12770649390491134,
+     "median_shift": -0.010750550031661987,
+     "iqr_shift": 0.010710737854242324
+    },
+    {
+     "subject": "SC414",
+     "n": 1956,
+     "coverage": 0.9284253578732106,
+     "prior_term": 0.00984493269097142,
+     "score_term": -0.009133278109227809,
+     "interaction": 0.0031915842308444797,
+     "residual": -1.734723475976807e-16,
+     "mean_set_size": 2.5521472392638036,
+     "mean_confidence": 0.8864871837153026,
+     "mean_score": 0.9204570294501064,
+     "accuracy": 0.8706543967280164,
+     "prior_l1": 0.06548122038199203,
+     "median_shift": 0.026439831778407096,
+     "iqr_shift": -0.033852942986413836
+    },
+    {
+     "subject": "SC415",
+     "n": 2714,
+     "coverage": 0.9008843036109064,
+     "prior_term": -0.02362649403854474,
+     "score_term": -0.0030944975141059526,
+     "interaction": 0.003083176102934575,
+     "residual": -9.584347204771859e-17,
+     "mean_set_size": 2.3341930729550477,
+     "mean_confidence": 0.8875520705364167,
+     "mean_score": 0.9189666953891404,
+     "accuracy": 0.8898305084745762,
+     "prior_l1": 0.12402092513805674,
+     "median_shift": -0.0003562644124031067,
+     "iqr_shift": -0.00853320062160492
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold0_seed1",
+   "threshold": 0.9996167421340942,
+   "pooled_coverage": 0.9366466411796832,
+   "n_subjects": 4,
+   "coverage_sd": 0.004674386396858709,
+   "worst_coverage": 0.9325718496683861,
+   "mean_abs_terms": {
+    "prior": 0.006268229922083028,
+    "score": 0.008896258995743875,
+    "interaction": 0.003713988722657659
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 7.784571598445922e-17,
+   "correlations": {
+    "coverage_vs_set_size": -0.16019627829771646,
+    "coverage_vs_accuracy": -0.36830746986708585,
+    "coverage_vs_prior_l1": -0.9919380275595463
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.024890280514955523,
+    "mean_abs_iqr_shift": 0.01947206125187222
+   },
+   "rows": [
+    {
+     "subject": "SC407",
+     "n": 2249,
+     "coverage": 0.9417518897287684,
+     "prior_term": -0.00023460797290525415,
+     "score_term": 0.006061706905073989,
+     "interaction": -0.0007218503830835842,
+     "residual": 7.784571598445922e-17,
+     "mean_set_size": 2.5460204535349042,
+     "mean_confidence": 0.8268117005822923,
+     "mean_score": 0.8802150067102779,
+     "accuracy": 0.8212538906180524,
+     "prior_l1": 0.058807081926575036,
+     "median_shift": -0.03205060511827469,
+     "iqr_shift": 0.013525352254509926
+    },
+    {
+     "subject": "SC409",
+     "n": 2236,
+     "coverage": 0.9333631484794276,
+     "prior_term": 0.009956901435259333,
+     "score_term": -0.020948972636715548,
+     "interaction": 0.007708578501200559,
+     "residual": 2.6020852139652106e-17,
+     "mean_set_size": 2.62567084078712,
+     "mean_confidence": 0.8267746938255903,
+     "mean_score": 0.8831693770950008,
+     "accuracy": 0.7866726296958855,
+     "prior_l1": 0.12770649390491134,
+     "median_shift": -0.0015996530652046203,
+     "iqr_shift": -0.011944939941167831
+    },
+    {
+     "subject": "SC414",
+     "n": 1956,
+     "coverage": 0.9401840490797546,
+     "prior_term": 0.003994036236016928,
+     "score_term": -0.004321964125312195,
+     "interaction": 0.0038653357893667054,
+     "residual": -3.946495907847236e-17,
+     "mean_set_size": 2.123721881390593,
+     "mean_confidence": 0.859111678182835,
+     "mean_score": 0.9146334888489952,
+     "accuracy": 0.7893660531697342,
+     "prior_l1": 0.06548122038199203,
+     "median_shift": 0.04959324151277542,
+     "iqr_shift": -0.03938720027217642
+    },
+    {
+     "subject": "SC415",
+     "n": 2714,
+     "coverage": 0.9325718496683861,
+     "prior_term": -0.010887374044150598,
+     "score_term": 0.0042523923158737705,
+     "interaction": 0.002560190216979789,
+     "residual": -4.380176776841438e-17,
+     "mean_set_size": 2.2899778924097274,
+     "mean_confidence": 0.866430060294242,
+     "mean_score": 0.9012194306949073,
+     "accuracy": 0.8739867354458364,
+     "prior_l1": 0.12402092513805674,
+     "median_shift": -0.016317622363567354,
+     "iqr_shift": -0.013030752539634705
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold0_seed2",
+   "threshold": 0.9997041821479797,
+   "pooled_coverage": 0.8351720371381757,
+   "n_subjects": 4,
+   "coverage_sd": 0.0892068997251602,
+   "worst_coverage": 0.7103905674281503,
+   "mean_abs_terms": {
+    "prior": 0.04066118320645642,
+    "score": 0.031134297616145494,
+    "interaction": 0.005599873978855191
+   },
+   "score_dominant_fraction": 0.5,
+   "max_abs_residual": 2.983724378680108e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.8667408321679861,
+    "coverage_vs_accuracy": -0.6079772644262568,
+    "coverage_vs_prior_l1": -0.48495459705056465
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.013309457944706083,
+    "mean_abs_iqr_shift": 0.02145924507640302
+   },
+   "rows": [
+    {
+     "subject": "SC407",
+     "n": 2249,
+     "coverage": 0.8759448643841707,
+     "prior_term": -0.0015129535480544534,
+     "score_term": 0.04487871627525038,
+     "interaction": -0.002592935481200989,
+     "residual": 1.3444106938820255e-16,
+     "mean_set_size": 2.400622498888395,
+     "mean_confidence": 0.8734215709197357,
+     "mean_score": 0.9108693454499084,
+     "accuracy": 0.861271676300578,
+     "prior_l1": 0.058807081926575036,
+     "median_shift": -0.021986958384513856,
+     "iqr_shift": -0.003933280147612095
+    },
+    {
+     "subject": "SC409",
+     "n": 2236,
+     "coverage": 0.8953488372093025,
+     "prior_term": 0.06345396873924371,
+     "score_term": -0.0076479488571266855,
+     "interaction": 0.004370780189009481,
+     "residual": 2.983724378680108e-16,
+     "mean_set_size": 2.6887298747763864,
+     "mean_confidence": 0.8519590953648197,
+     "mean_score": 0.9060518139742716,
+     "accuracy": 0.7974060822898033,
+     "prior_l1": 0.12770649390491134,
+     "median_shift": -0.008847941458225251,
+     "iqr_shift": 0.043728761933743955
+    },
+    {
+     "subject": "SC414",
+     "n": 1956,
+     "coverage": 0.8926380368098159,
+     "prior_term": 0.027112877137085552,
+     "score_term": 0.03179144590169313,
+     "interaction": -0.001438323367138564,
+     "residual": 1.1405806854547507e-16,
+     "mean_set_size": 2.2019427402862988,
+     "mean_confidence": 0.9060281479925466,
+     "mean_score": 0.9369878306314853,
+     "accuracy": 0.8819018404907976,
+     "prior_l1": 0.06548122038199203,
+     "median_shift": 0.0187500836327672,
+     "iqr_shift": -0.030365624744445086
+    },
+    {
+     "subject": "SC415",
+     "n": 2714,
+     "coverage": 0.7103905674281503,
+     "prior_term": -0.07056493340144196,
+     "score_term": -0.04021907943051179,
+     "interaction": -0.013997456878071732,
+     "residual": 1.3183898417423734e-16,
+     "mean_set_size": 1.7590272660280029,
+     "mean_confidence": 0.9137226221046645,
+     "mean_score": 0.9405979702827754,
+     "accuracy": 0.8979366249078851,
+     "prior_l1": 0.12402092513805674,
+     "median_shift": -0.0036528483033180237,
+     "iqr_shift": 0.007809313479810953
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold1_seed0",
+   "threshold": 0.9983705207705498,
+   "pooled_coverage": 0.8887889351175082,
+   "n_subjects": 4,
+   "coverage_sd": 0.07208222103556622,
+   "worst_coverage": 0.7932604735883424,
+   "mean_abs_terms": {
+    "prior": 0.005483930061328111,
+    "score": 0.053435465752749066,
+    "interaction": 0.005564458646796756
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 4.5102810375396984e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.8378307380685838,
+    "coverage_vs_accuracy": -0.20907718380612658,
+    "coverage_vs_prior_l1": -0.6001735664595043
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.01773201245814562,
+    "mean_abs_iqr_shift": 0.03445250354707241
+   },
+   "rows": [
+    {
+     "subject": "SC406",
+     "n": 1859,
+     "coverage": 0.8687466379774073,
+     "prior_term": -0.006461340439680309,
+     "score_term": -0.0020168907321269315,
+     "interaction": -0.011564065968293687,
+     "residual": -4.5102810375396984e-17,
+     "mean_set_size": 2.334050564819796,
+     "mean_confidence": 0.8180067073503703,
+     "mean_score": 0.8606464824169091,
+     "accuracy": 0.8676707907477138,
+     "prior_l1": 0.07040629534553018,
+     "median_shift": -0.0018268927931785583,
+     "iqr_shift": 0.03709562979638577
+    },
+    {
+     "subject": "SC410",
+     "n": 2196,
+     "coverage": 0.7932604735883424,
+     "prior_term": 0.01032126951400135,
+     "score_term": -0.09754068969993818,
+     "interaction": -0.008309041343228964,
+     "residual": -3.9898639947466563e-17,
+     "mean_set_size": 2.1083788706739526,
+     "mean_confidence": 0.8060701044042253,
+     "mean_score": 0.8623390191706884,
+     "accuracy": 0.8091985428051002,
+     "prior_l1": 0.12442011962909777,
+     "median_shift": -0.054438750445842746,
+     "iqr_shift": -0.0484577938914299
+    },
+    {
+     "subject": "SC412",
+     "n": 2029,
+     "coverage": 0.956136027599803,
+     "prior_term": -0.0048989882484738595,
+     "score_term": 0.07414067460961424,
+     "interaction": -0.00189459387884566,
+     "residual": 3.881443777498106e-17,
+     "mean_set_size": 2.898965007392804,
+     "mean_confidence": 0.781766135434672,
+     "mean_score": 0.8407473823164796,
+     "accuracy": 0.8068013799901429,
+     "prior_l1": 0.09353306550131603,
+     "median_shift": -0.008773787319660187,
+     "iqr_shift": -0.03533478416502476
+    },
+    {
+     "subject": "SC419",
+     "n": 2809,
+     "coverage": 0.9280882876468495,
+     "prior_term": -0.00025412204315692494,
+     "score_term": 0.04004360796931692,
+     "interaction": -0.0004901333968187186,
+     "residual": -2.959871930885427e-17,
+     "mean_set_size": 2.3474546101815594,
+     "mean_confidence": 0.7975858884504488,
+     "mean_score": 0.8633092009141481,
+     "accuracy": 0.8052687789248844,
+     "prior_l1": 0.0346439095521027,
+     "median_shift": -0.0058886192739009855,
+     "iqr_shift": -0.016921806335449218
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold1_seed1",
+   "threshold": 0.9997650682926178,
+   "pooled_coverage": 0.890812998987968,
+   "n_subjects": 4,
+   "coverage_sd": 0.07436778703767913,
+   "worst_coverage": 0.7950819672131147,
+   "mean_abs_terms": {
+    "prior": 0.0036809857532461225,
+    "score": 0.0538440972085231,
+    "interaction": 0.00834169421135801
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.3964523981613297e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.7703353595508773,
+    "coverage_vs_accuracy": -0.7327994430095348,
+    "coverage_vs_prior_l1": -0.6387506750986175
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.02883067764341831,
+    "mean_abs_iqr_shift": 0.018556251260451972
+   },
+   "rows": [
+    {
+     "subject": "SC406",
+     "n": 1859,
+     "coverage": 0.8590640129101667,
+     "prior_term": -0.008074894052212074,
+     "score_term": -0.012889761957954347,
+     "interaction": -0.010784330067634877,
+     "residual": -1.734723475976807e-18,
+     "mean_set_size": 2.469607315761162,
+     "mean_confidence": 0.8476921204375348,
+     "mean_score": 0.8941210070552951,
+     "accuracy": 0.8391608391608392,
+     "prior_l1": 0.07040629534553018,
+     "median_shift": -0.02793913185596466,
+     "iqr_shift": -0.007418120093643665
+    },
+    {
+     "subject": "SC410",
+     "n": 2196,
+     "coverage": 0.7950819672131147,
+     "prior_term": 0.005529600083190327,
+     "score_term": -0.0845004481636513,
+     "interaction": -0.016760183694392295,
+     "residual": 7.28583859910259e-17,
+     "mean_set_size": 2.314663023679417,
+     "mean_confidence": 0.8168770786924441,
+     "mean_score": 0.8777282601070616,
+     "accuracy": 0.7928051001821493,
+     "prior_l1": 0.12442011962909777,
+     "median_shift": -0.05257740467786789,
+     "iqr_shift": -0.013009601272642612
+    },
+    {
+     "subject": "SC412",
+     "n": 2029,
+     "coverage": 0.953178905864958,
+     "prior_term": -5.711154128808238e-05,
+     "score_term": 0.067737406716467,
+     "interaction": -0.005314388298188848,
+     "residual": -3.469446951953614e-18,
+     "mean_set_size": 3.051749630359783,
+     "mean_confidence": 0.8072138992273613,
+     "mean_score": 0.8713904182949743,
+     "accuracy": 0.7387875800887137,
+     "prior_l1": 0.09353306550131603,
+     "median_shift": -0.015004335343837738,
+     "iqr_shift": -0.027136442996561528
+    },
+    {
+     "subject": "SC419",
+     "n": 2809,
+     "coverage": 0.9416162335350658,
+     "prior_term": 0.0010623373362940065,
+     "score_term": 0.05024877199601977,
+     "interaction": -0.0005078747852160165,
+     "residual": 1.3964523981613297e-16,
+     "mean_set_size": 2.5154859380562478,
+     "mean_confidence": 0.8169817943596763,
+     "mean_score": 0.9007454973232636,
+     "accuracy": 0.7162691349234603,
+     "prior_l1": 0.0346439095521027,
+     "median_shift": 0.01980183869600296,
+     "iqr_shift": -0.026660840678960084
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold1_seed2",
+   "threshold": 0.9993405938148499,
+   "pooled_coverage": 0.8769818958731587,
+   "n_subjects": 4,
+   "coverage_sd": 0.05985969727437619,
+   "worst_coverage": 0.8064663023679417,
+   "mean_abs_terms": {
+    "prior": 0.008119750910132855,
+    "score": 0.04218758728762356,
+    "interaction": 0.0092734596291571
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 9.71445146547012e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.8552970479673718,
+    "coverage_vs_accuracy": 0.28965398425090316,
+    "coverage_vs_prior_l1": -0.4374629391393412
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.016020072624087334,
+    "mean_abs_iqr_shift": 0.0119191475212574
+   },
+   "rows": [
+    {
+     "subject": "SC406",
+     "n": 1859,
+     "coverage": 0.8520710059171597,
+     "prior_term": -0.012384699384837695,
+     "score_term": 0.0008699544211271547,
+     "interaction": -0.013396144992288356,
+     "residual": -9.71445146547012e-17,
+     "mean_set_size": 2.4529316837009145,
+     "mean_confidence": 0.8423005862060319,
+     "mean_score": 0.8851796593077924,
+     "accuracy": 0.8596019365250135,
+     "prior_l1": 0.07040629534553018,
+     "median_shift": -0.0059017747640609745,
+     "iqr_shift": -0.02040162980556488
+    },
+    {
+     "subject": "SC410",
+     "n": 2196,
+     "coverage": 0.8064663023679417,
+     "prior_term": 0.013864979909248138,
+     "score_term": -0.06695396192696154,
+     "interaction": -0.017426611487503584,
+     "residual": 2.42861286636753e-17,
+     "mean_set_size": 2.3078324225865208,
+     "mean_confidence": 0.8044452240829694,
+     "mean_score": 0.8756041834632793,
+     "accuracy": 0.7663934426229508,
+     "prior_l1": 0.12442011962909777,
+     "median_shift": -0.032053813338279724,
+     "iqr_shift": 0.005667153000831604
+    },
+    {
+     "subject": "SC412",
+     "n": 2029,
+     "coverage": 0.9452932479053721,
+     "prior_term": -0.005151407981285914,
+     "score_term": 0.07714975329107905,
+     "interaction": -0.0036869932775796684,
+     "residual": -8.196568423990414e-17,
+     "mean_set_size": 3.0137999014292753,
+     "mean_confidence": 0.7852215064370968,
+     "mean_score": 0.8442749511333124,
+     "accuracy": 0.8082799408575653,
+     "prior_l1": 0.09353306550131603,
+     "median_shift": -0.021687494218349458,
+     "iqr_shift": -0.009837369620800018
+    },
+    {
+     "subject": "SC419",
+     "n": 2809,
+     "coverage": 0.899252402990388,
+     "prior_term": 0.0010779163651596715,
+     "score_term": 0.023776679511326514,
+     "interaction": -0.002584088759256786,
+     "residual": -6.765421556309548e-17,
+     "mean_set_size": 2.4268422926308295,
+     "mean_confidence": 0.8305795638214952,
+     "mean_score": 0.8811628311061553,
+     "accuracy": 0.8216447134211463,
+     "prior_l1": 0.0346439095521027,
+     "median_shift": -0.00443720817565918,
+     "iqr_shift": -0.011770437657833099
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold2_seed0",
+   "threshold": 0.9993216209113598,
+   "pooled_coverage": 0.9137537993920972,
+   "n_subjects": 4,
+   "coverage_sd": 0.02371987730577985,
+   "worst_coverage": 0.8926462694578636,
+   "mean_abs_terms": {
+    "prior": 0.005182560769421409,
+    "score": 0.023357519806199677,
+    "interaction": 0.0059255087527568286
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 4.2500725161431774e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.7428459236365234,
+    "coverage_vs_accuracy": 0.444945960224687,
+    "coverage_vs_prior_l1": 0.040778922124509474
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.027107258886098863,
+    "mean_abs_iqr_shift": 0.042482910491526124
+   },
+   "rows": [
+    {
+     "subject": "SC400",
+     "n": 1968,
+     "coverage": 0.9126016260162602,
+     "prior_term": -0.0053788164136557935,
+     "score_term": 0.01838208539130281,
+     "interaction": -0.014155442353484102,
+     "residual": 2.42861286636753e-17,
+     "mean_set_size": 2.4136178861788617,
+     "mean_confidence": 0.8337474641337143,
+     "mean_score": 0.8788550020988316,
+     "accuracy": 0.8511178861788617,
+     "prior_l1": 0.10686794177972171,
+     "median_shift": 0.03222591280937195,
+     "iqr_shift": -0.07062451392412186
+    },
+    {
+     "subject": "SC403",
+     "n": 1863,
+     "coverage": 0.8926462694578636,
+     "prior_term": 0.008370902882189182,
+     "score_term": -0.02490327505202961,
+     "interaction": -0.0045751577643931614,
+     "residual": -5.204170427930421e-18,
+     "mean_set_size": 2.1239935587761676,
+     "mean_confidence": 0.8196916693138679,
+     "mean_score": 0.8632160325927781,
+     "accuracy": 0.8438003220611916,
+     "prior_l1": 0.09893041912005836,
+     "median_shift": -0.008940055966377258,
+     "iqr_shift": -0.03676520064473152
+    },
+    {
+     "subject": "SC405",
+     "n": 1918,
+     "coverage": 0.9473409801876955,
+     "prior_term": -0.004919229010345749,
+     "score_term": 0.04046405137949019,
+     "interaction": -0.0019576415735460947,
+     "residual": -4.2500725161431774e-17,
+     "mean_set_size": 2.4228362877997913,
+     "mean_confidence": 0.8317862585016038,
+     "mean_score": 0.8753209202099379,
+     "accuracy": 0.8633993743482794,
+     "prior_l1": 0.08256790835607422,
+     "median_shift": -0.01577518880367279,
+     "iqr_shift": -0.007601287215948105
+    },
+    {
+     "subject": "SC416",
+     "n": 2147,
+     "coverage": 0.9031206334420121,
+     "prior_term": 0.0020612947714949113,
+     "score_term": -0.009680667401976092,
+     "interaction": -0.0030137933196039543,
+     "residual": 1.3010426069826053e-17,
+     "mean_set_size": 2.3330228225430836,
+     "mean_confidence": 0.7720172370540634,
+     "mean_score": 0.8597371085589625,
+     "accuracy": 0.7475547275267815,
+     "prior_l1": 0.03926209564581763,
+     "median_shift": -0.05148787796497345,
+     "iqr_shift": 0.05494064018130303
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold2_seed1",
+   "threshold": 0.9996892213821411,
+   "pooled_coverage": 0.933257345491388,
+   "n_subjects": 4,
+   "coverage_sd": 0.023160454336072233,
+   "worst_coverage": 0.9119699409554481,
+   "mean_abs_terms": {
+    "prior": 0.004170949747824483,
+    "score": 0.017842784695930633,
+    "interaction": 0.005098177995234559
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 6.678685382510707e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.8585340867372581,
+    "coverage_vs_accuracy": -0.1608639127616588,
+    "coverage_vs_prior_l1": -0.27142461147354086
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.028665934689342976,
+    "mean_abs_iqr_shift": 0.04920443561859429
+   },
+   "rows": [
+    {
+     "subject": "SC400",
+     "n": 1968,
+     "coverage": 0.9227642276422764,
+     "prior_term": -0.004948444060073687,
+     "score_term": 0.006820512573507622,
+     "interaction": -0.012365186362545537,
+     "residual": 4.683753385137379e-17,
+     "mean_set_size": 2.559959349593496,
+     "mean_confidence": 0.8617438413354197,
+     "mean_score": 0.9011320446824619,
+     "accuracy": 0.853150406504065,
+     "prior_l1": 0.10686794177972171,
+     "median_shift": 0.013451438024640083,
+     "iqr_shift": -0.03525814907625317
+    },
+    {
+     "subject": "SC403",
+     "n": 1863,
+     "coverage": 0.9119699409554481,
+     "prior_term": 0.00694600786108613,
+     "score_term": -0.025686500790957988,
+     "interaction": -0.0025469116060679235,
+     "residual": -2.1250362580715887e-17,
+     "mean_set_size": 2.3199141170155664,
+     "mean_confidence": 0.8549523128979448,
+     "mean_score": 0.894085664581659,
+     "accuracy": 0.8593666129898014,
+     "prior_l1": 0.09893041912005836,
+     "median_shift": -0.005085457488894463,
+     "iqr_shift": -0.0032535546459257604
+    },
+    {
+     "subject": "SC405",
+     "n": 1918,
+     "coverage": 0.9655891553701772,
+     "prior_term": -0.0033172454845177696,
+     "score_term": 0.037617020264033595,
+     "interaction": -0.0019679649007265077,
+     "residual": -6.461844948013606e-17,
+     "mean_set_size": 2.710636079249218,
+     "mean_confidence": 0.8698924742444837,
+     "mean_score": 0.9139386922647831,
+     "accuracy": 0.837851929092805,
+     "prior_l1": 0.08256790835607422,
+     "median_shift": 0.008652168139815331,
+     "iqr_shift": -0.041010658536106345
+    },
+    {
+     "subject": "SC416",
+     "n": 2147,
+     "coverage": 0.9324639031206334,
+     "prior_term": 0.0014721015856203438,
+     "score_term": 0.0012471051552233395,
+     "interaction": -0.003512649111598266,
+     "residual": 6.678685382510707e-17,
+     "mean_set_size": 2.616208663251048,
+     "mean_confidence": 0.7719823267218897,
+     "mean_score": 0.8584594233765579,
+     "accuracy": 0.7526781555659059,
+     "prior_l1": 0.03926209564581763,
+     "median_shift": -0.08747467510402203,
+     "iqr_shift": 0.11729538021609187
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold2_seed2",
+   "threshold": 0.9999012239277363,
+   "pooled_coverage": 0.9433890577507599,
+   "n_subjects": 4,
+   "coverage_sd": 0.025506336245915716,
+   "worst_coverage": 0.9222560975609757,
+   "mean_abs_terms": {
+    "prior": 0.004210699004636063,
+    "score": 0.014520631158401279,
+    "interaction": 0.005316486781027618
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 9.454242944073599e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.6685278641788945,
+    "coverage_vs_accuracy": -0.2244592932891953,
+    "coverage_vs_prior_l1": -0.1423236837615695
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.009362242370843887,
+    "mean_abs_iqr_shift": 0.03892346788197756
+   },
+   "rows": [
+    {
+     "subject": "SC400",
+     "n": 1968,
+     "coverage": 0.9222560975609757,
+     "prior_term": -0.007475147674878405,
+     "score_term": -3.634291784309577e-05,
+     "interaction": -0.013621469597062761,
+     "residual": 9.367506770274758e-17,
+     "mean_set_size": 2.6636178861788617,
+     "mean_confidence": 0.8624614506384464,
+     "mean_score": 0.9021690499482424,
+     "accuracy": 0.8577235772357723,
+     "prior_l1": 0.10686794177972171,
+     "median_shift": 0.014763768017292022,
+     "iqr_shift": -0.03511491352692246
+    },
+    {
+     "subject": "SC403",
+     "n": 1863,
+     "coverage": 0.9355877616747181,
+     "prior_term": 0.007187084354984503,
+     "score_term": -0.012732956543909721,
+     "interaction": -0.0022554238871164475,
+     "residual": -7.632783294297951e-17,
+     "mean_set_size": 2.524959742351047,
+     "mean_confidence": 0.8374773967637212,
+     "mean_score": 0.8841758991055764,
+     "accuracy": 0.8303811057434246,
+     "prior_l1": 0.09893041912005836,
+     "median_shift": -0.018640638887882234,
+     "iqr_shift": -0.025746974162757397
+    },
+    {
+     "subject": "SC405",
+     "n": 1918,
+     "coverage": 0.9807090719499478,
+     "prior_term": -0.0008265973955409595,
+     "score_term": 0.040147949333122664,
+     "interaction": -0.0020013377383936532,
+     "residual": -9.454242944073599e-17,
+     "mean_set_size": 2.8399374348279456,
+     "mean_confidence": 0.8496892217146592,
+     "mean_score": 0.9034927162625134,
+     "accuracy": 0.8086548488008342,
+     "prior_l1": 0.08256790835607422,
+     "median_shift": -0.002832995355129242,
+     "iqr_shift": -0.015358406119048595
+    },
+    {
+     "subject": "SC416",
+     "n": 2147,
+     "coverage": 0.936190032603633,
+     "prior_term": 0.0013539665931403856,
+     "score_term": -0.005165275838729633,
+     "interaction": -0.0033877159015376097,
+     "residual": -3.469446951953614e-17,
+     "mean_set_size": 2.75966464834653,
+     "mean_confidence": 0.7997049651675631,
+     "mean_score": 0.8818361794374603,
+     "accuracy": 0.7498835584536563,
+     "prior_l1": 0.03926209564581763,
+     "median_shift": -0.001211567223072052,
+     "iqr_shift": 0.07947357771918177
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold3_seed0",
+   "threshold": 0.9962402880191803,
+   "pooled_coverage": 0.8248175182481752,
+   "n_subjects": 4,
+   "coverage_sd": 0.08900426675329311,
+   "worst_coverage": 0.7248554913294798,
+   "mean_abs_terms": {
+    "prior": 0.004066279621926027,
+    "score": 0.05554886341778931,
+    "interaction": 0.009091134278812908
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 5.204170427930421e-17,
+   "correlations": {
+    "coverage_vs_set_size": -0.18532601322354178,
+    "coverage_vs_accuracy": 0.9991821206767569,
+    "coverage_vs_prior_l1": -0.22669906184029517
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.01474483013153076,
+    "mean_abs_iqr_shift": 0.012837121542543174
+   },
+   "rows": [
+    {
+     "subject": "SC402",
+     "n": 2034,
+     "coverage": 0.9370698131760078,
+     "prior_term": 0.00689589572317338,
+     "score_term": 0.1077794325446379,
+     "interaction": -0.0024230333399786175,
+     "residual": -4.380176776841438e-17,
+     "mean_set_size": 2.500983284169125,
+     "mean_confidence": 0.7874919289655273,
+     "mean_score": 0.8522052108177378,
+     "accuracy": 0.7753195673549655,
+     "prior_l1": 0.052847783401584164,
+     "median_shift": -0.005829034000635147,
+     "iqr_shift": -0.00430808998644352
+    },
+    {
+     "subject": "SC404",
+     "n": 2435,
+     "coverage": 0.7926078028747433,
+     "prior_term": -0.007329822456442477,
+     "score_term": -0.018589789319383588,
+     "interaction": -0.006290103597605849,
+     "residual": 4.597017211338539e-17,
+     "mean_set_size": 2.1967145790554414,
+     "mean_confidence": 0.798131562368581,
+     "mean_score": 0.8806999644780829,
+     "accuracy": 0.6788501026694045,
+     "prior_l1": 0.07670820778570178,
+     "median_shift": 0.012163370102643966,
+     "iqr_shift": -0.025917458534240722
+    },
+    {
+     "subject": "SC411",
+     "n": 1730,
+     "coverage": 0.7248554913294798,
+     "prior_term": 0.00013223636321668675,
+     "score_term": -0.07897247241633257,
+     "interaction": -0.02112179086557955,
+     "residual": 5.204170427930421e-17,
+     "mean_set_size": 2.7341040462427744,
+     "mean_confidence": 0.7268856385711989,
+     "mean_score": 0.8461496092388278,
+     "accuracy": 0.638728323699422,
+     "prior_l1": 0.0800643468522747,
+     "median_shift": -0.01371573880314827,
+     "iqr_shift": 0.01890199016779661
+    },
+    {
+     "subject": "SC418",
+     "n": 1884,
+     "coverage": 0.8370488322717623,
+     "prior_term": 0.0019071639448715663,
+     "score_term": 0.016853759390803164,
+     "interaction": -0.00652960931208761,
+     "residual": 5.204170427930421e-18,
+     "mean_set_size": 2.6427813163481955,
+     "mean_confidence": 0.7542776742400384,
+     "mean_score": 0.8377922264766671,
+     "accuracy": 0.7064755838641189,
+     "prior_l1": 0.1379375287128526,
+     "median_shift": -0.027271177619695663,
+     "iqr_shift": 0.0022209474816918375
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold3_seed1",
+   "threshold": 0.9990682974457741,
+   "pooled_coverage": 0.8494370901892861,
+   "n_subjects": 4,
+   "coverage_sd": 0.03277174770356796,
+   "worst_coverage": 0.8190751445086705,
+   "mean_abs_terms": {
+    "prior": 0.010833618583313526,
+    "score": 0.03008446598983111,
+    "interaction": 0.008955344697338
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 1.1449174941446927e-16,
+   "correlations": {
+    "coverage_vs_set_size": -0.0033800346161259377,
+    "coverage_vs_accuracy": 0.9624613077650219,
+    "coverage_vs_prior_l1": -0.09820914878978054
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.010441805608570576,
+    "mean_abs_iqr_shift": 0.01485396893694997
+   },
+   "rows": [
+    {
+     "subject": "SC402",
+     "n": 2034,
+     "coverage": 0.8903638151425762,
+     "prior_term": 0.009263042392371598,
+     "score_term": 0.036165573186929444,
+     "interaction": -0.004501890626011008,
+     "residual": 4.85722573273506e-17,
+     "mean_set_size": 2.403638151425762,
+     "mean_confidence": 0.8259478291110186,
+     "mean_score": 0.8770552159752583,
+     "accuracy": 0.80039331366765,
+     "prior_l1": 0.052847783401584164,
+     "median_shift": -0.008473820984363556,
+     "iqr_shift": 0.009711774438619614
+    },
+    {
+     "subject": "SC404",
+     "n": 2435,
+     "coverage": 0.8275154004106777,
+     "prior_term": 0.010278054764607799,
+     "score_term": -0.01854632977204965,
+     "interaction": -0.013653414771166689,
+     "residual": 1.1449174941446927e-16,
+     "mean_set_size": 2.159753593429158,
+     "mean_confidence": 0.8042429721086177,
+     "mean_score": 0.8811336990805616,
+     "accuracy": 0.7314168377823409,
+     "prior_l1": 0.07670820778570178,
+     "median_shift": -0.0030738428235054017,
+     "iqr_shift": 0.010413088276982308
+    },
+    {
+     "subject": "SC411",
+     "n": 1730,
+     "coverage": 0.8190751445086705,
+     "prior_term": -0.0062248767675185356,
+     "score_term": -0.021250289074465904,
+     "interaction": -0.002886779838631226,
+     "residual": -1.0408340855860843e-17,
+     "mean_set_size": 2.648554913294798,
+     "mean_confidence": 0.745563339394641,
+     "mean_score": 0.868962188041258,
+     "accuracy": 0.6965317919075145,
+     "prior_l1": 0.0800643468522747,
+     "median_shift": -0.0207282654941082,
+     "iqr_shift": -0.011146055907011032
+    },
+    {
+     "subject": "SC418",
+     "n": 1884,
+     "coverage": 0.8614649681528664,
+     "prior_term": -0.01756850040875617,
+     "score_term": 0.04437567192587944,
+     "interaction": -0.014779293553543077,
+     "residual": 9.540979117872439e-17,
+     "mean_set_size": 2.5737791932059446,
+     "mean_confidence": 0.8139664190495091,
+     "mean_score": 0.8761166051581835,
+     "accuracy": 0.7807855626326964,
+     "prior_l1": 0.1379375287128526,
+     "median_shift": -0.009491293132305146,
+     "iqr_shift": -0.02814495712518692
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold3_seed2",
+   "threshold": 0.9980844259262085,
+   "pooled_coverage": 0.8488185079797106,
+   "n_subjects": 4,
+   "coverage_sd": 0.05807204181521066,
+   "worst_coverage": 0.784971098265896,
+   "mean_abs_terms": {
+    "prior": 0.003815831856699926,
+    "score": 0.04548184031612139,
+    "interaction": 0.005809368609077267
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 8.673617379884035e-17,
+   "correlations": {
+    "coverage_vs_set_size": -0.04829831264759657,
+    "coverage_vs_accuracy": 0.9817641978359344,
+    "coverage_vs_prior_l1": -0.08651448524896262
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.00957368891686201,
+    "mean_abs_iqr_shift": 0.013563921279273927
+   },
+   "rows": [
+    {
+     "subject": "SC402",
+     "n": 2034,
+     "coverage": 0.9178957718780727,
+     "prior_term": 0.007120612277295041,
+     "score_term": 0.06819117650543034,
+     "interaction": -0.006234524884363217,
+     "residual": -5.811323644522304e-17,
+     "mean_set_size": 2.4567354965585055,
+     "mean_confidence": 0.8061795530212547,
+     "mean_score": 0.8710280385523377,
+     "accuracy": 0.7792527040314651,
+     "prior_l1": 0.052847783401584164,
+     "median_shift": -0.003728971630334854,
+     "iqr_shift": -0.0011543636210262775
+    },
+    {
+     "subject": "SC404",
+     "n": 2435,
+     "coverage": 0.8201232032854209,
+     "prior_term": -0.000415930788329244,
+     "score_term": -0.023206367178271913,
+     "interaction": -0.00507300672768847,
+     "residual": -8.673617379884035e-17,
+     "mean_set_size": 2.1462012320328543,
+     "mean_confidence": 0.8160068795176747,
+     "mean_score": 0.8871000808707172,
+     "accuracy": 0.7404517453798768,
+     "prior_l1": 0.07670820778570178,
+     "median_shift": 0.006241362541913986,
+     "iqr_shift": -0.024759775027632713
+    },
+    {
+     "subject": "SC411",
+     "n": 1730,
+     "coverage": 0.784971098265896,
+     "prior_term": -0.007056674246871517,
+     "score_term": -0.058103973548874796,
+     "interaction": 0.0013132380819316973,
+     "residual": -2.6237692574149207e-17,
+     "mean_set_size": 2.692485549132948,
+     "mean_confidence": 0.7252070987500208,
+     "mean_score": 0.8432769264697468,
+     "accuracy": 0.7300578034682081,
+     "prior_l1": 0.0800643468522747,
+     "median_shift": -0.01624169424176216,
+     "iqr_shift": 0.018122270330786706
+    },
+    {
+     "subject": "SC418",
+     "n": 1884,
+     "coverage": 0.8699575371549895,
+     "prior_term": -0.0006701101143039012,
+     "score_term": 0.03242584403190852,
+     "interaction": -0.010616704742325683,
+     "residual": -5.724587470723463e-17,
+     "mean_set_size": 2.6454352441613587,
+     "mean_confidence": 0.7904734141539363,
+     "mean_score": 0.8612254422040352,
+     "accuracy": 0.7696390658174098,
+     "prior_l1": 0.1379375287128526,
+     "median_shift": -0.012082727253437042,
+     "iqr_shift": -0.010219276137650012
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold4_seed0",
+   "threshold": 0.9982329607009888,
+   "pooled_coverage": 0.9259661835748793,
+   "n_subjects": 4,
+   "coverage_sd": 0.03421275886488544,
+   "worst_coverage": 0.8903107861060331,
+   "mean_abs_terms": {
+    "prior": 0.013199049807357963,
+    "score": 0.031969586026214816,
+    "interaction": 0.012838328323755636
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 7.979727989493313e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.8277518430672055,
+    "coverage_vs_accuracy": 0.10243586026472072,
+    "coverage_vs_prior_l1": -0.13365651343541668
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.02589895687997341,
+    "mean_abs_iqr_shift": 0.048980001173913476
+   },
+   "rows": [
+    {
+     "subject": "SC401",
+     "n": 2289,
+     "coverage": 0.9292267365661862,
+     "prior_term": 0.019225954446922006,
+     "score_term": -0.01941587726500627,
+     "interaction": 0.0034504758093911554,
+     "residual": 4.336808689942018e-18,
+     "mean_set_size": 2.529488859764089,
+     "mean_confidence": 0.7863296588704596,
+     "mean_score": 0.8325437060302981,
+     "accuracy": 0.8615115771079074,
+     "prior_l1": 0.16816643556771202,
+     "median_shift": -0.022611048817634583,
+     "iqr_shift": -0.042920751869678496
+    },
+    {
+     "subject": "SC408",
+     "n": 2188,
+     "coverage": 0.8903107861060331,
+     "prior_term": -0.014451232226533169,
+     "score_term": 0.002799081745587695,
+     "interaction": -0.024003246987900767,
+     "residual": 7.979727989493313e-17,
+     "mean_set_size": 2.577696526508227,
+     "mean_confidence": 0.7694363349561717,
+     "mean_score": 0.8580659125181705,
+     "accuracy": 0.7554844606946983,
+     "prior_l1": 0.13916863171095745,
+     "median_shift": 0.033243440091609955,
+     "iqr_shift": -0.05651228502392769
+    },
+    {
+     "subject": "SC413",
+     "n": 1028,
+     "coverage": 0.8939688715953309,
+     "prior_term": 0.010693228037203798,
+     "score_term": -0.06327533571080557,
+     "interaction": 0.02058479569405336,
+     "residual": 5.551115123125783e-17,
+     "mean_set_size": 2.348249027237354,
+     "mean_confidence": 0.8171111281801754,
+     "mean_score": 0.86399894027159,
+     "accuracy": 0.8599221789883269,
+     "prior_l1": 0.09137060847008402,
+     "median_shift": 0.029614242911338805,
+     "iqr_shift": -0.05960758477449417
+    },
+    {
+     "subject": "SC417",
+     "n": 2775,
+     "coverage": 0.9632432432432434,
+     "prior_term": -0.008425784518772876,
+     "score_term": 0.042388049383459726,
+     "interaction": 0.0033147948036772604,
+     "residual": 3.382710778154774e-17,
+     "mean_set_size": 2.903063063063063,
+     "mean_confidence": 0.7361818631704863,
+     "mean_score": 0.8057326805119629,
+     "accuracy": 0.8032432432432433,
+     "prior_l1": 0.0935957696827262,
+     "median_shift": -0.018127095699310303,
+     "iqr_shift": -0.03687938302755356
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold4_seed1",
+   "threshold": 0.9998050332069397,
+   "pooled_coverage": 0.9491545893719807,
+   "n_subjects": 4,
+   "coverage_sd": 0.0268183547965022,
+   "worst_coverage": 0.9085603112840468,
+   "mean_abs_terms": {
+    "prior": 0.010444491691006325,
+    "score": 0.04242350365323637,
+    "interaction": 0.014945153027348739
+   },
+   "score_dominant_fraction": 1.0,
+   "max_abs_residual": 6.418476861114186e-17,
+   "correlations": {
+    "coverage_vs_set_size": 0.6169047204262139,
+    "coverage_vs_accuracy": -0.960766602956412,
+    "coverage_vs_prior_l1": 0.09284790302015503
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.015593353658914566,
+    "mean_abs_iqr_shift": 0.031762126274406915
+   },
+   "rows": [
+    {
+     "subject": "SC401",
+     "n": 2289,
+     "coverage": 0.9344692005242465,
+     "prior_term": 0.014389664704478413,
+     "score_term": -0.047385113797864455,
+     "interaction": 0.018310060245651807,
+     "residual": 5.204170427930421e-17,
+     "mean_set_size": 3.1384884228920926,
+     "mean_confidence": 0.8112500584792133,
+     "mean_score": 0.8638149036335413,
+     "accuracy": 0.8169506334643949,
+     "prior_l1": 0.16816643556771202,
+     "median_shift": -0.009646730124950409,
+     "iqr_shift": -0.02039974518120289
+    },
+    {
+     "subject": "SC408",
+     "n": 2188,
+     "coverage": 0.9606946983546619,
+     "prior_term": -0.003585388953874929,
+     "score_term": 0.023553836203035878,
+     "interaction": -0.008428338266479707,
+     "residual": -3.469446951953614e-17,
+     "mean_set_size": 2.9616087751371114,
+     "mean_confidence": 0.8027461452011216,
+     "mean_score": 0.8609626286986887,
+     "accuracy": 0.7975319926873857,
+     "prior_l1": 0.13916863171095745,
+     "median_shift": -0.013152624666690826,
+     "iqr_shift": 0.01902431361377239
+    },
+    {
+     "subject": "SC413",
+     "n": 1028,
+     "coverage": 0.9085603112840468,
+     "prior_term": 0.010770437126155035,
+     "score_term": -0.07603844980432696,
+     "interaction": 0.02467373459023805,
+     "residual": -4.85722573273506e-17,
+     "mean_set_size": 2.906614785992218,
+     "mean_confidence": 0.8344964896136685,
+     "mean_score": 0.8732112131642308,
+     "accuracy": 0.8715953307392996,
+     "prior_l1": 0.09137060847008402,
+     "median_shift": -0.028143183887004854,
+     "iqr_shift": -0.03528616540133953
+    },
+    {
+     "subject": "SC417",
+     "n": 2775,
+     "coverage": 0.9672072072072073,
+     "prior_term": -0.013032475979516926,
+     "score_term": 0.022716614807718204,
+     "interaction": 0.00836847900702539,
+     "residual": -6.418476861114186e-17,
+     "mean_set_size": 3.352072072072072,
+     "mean_confidence": 0.8041208696794939,
+     "mean_score": 0.8628146729027556,
+     "accuracy": 0.7953153153153153,
+     "prior_l1": 0.0935957696827262,
+     "median_shift": 0.011430875957012176,
+     "iqr_shift": -0.05233828090131283
+    }
+   ]
+  },
+  {
+   "run": "results\\main\\sleepcnn\\fold4_seed2",
+   "threshold": 0.9997774958610535,
+   "pooled_coverage": 0.9421497584541063,
+   "n_subjects": 4,
+   "coverage_sd": 0.021999629913780135,
+   "worst_coverage": 0.9212062256809339,
+   "mean_abs_terms": {
+    "prior": 0.012643657184452924,
+    "score": 0.034526831963651444,
+    "interaction": 0.014021279637073308
+   },
+   "score_dominant_fraction": 0.75,
+   "max_abs_residual": 1.8735013540549517e-16,
+   "correlations": {
+    "coverage_vs_set_size": 0.9807309460579905,
+    "coverage_vs_accuracy": -0.4263942474247034,
+    "coverage_vs_prior_l1": -0.3858686993939191
+   },
+   "location_vs_spread": {
+    "mean_abs_median_shift": 0.007990541961044074,
+    "mean_abs_iqr_shift": 0.030351347819669174
+   },
+   "rows": [
+    {
+     "subject": "SC401",
+     "n": 2289,
+     "coverage": 0.9287898645696809,
+     "prior_term": 0.017605620140034747,
+     "score_term": -0.0454367884343106,
+     "interaction": 0.014471274409850663,
+     "residual": -1.8735013540549517e-16,
+     "mean_set_size": 2.477064220183486,
+     "mean_confidence": 0.8236242345895971,
+     "mean_score": 0.867827033508894,
+     "accuracy": 0.8693752730449978,
+     "prior_l1": 0.16816643556771202,
+     "median_shift": -0.009100490808486938,
+     "iqr_shift": -0.021505305357277394
+    },
+    {
+     "subject": "SC408",
+     "n": 2188,
+     "coverage": 0.930530164533821,
+     "prior_term": -0.007052034486757928,
+     "score_term": 0.006438093938059148,
+     "interaction": -0.011005653371586533,
+     "residual": -1.9081958235744878e-17,
+     "mean_set_size": 2.5228519195612433,
+     "mean_confidence": 0.8028464417026073,
+     "mean_score": 0.8758933039851635,
+     "accuracy": 0.7577696526508226,
+     "prior_l1": 0.13916863171095745,
+     "median_shift": 0.0008113857358694077,
+     "iqr_shift": -0.009772261301986874
+    },
+    {
+     "subject": "SC413",
+     "n": 1028,
+     "coverage": 0.9212062256809339,
+     "prior_term": 0.01237186171826591,
+     "score_term": -0.05433529335589664,
+     "interaction": 0.021019898864458392,
+     "residual": -6.591949208711867e-17,
+     "mean_set_size": 2.507782101167315,
+     "mean_confidence": 0.8537682111625078,
+     "mean_score": 0.8869346968903468,
+     "accuracy": 0.8929961089494164,
+     "prior_l1": 0.09137060847008402,
+     "median_shift": -0.005096662044525147,
+     "iqr_shift": -0.07377853561192751
+    },
+    {
+     "subject": "SC417",
+     "n": 2775,
+     "coverage": 0.9700900900900902,
+     "prior_term": -0.013545112392753113,
+     "score_term": 0.03189715212633939,
+     "interaction": 0.009588291902397642,
+     "residual": -5.551115123125783e-17,
+     "mean_set_size": 3.101981981981982,
+     "mean_confidence": 0.7858077259106679,
+     "mean_score": 0.846250602574076,
+     "accuracy": 0.8032432432432433,
+     "prior_l1": 0.0935957696827262,
+     "median_shift": 0.0169536292552948,
+     "iqr_shift": -0.01634928900748491
+    }
+   ]
+  }
+ ]
+}
